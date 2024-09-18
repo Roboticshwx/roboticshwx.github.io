@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/05/29/stm32入门/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="开发环境搭建(点亮LED)采用cortex-debug进行调试。 下载GCC ARM工具链GNU Arm Embedded Toolchain Downloads  选择最新的版本，后缀为win32.exe的文件。 安装完成后将其添加到系统变量，勾选第三项;   在命令行中输入arm-none-eabi-gcc --version来验证是否安装成功并且添加到路径； 下载OpenOCDOpen On">
+<meta property="og:type" content="article">
+<meta property="og:title" content="STM32入门">
+<meta property="og:url" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="开发环境搭建(点亮LED)采用cortex-debug进行调试。 下载GCC ARM工具链GNU Arm Embedded Toolchain Downloads  选择最新的版本，后缀为win32.exe的文件。 安装完成后将其添加到系统变量，勾选第三项;   在命令行中输入arm-none-eabi-gcc --version来验证是否安装成功并且添加到路径； 下载OpenOCDOpen On">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_1.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_2.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_4.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_6.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_7.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_12.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_5.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_3.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_8.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_13.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_14.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_10.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_11.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_15.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_16.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_18.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_17.png">
+<meta property="og:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_19.png">
+<meta property="article:published_time" content="2023-05-29T13:15:01.000Z">
+<meta property="article:modified_time" content="2024-08-23T09:39:12.703Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_1.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            STM32入门 -
+        
+        Fomalhaut Wiki
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    
+        
+<script src="/js/libs/anime.min.js"></script>
+
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":true,"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.6.4","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+    <style>
+    :root {
+        --preloader-background-color: #fff;
+        --preloader-text-color: #000;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        :root {
+            --preloader-background-color: #202124;
+            --preloader-text-color: #fff;
+        }
+    }
+
+    @media (prefers-color-scheme: light) {
+        :root {
+            --preloader-background-color: #fff;
+            --preloader-text-color: #000;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .ml13 {
+            font-size: 2.6rem !important; /* Adjust this value as needed */
+        }
+    }
+
+    .preloader {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem; /* Tailwind 'gap-4' is 1rem */
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        padding: 12px;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh; /* 'h-screen' is 100% of the viewport height */
+        background-color: var(--preloader-background-color);
+        z-index: 1100; /* 'z-[1100]' sets the z-index */
+        transition: opacity 0.2s ease-in-out;
+    }
+
+    .ml13 {
+        font-size: 3.2rem;
+        /* text-transform: uppercase; */
+        color: var(--preloader-text-color);
+        letter-spacing: -1px;
+        font-weight: 500;
+        font-family: 'Chillax-Variable', sans-serif;
+        text-align: center;
+    }
+
+    .ml13 .word {
+        display: inline-flex;
+        flex-wrap: wrap;
+        white-space: nowrap;
+    }
+
+    .ml13 .letter {
+        display: inline-block;
+        line-height: 1em;
+    }
+</style>
+
+<div class="preloader">
+    <h2 class="ml13">
+        Fomalhaut Wiki
+    </h2>
+    <script>
+        var textWrapper = document.querySelector('.ml13');
+        // Split text into words
+        var words = textWrapper.textContent.trim().split(' ');
+
+        // Clear the existing content
+        textWrapper.innerHTML = '';
+
+        // Wrap each word and its letters in spans
+        words.forEach(function(word) {
+            var wordSpan = document.createElement('span');
+            wordSpan.classList.add('word');
+            wordSpan.innerHTML = word.replace(/\S/g, "<span class='letter'>$&</span>");
+            textWrapper.appendChild(wordSpan);
+            textWrapper.appendChild(document.createTextNode(' ')); // Add space between words
+        });
+
+        var animation = anime.timeline({loop: true})
+            .add({
+                targets: '.ml13 .letter',
+                translateY: [40,0],
+                translateZ: 0,
+                opacity: [0,1],
+                filter: ['blur(5px)', 'blur(0px)'], // Starting from blurred to unblurred
+                easing: "easeOutExpo",
+                duration: 1400,
+                delay: (el, i) => 300 + 30 * i,
+            }).add({
+                targets: '.ml13 .letter',
+                translateY: [0,-40],
+                opacity: [1,0],
+                filter: ['blur(0px)', 'blur(5px)'], // Ending from unblurred to blurred
+                easing: "easeInExpo",
+                duration: 1200,
+                delay: (el, i) => 100 + 30 * i,
+                complete: function() {
+                    hidePreloader(); // Call hidePreloader after the animation completes
+                }
+            });
+
+        let themeStatus = JSON.parse(localStorage.getItem('REDEFINE-THEME-STATUS'))?.isDark;
+
+        // If the theme status is not found in local storage, check the preferred color scheme
+        if (themeStatus === undefined || themeStatus === null) {
+            if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                themeStatus = 'dark';
+            } else {
+                themeStatus = 'light';
+            }
+        }
+
+        // Now you can use the themeStatus variable in your code
+        if (themeStatus) {
+            document.documentElement.style.setProperty('--preloader-background-color', '#202124');
+            document.documentElement.style.setProperty('--preloader-text-color', '#fff');
+        } else {
+            document.documentElement.style.setProperty('--preloader-background-color', '#fff');
+            document.documentElement.style.setProperty('--preloader-text-color', '#000');
+        }
+
+        window.addEventListener('load', function () {
+            setTimeout(hidePreloader, 5000); // Call hidePreloader after 5000 milliseconds if not already called by animation
+        });
+
+        function hidePreloader() {
+            var preloader = document.querySelector('.preloader');
+            preloader.style.opacity = '0';
+            setTimeout(function () {
+                preloader.style.display = 'none';
+            }, 200);
+        }
+    </script>
+</div>
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">42</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">STM32入门</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/portrait.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-05-29 21:15:01</span>
+        <span class="mobile">2023-05-29 21:15:01</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-08-23 17:39:12</span>
+            <span class="mobile">2024-08-23 17:39:12</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Electronics-and-Embedded-System/">Electronics and Embedded System</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="开发环境搭建-点亮LED"><a href="#开发环境搭建-点亮LED" class="headerlink" title="开发环境搭建(点亮LED)"></a>开发环境搭建(点亮LED)</h2><p>采用cortex-debug进行调试。</p>
+<h3 id="下载GCC-ARM工具链"><a href="#下载GCC-ARM工具链" class="headerlink" title="下载GCC ARM工具链"></a>下载GCC ARM工具链</h3><p><a class="link"   target="_blank" rel="noopener" href="https://developer.arm.com/downloads/-/gnu-rm" >GNU Arm Embedded Toolchain Downloads <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>选择最新的版本，后缀为<code>win32.exe</code>的文件。</p>
+<p>安装完成后将其添加到系统变量，勾选第三项;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_1.png"
+                      class="" width="400"
+                >
+
+<p>在命令行中输入<code>arm-none-eabi-gcc --version</code>来验证是否安装成功并且添加到路径；</p>
+<h3 id="下载OpenOCD"><a href="#下载OpenOCD" class="headerlink" title="下载OpenOCD"></a>下载OpenOCD</h3><p><a class="link"   target="_blank" rel="noopener" href="https://github.com/openocd-org/openocd/releases" >Open On-Chip Debugger <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>解压完成之后需要手动将根目录下的<code>bin</code>文件夹添加到系统变量。</p>
+<p>最后在命令行中输入 <code>openocd --version</code> 来检查 OpenOCD 是否安装成功并且添加到路径；</p>
+<h3 id="添加cortex-debug插件"><a href="#添加cortex-debug插件" class="headerlink" title="添加cortex-debug插件"></a>添加cortex-debug插件</h3><p>在vscode中搜索这个插件，安装；</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_2.png"
+                      class="" width="600"
+                >
+
+<h3 id="下载GNU-make"><a href="#下载GNU-make" class="headerlink" title="下载GNU make"></a>下载GNU make</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.mingw-w64.org/downloads/" >MinGW Download <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<blockquote>
+<p>MinGW（Minimalist GNU for Windows）是一个可以在Windows环境下运行的GNU编译器套装，包括GCC（GNU Compiler Collection，GNU编译器套件）和其他一些开源工具。</p>
+</blockquote>
+<p>通过下载MinGW来获取GNU make，下载对应的windows版本即可，记得添加路径。</p>
+<p>在命令行中输入 make -v 来检查是否安装成功。</p>
+<h3 id="下载CubeMX"><a href="#下载CubeMX" class="headerlink" title="下载CubeMX"></a>下载CubeMX</h3><p>CubeMX用于生成stm32调试的基本代码，通过图形化的方式对stm32进行一个基础的硬件设置。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.st.com/en/development-tools/stm32cubemx.html#get-software" >STM32CubeMX <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="利用CubeMX生成工程文件夹"><a href="#利用CubeMX生成工程文件夹" class="headerlink" title="利用CubeMX生成工程文件夹"></a>利用CubeMX生成工程文件夹</h3><p>选择<code>File</code>然后选择<code>New Project ...</code>或者Ctrl+N来新建工程；</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_4.png"
+                      class="" width="600"
+                >
+
+<p>左上角写入stm32的型号，然后在中间下面的众多型号中进行选择，上方可下载对应的芯片手册，右上方点击 <code>Start Project</code>;</p>
+<p>先设置<code>Pinout &amp; Configuration</code></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_6.png"
+                      class="" width="400"
+                >
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_7.png"
+                      class="" width="400"
+                >
+
+<p>为了点亮一个LED灯，这里将PB0设置为<code>GPIO_Output</code></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_12.png"
+                      class="" width="400"
+                >
+
+<p><code>Clock Configuration</code>的配置如下：</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_5.png"
+                      class="" width="600"
+                >
+
+<p>在<code>Project Manager</code>中输入工程名字和配置工程路径;</p>
+<p>在<code>Toolchain/IDE</code>中选择<code>Makefile</code>，</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_3.png"
+                      class="" width="800"
+                >
+
+<p>在左边第二栏中进行如图勾选；</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_8.png"
+                      class="" width="400"
+                >
+
+<p>最后点击<code>GENERATE CODE</code>（右上）；</p>
+
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>初次下载CubeMX需要安装对应stm32系类的软件包，如这里的stm32F103C8T6则需要安装stm32F1的软件包。</p>
+
+  </div>
+
+<p>在STM32CubeMX界面下，点击Alt+U打开软件包管理界面，在这里下载即可。</p>
+<h3 id="launch-json配置"><a href="#launch-json配置" class="headerlink" title="launch.json配置"></a>launch.json配置</h3><p>创建好工程文件夹后，用vscode打开根目录，根目录的文件如下：</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_13.png"
+                      class="" width="400"
+                >
+
+<p>在左边菜单栏中选择<code>运行和调试</code>，然后选择<code>创建 launch.json 文件</code>，然后选择<code>cortex-debug</code>;</p>
+<p>vscode会自己创建一个<code>.vscode</code>文件夹，里面包含<code>launch.json</code>文件</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Cortex Debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;executable&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./bin/executable.elf&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cortex-debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;runToEntryPoint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;servertype&quot;</span><span class="punctuation">:</span> <span class="string">&quot;openocd&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;configFiles&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;interface/cmsis-dap.cfg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;target/stm32f1x.cfg&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<p>需要对其进行修改，这里使用的是STM32F103和Daplink，所以需要修改<code>executable</code>和<code>configFiles</code>两个参数；</p>
+<p>由于CubeMX的Makefile文件默认将<code>.elf</code>文件放在<code>build</code>文件夹下，所以需要修改<code>executable</code>为<code>./build/$executable$.elf</code>；</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Cortex Debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceFolder&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;executable&quot;</span><span class="punctuation">:</span> <span class="string">&quot;./build/hello_world.elf&quot;</span><span class="punctuation">,</span> <span class="comment">// 修改这里</span></span><br><span class="line">            <span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cortex-debug&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;runToEntryPoint&quot;</span><span class="punctuation">:</span> <span class="string">&quot;main&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;servertype&quot;</span><span class="punctuation">:</span> <span class="string">&quot;openocd&quot;</span><span class="punctuation">,</span> <span class="comment">// 修改这里</span></span><br><span class="line">            <span class="attr">&quot;configFiles&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;interface/cmsis-dap.cfg&quot;</span><span class="punctuation">,</span>  <span class="comment">// 新增这两行</span></span><br><span class="line">                <span class="string">&quot;target/stm32f1x.cfg&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="tasks-json配置"><a href="#tasks-json配置" class="headerlink" title="tasks.json配置"></a>tasks.json配置</h3><p>在<code>.vscode</code>目录下新建<code>tasks.json</code>文件，将以下内容复制：</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build STM32 Firmware&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;make&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;shell&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build and Download&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;openocd&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-f&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;interface/cmsis-dap.cfg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-f&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;target/stm32f1x.cfg&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-c&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;program build/hello_world.elf verify reset exit&quot;</span> <span class="comment">//这里改为自己的项目执行文件</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$gcc&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;dependsOn&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Build STM32 Firmware&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="C-x2F-C-配置"><a href="#C-x2F-C-配置" class="headerlink" title="C&#x2F;C++ 配置"></a>C&#x2F;C++ 配置</h3><p><code>Ctrl+Shift+P</code>打开<code>C/C++配置UI</code></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_14.png"
+                      class="" width="400"
+                >
+
+<p>编译器路径修改为本地gcc安装的位置：(可以通过Everything搜索arm-none-eabi-gcc.exe来找到路径)</p>
+<p><code>D:\Program Files (x86)\GNU Arm Embedded Toolchain\10 2021.10\bin\arm-none-eabi-gcc.exe</code></p>
+<p>IntelliSense模式修改为：gcc-arm(legacy)</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_10.png"
+                      class="" width="600"
+                >
+
+<p>将以下内容覆盖到<code>包含路径</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$&#123;workspaceFolder&#125;/**</span><br><span class="line">$&#123;workspaceFolder&#125;/Core/Inc</span><br><span class="line">$&#123;workspaceFolder&#125;/Drivers/STM32F1xx_HAL_Driver/Inc</span><br><span class="line">$&#123;workspaceFolder&#125;/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy</span><br><span class="line">$&#123;workspaceFolder&#125;/Drivers/CMSIS/Device/ST/STM32F1xx/Include</span><br><span class="line">$&#123;workspaceFolder&#125;/Drivers/CMSIS/Include</span><br></pre></td></tr></table></figure></div>
+
+<p>以下内容覆盖到<code>定义</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">_DEBUG</span><br><span class="line">UNICODE</span><br><span class="line">_UNICODE</span><br><span class="line">USE_HAL_DRIVER</span><br><span class="line">STM32F103xB</span><br></pre></td></tr></table></figure></div>
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_11.png"
+                      class="" width="600"
+                >
+
+<p>修改成功后，在.vscode目录下自动生成配置文件<code>c_cpp_properties.json</code>, 表示配置成功。</p>
+<p>烧录器连接：（Daplink）</p>
+<table>
+<thead>
+<tr>
+<th>stm32</th>
+<th>Daplink</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>3v3</td>
+<td>3v3</td>
+</tr>
+<tr>
+<td>SWIO</td>
+<td>SDO</td>
+</tr>
+<tr>
+<td>SWCLK</td>
+<td>SCK</td>
+</tr>
+<tr>
+<td>GND</td>
+<td>GND</td>
+</tr>
+</tbody></table>
+<p>在main.c下写代码</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">  <span class="comment">/* USER CODE BEGIN 2 */</span></span><br><span class="line">  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);</span><br><span class="line">  <span class="comment">/* USER CODE END 2 */</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET); <span class="comment">// 设置PB0为高电平</span></span><br></pre></td></tr></table></figure></div>
+
+<p><code>Ctrl+Shift+B</code>来对代码进行编译和下载</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_15.png"
+                      class="" width="600"
+                >
+
+<p>选择<code>Build STM32 Firmware</code>对代码进行编译，选择<code>Build and Download</code>则进行编译和下载。</p>
+<p>连接stm32的B0到led上，检查能否点亮led.</p>
+<h3 id="代码结构"><a href="#代码结构" class="headerlink" title="代码结构"></a>代码结构</h3><p><code>main.c</code>中的大部分代码由CubeMX自动生成, 这里重新梳理一下stm32f103的代码结构.</p>
+<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;main.h&quot;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&quot;gpio.h&quot;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">SystemClock_Config</span><span class="params">(<span class="type">void</span>)</span>; <span class="comment">// 该函数用于配置系统时钟</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">// 主函数</span></span><br><span class="line">&#123;</span><br><span class="line">    HAL_Init(); <span class="comment">// 初始化HAL库</span></span><br><span class="line"></span><br><span class="line">    SystemClock_Config(); <span class="comment">// 配置系统时钟</span></span><br><span class="line"></span><br><span class="line">    MX_GPIO_Init(); <span class="comment">// 初始化GPIO</span></span><br><span class="line"></span><br><span class="line">    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET); <span class="comment">// 设置PB0为高电平</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">    HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET); <span class="comment">// 设置PB0为高电平</span></span><br><span class="line"></span><br><span class="line">    &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">SystemClock_Config</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">// 配置系统时钟</span></span><br><span class="line">&#123;</span><br><span class="line">    RCC_OscInitTypeDef RCC_OscInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line">    RCC_ClkInitTypeDef RCC_ClkInitStruct = &#123;<span class="number">0</span>&#125;;</span><br><span class="line"></span><br><span class="line">    RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;</span><br><span class="line">    RCC_OscInitStruct.HSEState = RCC_HSE_ON;</span><br><span class="line">    RCC_OscInitStruct.HSEPredivValue = RCC_HSE_PREDIV_DIV1;</span><br><span class="line">    RCC_OscInitStruct.HSIState = RCC_HSI_ON;</span><br><span class="line">    RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;</span><br><span class="line">    RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;</span><br><span class="line">    RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;</span><br><span class="line">    <span class="keyword">if</span> (HAL_RCC_OscConfig(&amp;RCC_OscInitStruct) != HAL_OK)</span><br><span class="line">    &#123;</span><br><span class="line">        Error_Handler(); <span class="comment">// 时钟配置失败, 则调用错误处理函数</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK</span><br><span class="line">                                |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;</span><br><span class="line">    RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;</span><br><span class="line">    RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;</span><br><span class="line">    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV2;</span><br><span class="line">    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (HAL_RCC_ClockConfig(&amp;RCC_ClkInitStruct, FLASH_LATENCY_2) != HAL_OK)</span><br><span class="line">    &#123;</span><br><span class="line">        Error_Handler();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">Error_Handler</span><span class="params">(<span class="type">void</span>)</span> <span class="comment">// 定义错误函数</span></span><br><span class="line">&#123;</span><br><span class="line">    __disable_irq(); <span class="comment">// 禁用所有中断</span></span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) <span class="comment">// 进入无限循环, 等待外部中断</span></span><br><span class="line">    &#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">ifdef</span>  USE_FULL_ASSERT <span class="comment">// 如果定义了USE_FULL_ASSERT, 则调用assert_failed函数</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">assert_failed</span><span class="params">(<span class="type">uint8_t</span> *file, <span class="type">uint32_t</span> line)</span> <span class="comment">// 定义assert_failed函数</span></span><br><span class="line">&#123;&#125;</span><br><span class="line"><span class="meta">#<span class="keyword">endif</span></span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="输出PWM"><a href="#输出PWM" class="headerlink" title="输出PWM"></a>输出PWM</h2><h3 id="工作原理"><a href="#工作原理" class="headerlink" title="工作原理"></a>工作原理</h3><p>STM32F1共有8个定时器，其中可以用于PWM输出的定时器有：</p>
+<ul>
+<li>高级定时器：TIM1, TIM8 (7路PWM)</li>
+<li>通用定时器: TIM2, TIM3, TIM4, TIM5 (4路PWM)</li>
+</ul>
+<p>输出原理:</p>
+<ul>
+<li>TIMx_ARR寄存器确定PWM频率；</li>
+<li>TIMx_CCRx寄存器确定PWM占空比；</li>
+<li>TIMx_CNT为定时器计数器；</li>
+</ul>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_16.png"
+                      class="" width="600"
+                >
+
+<ul>
+<li>PWM模式1：在向上计数时，TIMx_CNT &lt; TIMx_CCR1时通道1为有效电平，否则为无效电平；在向下计数时，TIMx_CNT&gt;TIMx_CCR1时通道1为无效电平，否则为有效电平。</li>
+<li>PWM模式2：在向上计数时，TIMx_CNT &lt; TIMx_CCR1时通道1为无效电平，否则为有效电平；在向下计数时，TIMx_CNT&gt;TIMx_CCR1时通道1为有效电平，否则为无效电平。</li>
+</ul>
+<h2 id="CAN总线"><a href="#CAN总线" class="headerlink" title="CAN总线"></a>CAN总线</h2><h3 id="CAN总线的基本原理"><a href="#CAN总线的基本原理" class="headerlink" title="CAN总线的基本原理"></a>CAN总线的基本原理</h3><p>要进行can通讯，需要专门的can收发芯片，单片机通过Tx与Rx与can收发芯片通讯，can收发芯片通过CANH和CANL与can总线通讯。线束上需要双绞线缠绕。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_18.png"
+                      class="" width="600"
+                >
+
+<p>经过can收发器之后，普通信号会转换为差分信号，差分线是用CAN HIGH和CAN LOW两根线来传输信号，低电平下CANH为3.5V，CANL为1.5V，高电平下CANH和CANL均为2.5V。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_17.png"
+                      class="" width="600"
+                >
+
+<p>其数据帧格式为：</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/05/29/stm32%E5%85%A5%E9%97%A8/fig_19.png"
+                      class="" width="600"
+                >
+
+<h2 id="USB-Host"><a href="#USB-Host" class="headerlink" title="USB Host"></a>USB Host</h2><p>由于常用的stm32f103没有USB Host功能，所以使用stm32f411CEU6，作为usb host与usb设备通讯。</p>
+<p>CubeMX设置</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/as480133937/article/details/99231677" >【STM32】HAL库 STM32CubeMX教程七—PWM输出(呼吸灯) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV14k4y187e6/?spm_id_from=333.337.search-card.all.click&vd_source=3c842e78ba17ee7afd3375b35f554ca1" >趋近于完美的通讯 CAN总线！4分钟看懂！ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Z1421C7dP/?spm_id_from=333.337.search-card.all.click&vd_source=3c842e78ba17ee7afd3375b35f554ca1" >STM32F103用CAN通讯驱动小米电机讲解 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> STM32入门</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2023-05-29 21:15:01</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-08-23 17:39:12
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2023/05/29/stm32入门/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/07/21/CAD%E8%AE%BE%E8%AE%A1%E6%8A%80%E5%B7%A7/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">CAD设计技巧</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/05/27/%E5%88%B6%E5%AF%BC%E9%A3%9E%E9%95%96%E7%BB%93%E6%9E%84%E8%AE%BE%E8%AE%A1/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">制导飞镖结构设计</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">STM32入门</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA-%E7%82%B9%E4%BA%AELED"><span class="nav-text">开发环境搭建(点亮LED)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDGCC-ARM%E5%B7%A5%E5%85%B7%E9%93%BE"><span class="nav-text">下载GCC ARM工具链</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDOpenOCD"><span class="nav-text">下载OpenOCD</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0cortex-debug%E6%8F%92%E4%BB%B6"><span class="nav-text">添加cortex-debug插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDGNU-make"><span class="nav-text">下载GNU make</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BDCubeMX"><span class="nav-text">下载CubeMX</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8CubeMX%E7%94%9F%E6%88%90%E5%B7%A5%E7%A8%8B%E6%96%87%E4%BB%B6%E5%A4%B9"><span class="nav-text">利用CubeMX生成工程文件夹</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#launch-json%E9%85%8D%E7%BD%AE"><span class="nav-text">launch.json配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tasks-json%E9%85%8D%E7%BD%AE"><span class="nav-text">tasks.json配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#C-x2F-C-%E9%85%8D%E7%BD%AE"><span class="nav-text">C&#x2F;C++ 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84"><span class="nav-text">代码结构</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BAPWM"><span class="nav-text">输出PWM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86"><span class="nav-text">工作原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CAN%E6%80%BB%E7%BA%BF"><span class="nav-text">CAN总线</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#CAN%E6%80%BB%E7%BA%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86"><span class="nav-text">CAN总线的基本原理</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#USB-Host"><span class="nav-text">USB Host</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        42 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.6.4</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

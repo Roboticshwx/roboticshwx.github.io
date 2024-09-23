@@ -26,7 +26,7 @@
 <meta property="og:description" content="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning2024.5 该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2024-09-09T07:33:10.000Z">
-<meta property="article:modified_time" content="2024-09-14T08:51:16.331Z">
+<meta property="article:modified_time" content="2024-09-19T09:36:52.785Z">
 <meta property="article:author" content="hwx">
 <meta name="twitter:card" content="summary">
     
@@ -454,7 +454,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">42</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">43</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -508,8 +508,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-14 16:51:16</span>
-            <span class="mobile">2024-09-14 16:51:16</span>
+            <span class="desktop">2024-09-19 17:36:52</span>
+            <span class="mobile">2024-09-19 17:36:52</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -647,6 +647,52 @@
 <p>为了克服这些问题，作者提出了一种仅基于图像的机器人操作框架。该框架利用安装在机器人抓取器上的单目相机，通过相机随抓取器移动从多个视角感知物体，从而估计物体的 6D 姿态（即位置和方向）。这种方法虽然通过多视角提高了姿态估计的准确性，但也增加了操作时间。为了解决这个权衡问题，作者采用了强化学习策略来平衡操作效率和姿态估计的准确性。实验结果表明，该方法在仿真和实际环境中均表现出色。</p>
 <p>文中使用了一种常见的强化学习算法——Proximal Policy Optimization (PPO) 来训练全局调度策略。PPO 是一种高效且稳定的强化学习方法，通过不断优化策略来改进机器人在不同视角之间的切换决策，使其能够更好地权衡感知精度和操作效率。</p>
 <p>该强化学习应用的算法, 全局调度策略（Global Scheduling Policy），该策略是一个高层次的决策机制。其主要功能是在机器人探索环境或开始操作之间做出决策。它根据已经累积的环境信息和主动感知模块的反馈，决定是否需要进一步探索新视角。若选择探索，策略会为机械臂指定 6D 外参参数，调整相机位置以获取图像；若决定停止探索，机器人将进入操作模式，继续执行任务。</p>
+<h2 id="Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><a href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks" class="headerlink" title="Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks"></a>Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</h2><p>2024 ICLR</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mihdalal.github.io/planseqlearn/" >Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+
+	<div class="row">
+    <embed src="./8.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>现有的LLM方法能够给机器人提供high-level的planning. 但是这些方法依赖预定义的技能库(抓取, 放置, 拉动, 推动). LLM无法解决如何设计或学习这些技能, 尤其是在长时序任务中.</p>
+<p>本文提出了一个Plan-Seq-Learn框架, 利用LLM的高层次策略引导强化学习(RL)来解决机器人的控制任务.</p>
+<p>文中提出一个观点, LLM与RL优势互补, LLMs可以借助互联网规模的知识将长时序任务分解为可实现的子目标，但它们缺乏生成低层次控制策略的能力；而RL则擅长发现复杂的控制行为，但在长时序推理方面表现不足。</p>
+<p>PSL框架的创新在于, 它不依赖任何预定义的技能库, 而是通过运动规划控制跟踪LLM的计划, 并通过RL学习低层次的控制技能.</p>
+<ol>
+<li>Plan（计划）阶段：由LLM生成高层次任务分解计划<br>在“NutAssembly”任务中，首先由LLM生成任务的高层次计划。这一步的目的是将任务分解为多个可执行的子步骤。对于这个任务，LLM可能生成如下计划：</li>
+</ol>
+<ul>
+<li>抓取金色螺母</li>
+<li>将金色螺母放置在金色螺栓上</li>
+<li>抓取银色螺母</li>
+<li>将银色螺母放置在银色螺栓上</li>
+</ul>
+<p>原文示例：</p>
+<blockquote>
+<p>Plan: [(“gold nut”,“grasp”), (“gold peg”, “place”), (“silver nut”, “grasp”), (“silver peg”, “place”)]​。</p>
+</blockquote>
+<p>这个计划展示了任务的四个关键步骤，分别是抓取和放置两个螺母。计划通过自然语言描述任务的各个阶段，供后续模块执行。</p>
+<ol start="2">
+<li>Seq（序列）阶段：运动规划追踪任务计划<br>在这一步中，PSL框架使用视觉引导的运动规划模块（Seq）将计划的每个阶段转化为机器人要达到的具体目标位置。具体来说：</li>
+</ol>
+<p>系统通过视觉系统识别场景中的目标对象，如“金色螺母”和“金色螺栓”。<br>通过视觉估计物体的三维坐标，计算机器人臂的目标姿态（q_target）。<br>运动规划算法（如AIT*）计算从机器人当前姿态到目标姿态的无碰撞路径，使机器人到达目标区域。<br>这一步主要是通过视觉引导和运动规划来执行无接触的运动，比如将机器人移动到金色螺母的上方，准备抓取。</p>
+<p>原文说明：</p>
+<blockquote>
+<p>Vision and Estimation: Using a text label of the target region of interest from the high-level plan and observation Oglobal, we need to compute a target robot state qtarget for the motion planner to achieve​。</p>
+</blockquote>
+<p>通过运动规划模块，机器人能够在空间中移动到正确的目标区域，比如移动到金色螺母上方。</p>
+<ol start="3">
+<li>Learn（学习）阶段：强化学习策略进行低层次控制<br>当机器人到达目标区域（如金色螺母上方）后，系统开始执行与环境的接触互动，这时RL模块开始发挥作用。RL策略负责学习如何抓取螺母、如何精确地放置螺母在螺栓上等接触任务。</li>
+</ol>
+<p>强化学习（RL）模型通过观察局部的环境信息（如机器人手臂末端的摄像头视角）执行动作。<br>机器人通过与环境的反复交互，逐渐学习到如何精确操控物体，如抓取螺母、放置到螺栓上。<br>每次成功执行后，系统通过奖励函数反馈调整策略，逐渐提高成功率。<br>原文说明：</p>
+<blockquote>
+<p>Once the agent steps through the plan and achieves states near target regions of interest, it needs to train an RL policy πθ to learn low-level control for solving the task. We train πθ using DRQ-v2 Yarats et al. (2021), a SOTA visual model-free RL algorithm​。</p>
+</blockquote>
+<p>通过RL策略，PSL能够处理需要精细控制的接触任务，比如如何准确抓住螺母并将其对准螺栓。</p>
 
         </div>
 
@@ -661,7 +707,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-09-14 16:51:16
+                    :</strong> 2024-09-19 17:36:52
             </li>
         
         <li>
@@ -777,7 +823,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">论文笔记</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><span class="nav-text">Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><span class="nav-text">Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><span class="nav-text">Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TidyBot-personalized-robot-assistance-with-large-language-models"><span class="nav-text">TidyBot: personalized robot assistance with large language models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><span class="nav-text">⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><span class="nav-text">⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><span class="nav-text">⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><span class="nav-text">Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><span class="nav-text">Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><span class="nav-text">Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TidyBot-personalized-robot-assistance-with-large-language-models"><span class="nav-text">TidyBot: personalized robot assistance with large language models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><span class="nav-text">⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><span class="nav-text">⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><span class="nav-text">⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><span class="nav-text">Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</span></a></li></ol>
 
     </div>
 </div>
@@ -810,7 +856,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        42 posts in total
+                        43 posts in total
                     </span>
                     
                 </p>

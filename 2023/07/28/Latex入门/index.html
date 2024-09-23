@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/07/28/latex入门/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="为什么用latex提高技术文档的工作效率，无论是官方的文档还是挑战杯、大创等等都需要大量的技术材料，这种专业的技术材料的写作通常都会使用latex进行排版，在战队编写文档的过程中，使用word容易出现格式不统一，整理和排版混乱的情况，在22赛季末的赛季总结排版工作中尤为严重，需要花费大量大量的时间和精力去做，因此使用latex进行替代，可以提前对文档进行排版，最终整合大家内容只需要进行一些简单的搬">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Latex入门">
+<meta property="og:url" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="为什么用latex提高技术文档的工作效率，无论是官方的文档还是挑战杯、大创等等都需要大量的技术材料，这种专业的技术材料的写作通常都会使用latex进行排版，在战队编写文档的过程中，使用word容易出现格式不统一，整理和排版混乱的情况，在22赛季末的赛季总结排版工作中尤为严重，需要花费大量大量的时间和精力去做，因此使用latex进行替代，可以提前对文档进行排版，最终整合大家内容只需要进行一些简单的搬">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_1.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_2.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_3.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_4.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_5.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_6.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_7.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_8.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_9.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_10.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_11.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_13.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_12.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_14.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_15.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_16.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_17.png">
+<meta property="og:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_18.png">
+<meta property="article:published_time" content="2023-07-28T11:19:23.000Z">
+<meta property="article:modified_time" content="2024-08-23T09:40:35.141Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_1.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Latex入门 -
+        
+        Fomalhaut Wiki
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.1","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+
+    <div class="navbar-content ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-screen w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">43</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Latex入门</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/portrait.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-07-28 19:19:23</span>
+        <span class="mobile">2023-07-28 19:19:23</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-08-23 17:40:35</span>
+            <span class="mobile">2024-08-23 17:40:35</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Basic-Computer-Programming/">Basic Computer Programming</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="为什么用latex"><a href="#为什么用latex" class="headerlink" title="为什么用latex"></a>为什么用latex</h2><p>提高技术文档的工作效率，无论是官方的文档还是挑战杯、大创等等都需要大量的技术材料，这种专业的技术材料的写作通常都会使用latex进行排版，在战队编写文档的过程中，使用word容易出现格式不统一，整理和排版混乱的情况，在22赛季末的赛季总结排版工作中尤为严重，需要花费大量大量的时间和精力去做，因此使用latex进行替代，可以提前对文档进行排版，最终整合大家内容只需要进行一些简单的搬运工作即可完成最终的整合，同时能够形成风格统一，格式严整的文档，另外还可以使用git进行版本管理。</p>
+<p>在做presentation中，通常还需要用到PPT，这里提供一个latex_beamer的解决方案，能够在短时间内，做出一份学术性强，比较academic的幻灯片，适合用于组会汇报，技术学术分享演讲等等。</p>
+<h2 id="Latex写作环境配置"><a href="#Latex写作环境配置" class="headerlink" title="Latex写作环境配置"></a>Latex写作环境配置</h2><ol>
+<li>给vscode安装插件（安装vscode记得选择添加到path）：</li>
+</ol>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_1.png"
+                      class="" width="300"
+                >
+
+<ol start="2">
+<li>安装Texlive</li>
+</ol>
+<p><a class="link"   target="_blank" rel="noopener" href="https://tug.org/texlive/" >Texlive官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>选择<code>install on Windows</code>-&gt;<code>install-tl-windows.exe</code></p>
+<p>下载好之后右键<code>以管理员身份运行</code>开始安装：（自行选择安装位置）</p>
+<div style="display: flex; align-items: center;">
+    <div style="flex: 50%; padding: 5px;">
+        <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_2.png"
+                      class="" width="500"
+                >
+    </div>
+    <div style="flex: 50%; padding: 5px;">
+        <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_3.png"
+                      class="" width="420"
+                >
+    </div>
+</div>
+
+<p>由于默认的编辑器并不好用，可以把<code>安装TeXworks前端</code>去掉；</p>
+<div style="display: flex; align-items: center;">
+    <div style="flex: 50%; padding: 5px;">
+        <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_4.png"
+                      class="" width="300"
+                >
+    </div>
+    <div style="flex: 50%; padding: 5px;">
+        <img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_5.png"
+                      class="" width="400"
+                >
+    </div>
+</div>
+
+<ol start="3">
+<li>配置vscode</li>
+</ol>
+<p>安装好texlive重启vscode，<code>Ctrl+,</code>打开设置，右上角打开<code>setting.json</code></p>
+<p>添加以下内容，用花括号包起来：</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.autoBuild.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;never&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.showContextMenu&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.intellisense.package.enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.message.error.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.message.warning.show&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;latexmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-synctex=1&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-interaction=nonstopmode&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-file-line-error&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-pdf&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-outdir=%OUTDIR%&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;%DOCFILE%&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.recipes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;XeLaTeX&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;PDFLaTeX&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;BibTeX&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;bibtex&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;LaTeXmk&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;latexmk&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;xelatex -&gt; bibtex -&gt; xelatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;xelatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;xelatex&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;pdflatex -&gt; bibtex -&gt; pdflatex*2&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;tools&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;bibtex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;pdflatex&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;pdflatex&quot;</span></span><br><span class="line">            <span class="punctuation">]</span></span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.clean.fileTypes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;*.aux&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.bbl&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.blg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.idx&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.ind&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.lof&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.lot&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.out&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.toc&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.acn&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.acr&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.alg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.glg&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.glo&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.gls&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.ist&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.fls&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.log&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;*.fdb_latexmk&quot;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.autoClean.run&quot;</span><span class="punctuation">:</span> <span class="string">&quot;onFailed&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.latex.recipe.default&quot;</span><span class="punctuation">:</span> <span class="string">&quot;lastUsed&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.view.pdf.internal.synctex.keybinding&quot;</span><span class="punctuation">:</span> <span class="string">&quot;double-click&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="4">
+<li>安装SumatraPdf</li>
+</ol>
+<p>SumatraPdf是vscode+latex的好帮手，同时也是一个好用的pdf阅读器；</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.sumatrapdfreader.org/download-free-pdf-viewer" >官网 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>在<code>setting.json</code>中添加内容: (注意修改路径!)</p>
+<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;latex-workshop.view.pdf.external.synctex.command&quot;</span><span class="punctuation">:</span></span><br><span class="line">    <span class="string">&quot;D:/Code/SumatraPDF/SumatraPDF.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;latex-workshop.view.pdf.external.synctex.args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;-forward-search&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;%TEX%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;%LINE%&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;%PDF%&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="punctuation">]</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div>
+
+<ol start="5">
+<li>设置SumatraPdf</li>
+</ol>
+<p>选择<code>设置</code>，选择<code>高级选项</code>，然后打开一个<code>.txt</code>文件</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_6.png"
+                      class="" width="400"
+                >
+
+<p>在最后一行加入以下内容：（注意修改vscode的安装路径, 可以在应用的属性中找到, 这里的斜杠不用改, 且需要更改两处）</p>
+<div class="highlight-container" data-rel="Txt"><figure class="iseeu highlight txt"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">InverseSearchCmdLine = &quot;C:\Users\hwx_pc\AppData\Local\Programs\Microsoft VS Code\Code.exe&quot; &quot;C:\Users\hwx_pc\AppData\Local\Programs\Microsoft VS Code\resources\app\out\cli.js&quot;  --ms-enable-electron-run-as-node -r -g &quot;%f:%l&quot;</span><br><span class="line">EnableTeXEnhancements = true</span><br></pre></td></tr></table></figure></div>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_7.png"
+                      class="" width="400"
+                >
+
+<p>这样，就基本完成所有的配置了；</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_8.png"
+                      class="" width="400"
+                >
+
+
+  <div class="note p-4 mb-4 rounded-small info">
+    <p>正向搜索：右键vscode界面，选择<code>SyncTex form cursor</code>，即可跳转到源代码对应pdf的内容。</p>
+
+  </div>
+
+<ol start="6">
+<li>测试</li>
+</ol>
+<p>新建一个工程文件夹, 用vscode打开, 新建一个<code>.tex</code>文件;</p>
+<p>输入:</p>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[UTF8]&#123;ctexart&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line">你好！！！</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></div>
+<p>编写完内容后点击绿色的编译按钮，左下角显示编译成功后，在点击打开pdf，即可查看pdf和导出。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_9.png"
+                      class="" width="500"
+                >
+
+<h2 id="Latex基础语法"><a href="#Latex基础语法" class="headerlink" title="Latex基础语法"></a>Latex基础语法</h2><h3 id="开头"><a href="#开头" class="headerlink" title="开头"></a>开头</h3><p>当我们需要一个中英文混排的文档的时候，需要对文档类型进行定义，一般使用命令<code>\documentclass[UTF8]&#123;ctexart&#125;</code>，UTF8是默认使用的编码类型，需要在命令中定义，否则可能会出现乱码。</p>
+<p>所有位于<code>\begin&#123;document&#125;</code>之前的内容都被称作是导言区（preamble），写作开始前要在前言中做以下事情：</p>
+<ul>
+<li>设置文档的格式；</li>
+<li>设定页面的尺寸；</li>
+<li>在指定的文档中导入需要的宏包；<br>介于<code>\begin&#123;document&#125;</code>和<code>\end&#123;document&#125;</code>之间的内容称为文档的正文区。</li>
+</ul>
+
+  <div class="note p-4 mb-4 rounded-small tip">
+    <p>💡在修改导言区的设置中，一般需要编译两次才能成功修改文档的结果，而在正文区写作只需要编译一次即可。</p>
+
+  </div>
+
+<h3 id="封面"><a href="#封面" class="headerlink" title="封面"></a>封面</h3><p>在导言区加入三行命令，分别是题目、作者和日期，同时在正文区加一行\maketitle，便可以实现一个简单的封面。</p>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[UTF8]&#123;ctexart&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\title</span>&#123;RoboMaster步兵发射机构研究&#125;</span><br><span class="line"><span class="keyword">\author</span>&#123;智宝&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\maketitle</span></span><br><span class="line"></span><br><span class="line">你好！！！</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></div>
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_10.png"
+                      class="" width="600"
+                >
+
+
+<h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\clearpage</span></span><br><span class="line"><span class="keyword">\tableofcontents</span></span><br></pre></td></tr></table></figure></div>
+<p>生成目录的命令需要编译两次！</p>
+<h3 id="格式化命令"><a href="#格式化命令" class="headerlink" title="格式化命令"></a>格式化命令</h3><p>在正文区的写作中，在格式化命令的情况下，只需要将文字放入花括号即可。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_11.png"
+                      class="" width="800"
+                >
+
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\textbf</span>&#123;在比赛中，由于常用的电机只用寥寥几种，若采用直驱的方式，则会有很多场景无法使用，例如英雄的Pitch控制，单独用一个RM6020电机会导致动力不足，</span><br><span class="line">采用两个6020则会显得过于笨重。&#125;</span><br><span class="line"><span class="keyword">\textit</span>&#123;若采用同步带，齿轮，连杆等传动结构，则能够实现控制的同时保证机构的灵活性，&#125;</span><br><span class="line"><span class="keyword">\underline</span>&#123;同时也能起到节省成本的作用。&#125;</span><br><span class="line"></span><br><span class="line">通过修改3508的减速箱的减速比，使得云台控制可以更换为重量更轻的3508电机使得整个机器人更加灵活。</span><br></pre></td></tr></table></figure></div>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_13.png"
+                      class="" width="600"
+                >
+
+
+<h3 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h3><div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\section</span>*&#123;第一章&#125;</span><br><span class="line">这是第一章的内容</span><br><span class="line"></span><br><span class="line"><span class="keyword">\subsection</span>*&#123;第一章的子章节&#125;</span><br><span class="line">这是子章节的内容</span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>*&#123;第二章&#125;</span><br><span class="line">这是第二章的内容</span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>&#123;第三章&#125;</span><br><span class="line">这是第三章的内容</span><br></pre></td></tr></table></figure></div>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_12.png"
+                      class="" width="500"
+                >
+
+<h3 id="添加图片"><a href="#添加图片" class="headerlink" title="添加图片"></a>添加图片</h3><p>需要在导言区中添加<code>\usepackage&#123;graphicx&#125;</code>宏包。</p>
+<p>然后在正文中添加<code>\includegraphics&#123;&#125;</code>，花括号中的内容是图片的文件名，图片文件需要放入tex的文件夹中，一般不需要写文件后缀名，或者也可以利用vscode直接选择对应的文件。</p>
+<p>通常图片的尺寸会很不合适，因此需要将图片的尺寸与文本进行匹配。这里的<code>\textwidth</code>表示文本的宽度，这里的图片等于文本的0.5倍宽度。</p>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\includegraphics</span>[width=0.5<span class="keyword">\textwidth</span>]&#123;figure<span class="built_in">_</span>1&#125;</span><br></pre></td></tr></table></figure></div>
+<p>正常情况下还需要将图片居中，给图片出一个标题，因此需要图片嵌套在一个figure的环境中，利用<code>\caption</code>指定图片的标题。利用<code>\centering</code>命令将图片居中。</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_14.png"
+                      class="" width="500"
+                >
+
+<p>有时候图片会产生错位, 需要进行以下修改:</p>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[H]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.5<span class="keyword">\textwidth</span>]&#123;figure<span class="built_in">_</span>1&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;图片&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="列表的创建"><a href="#列表的创建" class="headerlink" title="列表的创建"></a>列表的创建</h3><div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\begin</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\item</span> 步兵</span><br><span class="line">    <span class="keyword">\item</span> 英雄</span><br><span class="line">    <span class="keyword">\item</span> 工程</span><br><span class="line"><span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\begin</span>&#123;enumerate&#125;</span><br><span class="line">    <span class="keyword">\item</span> 哨兵</span><br><span class="line">    <span class="keyword">\item</span> 飞镖</span><br><span class="line">    <span class="keyword">\item</span> 雷达</span><br><span class="line"><span class="keyword">\end</span>&#123;enumerate&#125;</span><br></pre></td></tr></table></figure></div>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_15.png"
+                      class="" width="500"
+                >
+
+<h3 id="数学公式"><a href="#数学公式" class="headerlink" title="数学公式"></a>数学公式</h3><ul>
+<li>行内公式通过<code>$...$</code>进行填写；</li>
+<li>行外公式利用<code>\begin&#123;equation&#125;...\end&#123;equation&#125;</code>环境进行填写。<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">爱因斯坦在1905年发现的质能守衡方程为: <span class="built_in">$</span>E = mc<span class="built_in">^</span>2<span class="built_in">$</span></span><br><span class="line"></span><br><span class="line">拉普拉斯变换</span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">    F(p) = <span class="keyword">\int</span><span class="built_in">_</span>0<span class="built_in">^</span><span class="keyword">\infty</span> f(t)e<span class="built_in">^</span>&#123;-pt&#125;d t</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br></pre></td></tr></table></figure></div>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_16.png"
+                      class="" width="500"
+                ></li>
+</ul>
+<blockquote>
+<p>补充：数学公式在tex中成一个体系语言，需要用到时上网查阅即可。另外也可以通过各种公式编辑器进行数学公式的输入。</p>
+</blockquote>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.latexlive.com/" >在线LaTeX公式编辑器-编辑器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="表格的用法"><a href="#表格的用法" class="headerlink" title="表格的用法"></a>表格的用法</h3><p>Latex的表格绘制比较麻烦，可以用表格生成器代替：</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.tablesgenerator.com/" >Table Generator <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>将代码直接复制到tex文件即可.</p>
+<h3 id="Latex中文手册"><a href="#Latex中文手册" class="headerlink" title="Latex中文手册"></a>Latex中文手册</h3>
+
+	<div class="row">
+    <embed src="./lshort-zh-cn.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<h2 id="Latex制作幻灯片"><a href="#Latex制作幻灯片" class="headerlink" title="Latex制作幻灯片"></a>Latex制作幻灯片</h2><p>用latex做幻灯片的优点:</p>
+<ul>
+<li>学术性非常强;</li>
+<li>兼容latex的各种命令, 方便移植;</li>
+<li>编辑需要较强的逻辑性;</li>
+<li>输出为pdf, 方便跨设备分享;</li>
+</ul>
+<p>利用<code>beamer</code>文档类型作为幻灯片格式，然后进行创作。</p>
+<p>幻灯片的每一页都是一帧 frame, beamer的帧分为三类</p>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 标题帧</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;<span class="keyword">\titlepage</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 普通帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[&lt;对齐方式&gt;]<span class="keyword">\frametitle</span>&#123;帧标题&#125;    <span class="comment">% 对齐方式可以选择 c 和 t，分别是居中和从上往下</span></span><br><span class="line">内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 空白帧（空白帧没有标题）</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[plain]</span><br><span class="line">内容</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>通过<code>\usetheme&#123;&#125;</code>命令可以选择主题;&#96;</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://latex-beamer.com/tutorials/beamer-themes/" >Beamer Themes — Full List <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h3 id="示例报告"><a href="#示例报告" class="headerlink" title="示例报告"></a>示例报告</h3><div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[11pt]&#123;beamer&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\usepackage</span>[space,hyperref,UTF8]&#123;ctex&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% chktex-file 44</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;caption&#125;[numbered]       <span class="comment">% 给表格和图片加上数字</span></span><br><span class="line"><span class="keyword">\setbeamertemplate</span>&#123;navigation&#125;&#123;&#125;    <span class="comment">% 删除导航栏</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">\usefonttheme</span>[onlymath]&#123;serif&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 使用背景</span></span><br><span class="line"><span class="keyword">\usetheme</span>&#123;warsaw&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\title</span>&#123;飞镖系统工作汇报&#125;</span><br><span class="line"><span class="keyword">\author</span>&#123;洪汶熙、朱子骐、赵启豪、彭洛延&#125;</span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"><span class="keyword">\institute</span>&#123;飞镖组&#125;</span><br><span class="line"><span class="keyword">\titlegraphic</span>&#123;<span class="keyword">\includegraphics</span>[width = 0.35<span class="keyword">\textwidth</span>]&#123;dart&#125;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 开始写幻灯片</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第一帧</span></span><br><span class="line"><span class="keyword">\frame</span>&#123;<span class="keyword">\titlepage</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第二帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[c]<span class="keyword">\frametitle</span>&#123;frame title&#125;</span><br><span class="line">    The context goes here。飞镖系统</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第三帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[t]<span class="keyword">\frametitle</span>&#123;机械部分&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;description&#125;</span><br><span class="line">    <span class="keyword">\item</span>[First Item] Description of first item</span><br><span class="line">    <span class="keyword">\item</span>[Second Item] Description of second item</span><br><span class="line">    <span class="keyword">\item</span>[Third Item] Description of third item</span><br><span class="line">    <span class="keyword">\item</span>[Forth Item] Description of forth  </span><br><span class="line"><span class="keyword">\end</span>&#123;description&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第四帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\emph</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textbf</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textit</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textsl</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\alert</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textrm</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textsf</span>&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\textcolor</span>&#123;green&#125;&#123;Sample Text&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\structure</span>&#123;Sample Text&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第五帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line"><span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">    a<span class="built_in">^</span>2 + b<span class="built_in">^</span>2 = c<span class="built_in">^</span>2</span><br><span class="line"><span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第六帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;columns&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;column&#125;&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        <span class="keyword">\begin</span>&#123;itemize&#125; </span><br><span class="line">            <span class="keyword">\item</span> The first item</span><br><span class="line">            <span class="keyword">\item</span> The second tiem</span><br><span class="line">            <span class="keyword">\item</span> The third item</span><br><span class="line">            <span class="keyword">\item</span> The fourth item</span><br><span class="line">        <span class="keyword">\end</span>&#123;itemize&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;column&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;column&#125;&#123;0.5<span class="keyword">\textwidth</span>&#125;</span><br><span class="line">        <span class="keyword">\begin</span>&#123;enumerate&#125;</span><br><span class="line">            <span class="keyword">\item</span> The first item</span><br><span class="line">            <span class="keyword">\item</span> The second item</span><br><span class="line">            <span class="keyword">\item</span> The third item</span><br><span class="line">        <span class="keyword">\end</span>&#123;enumerate&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;column&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;columns&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第七帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;theorem&#125;[雷诺数方程]</span><br><span class="line">        <span class="keyword">\begin</span>&#123;equation&#125;</span><br><span class="line">            Re = <span class="keyword">\frac</span>&#123;<span class="keyword">\rho</span> uL&#125;&#123;<span class="keyword">\mu</span>&#125;</span><br><span class="line">        <span class="keyword">\end</span>&#123;equation&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;theorem&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;example&#125;</span><br><span class="line">        This is a example block environment.hahahaha</span><br><span class="line">    <span class="keyword">\end</span>&#123;example&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第八帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[c]</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;table&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;table&#125;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\caption</span>&#123;飞镖系统部分bom表&#125;</span><br><span class="line">    <span class="keyword">\begin</span>&#123;tabular&#125;&#123;|c|c|c|c|c|&#125;</span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   皮筋触发    <span class="built_in">&amp;</span>   1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   底板    <span class="built_in">&amp;</span> 1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   滑轨    <span class="built_in">&amp;</span> 1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   小滑块连接片    <span class="built_in">&amp;</span> 1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   连接铜柱    <span class="built_in">&amp;</span>   4   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   飞镖对接口  <span class="built_in">&amp;</span>    1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">        发射云台    <span class="built_in">&amp;</span>   发射轨道    <span class="built_in">&amp;</span>   4   <span class="built_in">&amp;</span>   小滑块 <span class="built_in">&amp;</span>   1   <span class="keyword">\\</span></span><br><span class="line">        <span class="keyword">\hline</span></span><br><span class="line">    <span class="keyword">\end</span>&#123;tabular&#125;</span><br><span class="line">    <span class="keyword">\end</span>&#123;table&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 第九帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;</span><br><span class="line">    <span class="keyword">\frametitle</span>&#123;picture&#125;</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width = 0.5<span class="keyword">\textwidth</span>]&#123;matlab.png&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">% 空白帧</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;frame&#125;[plain]</span><br><span class="line"></span><br><span class="line">    啥都没有</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;frame&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></div>
+
+
+	<div class="row">
+    <embed src="./report.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+<h2 id="查看宏包说明"><a href="#查看宏包说明" class="headerlink" title="查看宏包说明"></a>查看宏包说明</h2><p>在安装TexLive的情况下，在vscode中，利用快捷键<code>Ctrl+Shift+</code>新建一个终端，输入<code>texdoc &lt;package&gt;</code>即可查看该宏包的官方说明文档；举例：输入texdoc background即可查看 background 宏包.</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_17.png"
+                      class="" width="400"
+                >
+
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/07/28/Latex%E5%85%A5%E9%97%A8/fig_18.png"
+                      class="" width="300"
+                >
+
+
+<p>在电脑安装Everything的情况下（快速检索文件的一个软件），搜索<code>&lt;package&gt;.sty</code>即可得到该宏包的源码文件，通常无法更改，将该文件的属性中的权限改为可编辑即可修改。</p>
+<p>例如<code>background</code>宏包通常有一个<code>bug</code>，搜索<code>background.sty</code>并更改编辑权限即可修改宏包的设置。</p>
+<h2 id="Latex模板"><a href="#Latex模板" class="headerlink" title="Latex模板"></a>Latex模板</h2><h3 id="课程论文模板"><a href="#课程论文模板" class="headerlink" title="课程论文模板"></a>课程论文模板</h3><div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">\documentclass</span>[UTF8]&#123;ctexart&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%题目</span></span><br><span class="line"><span class="keyword">\title</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\date</span>&#123;<span class="keyword">\today</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\author</span>&#123;xxx,xxx&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\usepackage</span>&#123;graphicx&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>&#123;float&#125;</span><br><span class="line"><span class="keyword">\usepackage</span>[colorlinks = true]&#123;hyperref&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">%正文开始</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;document&#125;</span><br><span class="line"><span class="keyword">\maketitle</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%摘要部分</span></span><br><span class="line"><span class="comment">%\begin&#123;abstract&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%\end&#123;abstract&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%\clearpage</span></span><br><span class="line"><span class="comment">%\tableofcontents</span></span><br><span class="line"></span><br><span class="line"><span class="comment">%标题</span></span><br><span class="line"><span class="keyword">\section</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\section</span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">%文献引用</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;thebibliography&#125;&#123;99&#125;</span><br><span class="line"><span class="keyword">\bibitem</span>&#123;key1&#125; Author1, Title1, Journal1, Year1</span><br><span class="line"><span class="keyword">\bibitem</span>&#123;key2&#125; Author2, Title2, Journal2, Year2</span><br><span class="line"><span class="keyword">\end</span>&#123;thebibliography&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">\end</span>&#123;document&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Tex"><figure class="iseeu highlight tex"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">%插入图片格式</span></span><br><span class="line"><span class="keyword">\begin</span>&#123;figure&#125;[H]</span><br><span class="line">    <span class="keyword">\centering</span></span><br><span class="line">    <span class="keyword">\includegraphics</span>[width=0.6<span class="keyword">\textwidth</span>]&#123;figure<span class="built_in">_</span>3&#125;</span><br><span class="line">    <span class="keyword">\caption</span>&#123;&#125;</span><br><span class="line"><span class="keyword">\end</span>&#123;figure&#125;</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="RBCC报告"><a href="#RBCC报告" class="headerlink" title="RBCC报告"></a>RBCC报告</h3><h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Y34y1r7jH/?spm_id_from=333.337.search-card.all.click" >https://www.bilibili.com/video/BV1Y34y1r7jH/?spm_id_from=333.337.search-card.all.click <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://ljguo1020.github.io/2022/02/25/LaTeX-vscode/" >https://ljguo1020.github.io/2022/02/25/LaTeX-vscode/ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Latex入门</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2023-07-28 19:19:23</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-08-23 17:40:35
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2023/07/28/Latex入门/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/07/30/%E6%8B%93%E6%89%91%E4%BC%98%E5%8C%96/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">拓扑优化</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/07/27/Webots-%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Webots 入门</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          recaptchaV3Key: "wasd",
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Latex入门</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E7%94%A8latex"><span class="nav-text">为什么用latex</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex%E5%86%99%E4%BD%9C%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE"><span class="nav-text">Latex写作环境配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-text">Latex基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%80%E5%A4%B4"><span class="nav-text">开头</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2"><span class="nav-text">封面</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E5%BD%95"><span class="nav-text">目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%BC%E5%BC%8F%E5%8C%96%E5%91%BD%E4%BB%A4"><span class="nav-text">格式化命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%87%E9%A2%98"><span class="nav-text">标题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E5%9B%BE%E7%89%87"><span class="nav-text">添加图片</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-text">列表的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F"><span class="nav-text">数学公式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%94%A8%E6%B3%95"><span class="nav-text">表格的用法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Latex%E4%B8%AD%E6%96%87%E6%89%8B%E5%86%8C"><span class="nav-text">Latex中文手册</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex%E5%88%B6%E4%BD%9C%E5%B9%BB%E7%81%AF%E7%89%87"><span class="nav-text">Latex制作幻灯片</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A4%BA%E4%BE%8B%E6%8A%A5%E5%91%8A"><span class="nav-text">示例报告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E5%AE%8F%E5%8C%85%E8%AF%B4%E6%98%8E"><span class="nav-text">查看宏包说明</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Latex%E6%A8%A1%E6%9D%BF"><span class="nav-text">Latex模板</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%BE%E7%A8%8B%E8%AE%BA%E6%96%87%E6%A8%A1%E6%9D%BF"><span class="nav-text">课程论文模板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RBCC%E6%8A%A5%E5%91%8A"><span class="nav-text">RBCC报告</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        43 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.1</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+<div class="post-scripts" data-swup-reload-script>
+    
+        
+<script src="/js/tools/tocToggle.js" type="module"></script>
+
+<script src="/js/layouts/toc.js" type="module"></script>
+
+<script src="/js/plugins/tabs.js" type="module"></script>
+
+    
+</div>
+
+
+</body>
+</html>

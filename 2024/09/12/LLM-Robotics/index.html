@@ -18,20 +18,24 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="基础知识 The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.  Two Fundamental Challenges:  Ground natural language in robot state.  如何把自然语言转换成能够被机器人识别, 处理的状态?">
+        <meta name="description" content="基础知识 The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.  传统机器人执行pick and place任务的流程:  利用cv算法检测出要抓取的目标物体; 计算机械臂该用什么姿势抓取物体; 移动机械臂到抓取姿势并抓取 根据要求移动机械臂到指定位置; 计">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LLM + Robotics">
 <meta property="og:url" content="http://example.com/2024/09/12/LLM-Robotics/index.html">
 <meta property="og:site_name" content="Fomalhaut_wiki">
-<meta property="og:description" content="基础知识 The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.  Two Fundamental Challenges:  Ground natural language in robot state.  如何把自然语言转换成能够被机器人识别, 处理的状态?">
+<meta property="og:description" content="基础知识 The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.  传统机器人执行pick and place任务的流程:  利用cv算法检测出要抓取的目标物体; 计算机械臂该用什么姿势抓取物体; 移动机械臂到抓取姿势并抓取 根据要求移动机械臂到指定位置; 计">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/1.png">
 <meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/2.png">
 <meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/3.png">
 <meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/4.png">
 <meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/5.png">
+<meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/6.png">
+<meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/7.png">
+<meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/8.png">
+<meta property="og:image" content="http://example.com/2024/09/12/LLM-Robotics/9.png">
 <meta property="article:published_time" content="2024-09-12T03:59:02.000Z">
-<meta property="article:modified_time" content="2024-09-18T15:41:08.877Z">
+<meta property="article:modified_time" content="2024-10-17T12:48:35.635Z">
 <meta property="article:author" content="hwx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/09/12/LLM-Robotics/1.png">
@@ -311,7 +315,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">43</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">44</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -365,8 +369,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-09-18 23:41:08</span>
-            <span class="mobile">2024-09-18 23:41:08</span>
+            <span class="desktop">2024-10-17 20:48:35</span>
+            <span class="mobile">2024-10-17 20:48:35</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -412,6 +416,19 @@
             <h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><blockquote>
 <p>The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.</p>
 </blockquote>
+<p>传统机器人执行pick and place任务的流程:</p>
+<ol>
+<li>利用cv算法检测出要抓取的目标物体;</li>
+<li>计算机械臂该用什么姿势抓取物体;</li>
+<li>移动机械臂到抓取姿势并抓取</li>
+<li>根据要求移动机械臂到指定位置;</li>
+<li>计算机械臂放下物体的姿势并放下;</li>
+</ol>
+<p>传统机器人控制中存在的弊端:</p>
+<ul>
+<li>对于每一个任务, 现实中有大量边缘情况, 需要设计更复杂的规则来应对;</li>
+<li>对于每一个任务都需要人类专家设计规则, 但现实中复杂任务数不胜数, 且任务之间很难融洽;</li>
+</ul>
 <p>Two Fundamental Challenges:</p>
 <ul>
 <li>Ground natural language in robot state.</li>
@@ -467,12 +484,103 @@
                       class="" width="1000"
                 >
 
+<h2 id="科研机器人设计思路"><a href="#科研机器人设计思路" class="headerlink" title="科研机器人设计思路"></a>科研机器人设计思路</h2><p>目标是设计出一个机器人, 能够泛化的执行一些科研任务, 例如做材料实验, 化学实验等;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/6.png"
+                      class="" width="800"
+                >
 
 
+<p>LLM在观测后输出一整个计划的行动序列, 就需要LLM对环境的未来走向有很好的了解.</p>
+<h3 id="Tricks-for-Improving-Plan"><a href="#Tricks-for-Improving-Plan" class="headerlink" title="Tricks for Improving Plan"></a>Tricks for Improving Plan</h3><ul>
+<li>执行前Self-refine</li>
+</ul>
+<p>在LLM生成plan后, 使用另一个LLM (或者人类设定的启发式评估函数) 来评估其好坏, 并且给出指导性意见;</p>
+<p>但在这种情况下, LLM常常无法正确定位出错误; 通常会出现自己误导自己的情况;</p>
+<ul>
+<li>Self-consistency</li>
+</ul>
+<p>LLM通过多次生成规划并且选择最优的生成结果.</p>
+<ul>
+<li>执行后Self-reflection</li>
+</ul>
+<p>让LLM从环境的反馈+自身反思中优化计划;</p>
+<p>环境的反馈可能包括以下失败的原因:</p>
+<ul>
+<li>生成的动作不合规范, 没有正确调用action function;</li>
+<li>没有满足动作的执行条件, 如手中没有物体时, 执行放下物体的动作;</li>
+<li>LLM自己以为生成的plan已经完成了任务, 实际任务还没有完成;</li>
+<li>生成的plan有很多冗余动作, 导致动作序列太长;</li>
+</ul>
+<p><strong>Replan机制: 结合ReAct与Planning</strong></p>
+<p>生成plan之后, 先执行plan获得环境的反馈和新观测信息后, 从当前状态继续规划;<br>同时, Replan允许LLM分析解决问题, 如可以先执行探索plan, 再根据结果调整和生成后续plan.</p>
+<p><strong>Tree search</strong></p>
+<p>如果计划未通过self-evaluation或执行失败, 在计划中的各步思考有哪些可行解决方案;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/7.png"
+                      class="" width="800"
+                >
+
+<p>使用DFS或BFS, 在叶节点进行self-evaluation, 最终选择一条最优计划;</p>
+<p>Tree search的缺点是</p>
+<ul>
+<li>消耗的tokens数大大增加;</li>
+<li>容易在错误的分支上花费很多搜索;</li>
+</ul>
+<p><strong>State tracking</strong></p>
+<p>预测出操作一步之后, 环境会发生什么样的变化, 对下一步的状态进行估计;</p>
+<p>原本LLM应该包含这一步, 但是由于大模型的幻觉, 可能对下一步的状态估计不准确;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/8.png"
+                      class="" width="800"
+                >
+
+<p>可以使用另一个LLM作为world model来预测每一步动作后的观测;</p>
+<p><strong>问题分析</strong></p>
+<ul>
+<li>不着急直接输出Plan, 先让LLM自己分析一下这个问题: 这个问题有什么特点, 有什么易错点, 可以借助什么知识;</li>
+<li>Step back: 退一步看问题, 先针对问题中的核心概念提一个相关问题, 再回答原问题;</li>
+<li>让LLM重新强调一下输入环境和规则的重点, 有助于提取关键信息和进一步思考;</li>
+</ul>
+<h3 id="Plan-with-Code"><a href="#Plan-with-Code" class="headerlink" title="Plan with Code"></a>Plan with Code</h3><p>当再LLM的API输入high-level action之后得到的low-level actions sequence, 还可以让LLM直接生成代码, 例如生成Python代码;</p>
+<p>其优点有:</p>
+<ul>
+<li>利用代码的逻辑能力和可直接执行性;</li>
+<li>有更高的自由性, 不只是调用已有的high-level action;</li>
+<li>有更好的复用性, 可以利用他人的代码以及保存已有代码;</li>
+</ul>
+<p>甚至可以让LLM在code中自行定义有用的function;</p>
+<h3 id="Replan机制"><a href="#Replan机制" class="headerlink" title="Replan机制"></a>Replan机制</h3><p>如果计划遇到问题, 可以重新来过然后优化计划, 但是现实中常常不能重新来, 要在犯错后继续规划来完成任务.</p>
+<p>需要做的事情:</p>
+<ul>
+<li>环境返回执行错误的原因,以及当前最新状态和观测</li>
+<li>让LLM解释犯错的原因</li>
+</ul>
+<p>可以使用LLM worker, 监视每一步的执行结果, 或者在Plan code里面设定一些checkpoint, 保证环境变量按照计划执行;</p>
+<h2 id="A-Inspector-based-on-Markov-Chain-for-low-level-action-sequence-An-Innovative-Idea"><a href="#A-Inspector-based-on-Markov-Chain-for-low-level-action-sequence-An-Innovative-Idea" class="headerlink" title="A Inspector based on Markov Chain for low-level action sequence (An Innovative Idea)"></a>A Inspector based on Markov Chain for low-level action sequence (An Innovative Idea)</h2><p>马尔可夫链数学基础参考教程:</p>
+<ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://math.libretexts.org/Bookshelves/Applied_Mathematics/Applied_Finite_Mathematics_(Sekhon_and_Bloom)/10%3A_Markov_Chains/10.01%3A_Introduction_to_Markov_Chains" >Introduction to Markov Chains <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+</ul>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/9.png"
+                      class="" width="600"
+                >
+
+<p>由于LLM以及大模型存在的幻觉, low-level action sequence本身的action或者sequence是有可能出错的;</p>
+<p>对于像生物, 材料, 化学等实验任务, 必须保证实验的正确性和严谨性, 同时由于这些理科实验, 必须满足严格的逻辑, 因此借助马尔可夫链来检验low-level action sequence的正确性;</p>
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a class="link"   target="_blank" rel="noopener" href="https://github.com/GT-RIPL/Awesome-LLM-Robotics" >Awesome-LLM-Robotics <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/668053911" >Robotics+LLM系列通过大语言模型控制机器人 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 <li><a class="link"   target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/research/articles/chatgpt-for-robotics/" >ChatGPT for Robotics: Design Principles and Model Abilities <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JgsxebEf5/?spm_id_from=333.788&vd_source=3c842e78ba17ee7afd3375b35f554ca1" >LLM for Robotics前沿- 系统性讲解大语言模型如何助力通用机器人 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></li>
 </ul>
 
         </div>
@@ -488,7 +596,7 @@
         
             <li>
                 <strong>Updated at
-                    :</strong> 2024-09-18 23:41:08
+                    :</strong> 2024-10-17 20:48:35
             </li>
         
         <li>
@@ -536,10 +644,10 @@
                     <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
                         <a class="next"
                         rel="next"
-                        href="/2024/09/09/%E7%BB%84%E4%BC%9A%E6%96%87%E7%AB%A0%E5%88%86%E4%BA%AB/"
+                        href="/2024/09/09/%E6%9C%BA%E6%A2%B0%E8%87%82%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/"
                         >
                             <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">论文笔记</span>
+                                <span class="post-nav-title-item">机械臂论文笔记</span>
                                 <span class="post-nav-item">Next posts</span>
                             </span>
                             <span class="right arrow-icon flex justify-center items-center">
@@ -604,7 +712,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">LLM + Robotics</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%91%E7%A0%94%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-text">科研机器人设计思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tricks-for-Improving-Plan"><span class="nav-text">Tricks for Improving Plan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plan-with-Code"><span class="nav-text">Plan with Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Replan%E6%9C%BA%E5%88%B6"><span class="nav-text">Replan机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-Inspector-based-on-Markov-Chain-for-low-level-action-sequence-An-Innovative-Idea"><span class="nav-text">A Inspector based on Markov Chain for low-level action sequence (An Innovative Idea)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
 
     </div>
 </div>
@@ -637,7 +745,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        43 posts in total
+                        44 posts in total
                     </span>
                     
                 </p>

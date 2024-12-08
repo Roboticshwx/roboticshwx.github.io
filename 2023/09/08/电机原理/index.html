@@ -1,0 +1,1064 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/09/08/电机原理/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="有刷电机原理电机最底层的物理原理来源于电流的磁效应；   利用电磁铁的原理，得到直流有刷电机的转子，可以绕轴心转动；   两块弧形永磁体放置在左右两边，称为定子； 由于异性相吸，同性相斥，使得电机快速转到异性相吸的位置。 利用电刷进行换相，切换电流方向；   但由于双极容易平衡，容易锁住无法启动，因此转子都是奇数线圈。     电刷限制了电机的转速，也容易造成磨损，电火花的问题；因此为了更加高速的">
+<meta property="og:type" content="article">
+<meta property="og:title" content="电机原理">
+<meta property="og:url" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="有刷电机原理电机最底层的物理原理来源于电流的磁效应；   利用电磁铁的原理，得到直流有刷电机的转子，可以绕轴心转动；   两块弧形永磁体放置在左右两边，称为定子； 由于异性相吸，同性相斥，使得电机快速转到异性相吸的位置。 利用电刷进行换相，切换电流方向；   但由于双极容易平衡，容易锁住无法启动，因此转子都是奇数线圈。     电刷限制了电机的转速，也容易造成磨损，电火花的问题；因此为了更加高速的">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_1.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_2.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_3.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_4.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_6.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_5.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_7.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/gif_1.gif">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_8.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_9.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_10.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_11.png">
+<meta property="og:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_13.png">
+<meta property="article:published_time" content="2023-09-08T13:10:13.000Z">
+<meta property="article:modified_time" content="2024-08-23T09:29:47.370Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_1.png">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            电机原理 | Fomalhaut Wiki
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"><style>mjx-container[jax="SVG"] {
+  direction: ltr;
+}
+
+mjx-container[jax="SVG"] > svg {
+  overflow: visible;
+}
+
+mjx-container[jax="SVG"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="SVG"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="SVG"][justify="right"] {
+  text-align: right;
+}
+
+g[data-mml-node="merror"] > g {
+  fill: red;
+  stroke: red;
+}
+
+g[data-mml-node="merror"] > rect[data-background] {
+  fill: yellow;
+  stroke: none;
+}
+
+g[data-mml-node="mtable"] > line[data-line] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > rect[data-frame] {
+  stroke-width: 70px;
+  fill: none;
+}
+
+g[data-mml-node="mtable"] > .mjx-dashed {
+  stroke-dasharray: 140;
+}
+
+g[data-mml-node="mtable"] > .mjx-dotted {
+  stroke-linecap: round;
+  stroke-dasharray: 0,140;
+}
+
+g[data-mml-node="mtable"] > svg {
+  overflow: visible;
+}
+
+[jax="SVG"] mjx-tool {
+  display: inline-block;
+  position: relative;
+  width: 0;
+  height: 0;
+}
+
+[jax="SVG"] mjx-tool > mjx-tip {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+mjx-tool > mjx-tip {
+  display: inline-block;
+  padding: .2em;
+  border: 1px solid #888;
+  font-size: 70%;
+  background-color: #F8F8F8;
+  color: black;
+  box-shadow: 2px 2px 5px #AAAAAA;
+}
+
+g[data-mml-node="maction"][data-toggle] {
+  cursor: pointer;
+}
+
+mjx-status {
+  display: block;
+  position: fixed;
+  left: 1em;
+  bottom: 1em;
+  min-width: 25%;
+  padding: .2em .4em;
+  border: 1px solid #888;
+  font-size: 90%;
+  background-color: #F8F8F8;
+  color: black;
+}
+
+foreignObject[data-mjx-xml] {
+  font-family: initial;
+  line-height: normal;
+  overflow: visible;
+}
+
+.MathJax path {
+  stroke-width: 3;
+}
+
+mjx-container[display="true"] {
+  overflow: auto hidden;
+}
+
+mjx-container[display="true"] + br {
+  display: none;
+}
+</style></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container flex flex-col justify-between min-h-dvh">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">电机原理</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/portrait.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-09-08 21:10:13</span>
+        <span class="mobile">2023-09-08 21:10:13</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-08-23 17:29:47</span>
+            <span class="mobile">2024-08-23 17:29:47</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Electronics-and-Embedded-System/">Electronics and Embedded System</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="有刷电机原理"><a href="#有刷电机原理" class="headerlink" title="有刷电机原理"></a>有刷电机原理</h2><p>电机最底层的物理原理来源于电流的磁效应；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_1.png" class="" width="400">
+
+<p>利用电磁铁的原理，得到直流有刷电机的<strong>转子</strong>，可以绕轴心转动；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_2.png" class="" width="400">
+
+<p>两块弧形永磁体放置在左右两边，称为<strong>定子</strong>；</p>
+<p>由于异性相吸，同性相斥，使得电机快速转到异性相吸的位置。</p>
+<p>利用电刷进行换相，切换电流方向；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_3.png" class="" width="400">
+
+<p>但由于双极容易平衡，容易锁住无法启动，因此转子都是奇数线圈。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_4.png" class="" width="400">
+
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_6.png" class="" width="400">
+
+<p>电刷限制了电机的转速，也容易造成磨损，电火花的问题；因此为了更加高速的旋转，则把电刷去掉，即无刷电机；</p>
+<h2 id="无刷电机原理"><a href="#无刷电机原理" class="headerlink" title="无刷电机原理"></a>无刷电机原理</h2><img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_5.png" class="" width="400">
+
+<p>有感无刷电机采用永磁体作为转子，电磁铁作为定子，还需要霍尔原件来感受转子的状态和位置；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_7.png" class="" width="400">
+
+<p>一般的霍尔器件N级激发为高电平，S级激发低电平，如下图；</p>
+<center><img lazyload="" src="/images/loading.svg" data-src="gif_1.gif" width="800"></center>
+
+<ul>
+<li>当N级同时激活两块霍尔元件时，控制电路中的两个mos管导通，两个线圈流入电流产生不同极性的磁场；</li>
+<li>当N级只激活一块霍尔元件时，控制电路切换开关，另外两个线圈导通，继续推动转子转动，使其循环往复；<br>（感觉像是人坐在一头猪上，吊着胡萝卜吸引猪使得人可以一直前进）</li>
+</ul>
+<p>利用pwm波可以控制电机的转速，不同的占空比可以得到不同的电机速度，这是因为输入的电能越多，转化为的机械能就越多；PWM波的占空比越高，它的速度也越快；</p>
+<p>在实际应用中，应用比较多的时三相无刷直流电机，这也是为什么一般的无刷电机有三条线的缘故；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_8.png" class="" width="400">
+
+<p>除了三相无刷电机，还有单相无刷电机，通过霍尔传感器来判断转子之后，然后用4个mos管组成的H桥电路来改变电流方向；</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_9.png" class="" width="400">
+
+<p>在同等体积下，单相无刷电机拥有更低的成本，而三相电机则拥有更高的功率；</p>
+
+  <div class="note p-4 mb-4 rounded-small primary">
+    <p>💡由于霍尔传感器容易受环境影响，可以使用磁场改变之后在线圈中产生的的反电动势，再将该反生电动势的电流通过单片机检测电压的多少，但是该方法则需要复杂的FOC控制，才能实现对电机精确的控制。</p>
+
+  </div>
+
+<h2 id="BLDC与PMSM"><a href="#BLDC与PMSM" class="headerlink" title="BLDC与PMSM"></a>BLDC与PMSM</h2><p>无刷电机可以分为<strong>无刷直流电机 BLDC</strong>和<strong>永磁同步电机 PMSM</strong>；结构大同小异，主要区别在于线圈绕组不同导致的一些特性差异。</p>
+<p>由于转子在磁场中只有一定数量的稳定状态，在上述动画中，显然我们能发现电机之后6个稳定状态，因此事实上电机的旋转不是均匀平滑的吗，存在扭矩转动。</p>
+
+  <div class="note p-4 mb-4 rounded-small default">
+    <p>没有通电的时候可以用手转一下无刷电机，会感受到这种“颗粒感”。</p>
+
+  </div>
+
+<ul>
+<li>从硬件上解决这个问题，就是增加极对数，即磁铁对数，拆开航模的电机我们都能发现里面有很多组线圈和很多个磁铁，这样就是<strong>BLDC</strong>；</li>
+<li>从软件上解决这个问题，通过产生正弦波来驱动电机，就是<strong>PMSM</strong>；</li>
+</ul>
+<h3 id="驱动电路"><a href="#驱动电路" class="headerlink" title="驱动电路"></a>驱动电路</h3><p>三相逆变电路主要用到场效应管，这里先复习一下场效应管的原理：</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_10.png" class="" width="500">
+
+<p>初始状态如下，金属薄板与半导体之间有一层二氧化硅，从左到右分别为源极，栅极，漏极；</p>
+<ol>
+<li>由于漏极是正电，源极和栅极都是负电，PN结不可反向通电，因此该管无电流流动，属于关闭状态；<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_11.png" class="" width="500"></li>
+<li>当栅极是正电时，栅极的金属通过中间的二氧化硅层形成电容激发电场，P型半导体靠近栅极处在电容作用下聚集大量电子；</li>
+<li>在栅极处，P型半导体的电子多于N型半导体，电子开始反向扩散，此时原来的PN结变为<strong>反型层</strong>；</li>
+<li>在源极处，由于连接负极，电子无法扩散，反而源源不断向其他两极输入电子；</li>
+<li>漏极连接正电，因此电子不断从漏极处流出；</li>
+<li>最终，在栅极的控制下，源极和漏极形成通电回路；</li>
+<li>正电为1，负电为0，则可以通过输入0和1到栅极处控制电路通断；</li>
+</ol>
+
+
+<p>三相逆变电路具体实现是由半桥MOS电路来制作的，<strong>半桥电路</strong>由两个MOS管组成上桥臂和下桥臂，中间引出一条输出线；</p>
+<p>3个半桥电路就可以组成一个三相逆变电路，每个半桥引出一根输出线与无刷电机相连，组成最基本的无刷驱动电路。</p>
+<img lazyload="" src="/images/loading.svg" data-src="/2023/09/08/%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86/fig_13.png" class="" width="800">
+
+<p>如图，通过霍尔传感器或者pwm信号连接到控制电路，再连接到相应MOS管的栅极，就能控制特定线圈的通电，从而控制电机转动；</p>
+<p>实际上有些时候会控制三个MOS管，使得三个线圈都有电流流过，这样可以不浪费电机的扭矩；</p>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1ig411S7gX/?spm_id_from=333.337.search-card.all.click&vd_source=5c8e073b8f94f9e61f07ae791a132eaf">有刷电机与无刷电机的原理，为什么无刷电机转的更快？ <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1dc41137Gx/?spm_id_from=333.788.recommend_more_video.0&vd_source=5c8e073b8f94f9e61f07ae791a132eaf">底层原理极其简单，却很难造出精品！无刷直流电机的工作原理 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://blog.csdn.net/helaisun/article/details/127156100">永磁同步电机（PMSM） <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV11V411m7rh/?spm_id_from=333.788.recommend_more_video.6&vd_source=5c8e073b8f94f9e61f07ae791a132eaf">TI公开课 永磁同步电机（PMSM）磁场定向控制（FOC）中文字幕 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+<li><p><a class="link" target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/147659820">【自制FOC驱动器】深入浅出讲解FOC算法与SVPWM技术 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</li>
+</ul>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 电机原理</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2023-09-08 21:10:13</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-08-23 17:29:47
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2023/09/08/电机原理/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2023/09/26/Hexo%E9%83%A8%E7%BD%B2Githubpages/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Hexo部署Githubpages</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2023/08/30/ROS2%E5%85%A5%E9%97%A8/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">ROS2入门</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">电机原理</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%89%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="nav-text">有刷电机原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A0%E5%88%B7%E7%94%B5%E6%9C%BA%E5%8E%9F%E7%90%86"><span class="nav-text">无刷电机原理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BLDC%E4%B8%8EPMSM"><span class="nav-text">BLDC与PMSM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A9%B1%E5%8A%A8%E7%94%B5%E8%B7%AF"><span class="nav-text">驱动电路</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        45 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+</body>
+</html>

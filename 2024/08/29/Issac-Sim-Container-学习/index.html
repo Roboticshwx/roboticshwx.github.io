@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/08/29/issac-sim-container-学习/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="与下载到本地Linux的Isaac Sim不同, 由于采用服务器的方式, 整个Isaac Sim都需要在Docker中运行, 所有的应用都要采取Headless mode.  Isaac Sim 安装Container Installation  Isaac Sim 启动创建docker容器 1234567891011docker run --name isaac-sim --entrypoin">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Isaac Sim (Container)学习">
+<meta property="og:url" content="http://example.com/2024/08/29/Issac-Sim-Container-%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="与下载到本地Linux的Isaac Sim不同, 由于采用服务器的方式, 整个Isaac Sim都需要在Docker中运行, 所有的应用都要采取Headless mode.  Isaac Sim 安装Container Installation  Isaac Sim 启动创建docker容器 1234567891011docker run --name isaac-sim --entrypoin">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-08-29T07:36:19.000Z">
+<meta property="article:modified_time" content="2024-09-18T12:42:04.406Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Isaac Sim (Container)学习 | Fomalhaut Wiki
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container flex flex-col justify-between min-h-dvh">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Isaac Sim (Container)学习</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/portrait.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-08-29 15:36:19</span>
+        <span class="mobile">2024-08-29 15:36:19</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-09-18 20:42:04</span>
+            <span class="mobile">2024-09-18 20:42:04</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <blockquote>
+<p>与下载到本地Linux的Isaac Sim不同, 由于采用服务器的方式, 整个Isaac Sim都需要在Docker中运行, 所有的应用都要采取Headless mode.</p>
+</blockquote>
+<h2 id="Isaac-Sim-安装"><a href="#Isaac-Sim-安装" class="headerlink" title="Isaac Sim 安装"></a>Isaac Sim 安装</h2><p><a class="link"   target="_blank" rel="noopener" href="https://docs.omniverse.nvidia.com/isaacsim/latest/installation/install_container.html" >Container Installation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="Isaac-Sim-启动"><a href="#Isaac-Sim-启动" class="headerlink" title="Isaac Sim 启动"></a>Isaac Sim 启动</h2><p>创建docker容器</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run --name isaac-sim --entrypoint bash -it --runtime=nvidia --gpus all -e <span class="string">&quot;ACCEPT_EULA=Y&quot;</span> --network=host \</span><br><span class="line">    -e <span class="string">&quot;PRIVACY_CONSENT=Y&quot;</span> \</span><br><span class="line">    -v ~/docker/isaac-sim/cache/kit:/isaac-sim/kit/cache:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/cache/ov:/root/.cache/ov:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/cache/pip:/root/.cache/pip:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/cache/glcache:/root/.cache/nvidia/GLCache:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/cache/computecache:/root/.nv/ComputeCache:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/logs:/root/.nvidia-omniverse/logs:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/data:/root/.local/share/ov/data:rw \</span><br><span class="line">    -v ~/docker/isaac-sim/documents:/root/Documents:rw \</span><br><span class="line">    nvcr.io/nvidia/isaac-sim:4.1.0</span><br></pre></td></tr></table></figure></div>
+
+<p>加载GUI</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./runheadless.native.sh -v</span><br></pre></td></tr></table></figure></div>
+
+<p>同时启用多个doker容器的终端</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it isaac-sim bash</span><br></pre></td></tr></table></figure></div>
+
+<p>之后的docker启动只能从服务器主机进行, 不能直接ssh进到container中启动Isaac Sim</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 22 amdt@10.30.47.11 <span class="comment">#Password: AMDT123456</span></span><br><span class="line">docker start isaac-sim</span><br><span class="line">docker <span class="built_in">exec</span> -it isaac-sim bash</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="Vscode连接source-code"><a href="#Vscode连接source-code" class="headerlink" title="Vscode连接source code"></a>Vscode连接source code</h3><p>由于服务器是通过vscode中的remote ssh连接, 然后isaac-sim在docker中运行.</p>
+<p>在docker中配置ssh, 然后用vscode的remote-ssh连接</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装ssh</span></span><br><span class="line">apt update</span><br><span class="line">apt install openssh-server</span><br><span class="line"></span><br><span class="line"><span class="comment"># 修改配置文件</span></span><br><span class="line">vim /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Port 6789</span><br><span class="line">PermitRootLogin <span class="built_in">yes</span></span><br></pre></td></tr></table></figure></div>
+
+<p>然后重启和检查ssh服务</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">service ssh restart</span><br><span class="line">service ssh status</span><br></pre></td></tr></table></figure></div>
+
+<p>设置登录密码</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">passwd <span class="comment">#设置为amdt</span></span><br></pre></td></tr></table></figure></div>
+
+<p>在windows终端, 如果之前生成过ssh key, 需要删除</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -R [10.30.47.11]:6789</span><br></pre></td></tr></table></figure></div>
+
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -p 6789 root@10.30.47.11 <span class="comment">#Password: amdt</span></span><br></pre></td></tr></table></figure></div>
+
+<h2 id="基本操作逻辑"><a href="#基本操作逻辑" class="headerlink" title="基本操作逻辑"></a>基本操作逻辑</h2><ul>
+<li>Alt+左键旋转视角</li>
+<li>鼠标滚轮放大缩小</li>
+<li>鼠标滚轮按着平移</li>
+<li>右边操作树选中物体后，按F聚焦物体</li>
+</ul>
+<h2 id="Extension"><a href="#Extension" class="headerlink" title="Extension"></a>Extension</h2><blockquote>
+<p>Usage: Building interactive GUIs, custom application modules, and real-time sensitive applications.</p>
+</blockquote>
+<h2 id="Standalone-Application"><a href="#Standalone-Application" class="headerlink" title="Standalone Application"></a>Standalone Application</h2><blockquote>
+<p>Usage: Large scale traning for reinforcement learning, systematic world generation, and modification.</p>
+</blockquote>
+<p>对于container中的Isaac Sim:</p>
+<blockquote>
+<p>The Isaac Sim container supports running our Python apps and standalone examples in headless mode only.</p>
+</blockquote>
+<p>要执行standalone application, 首先需要确定standalone python script和python.sh (通常在根目录下) 的路径.</p>
+<p>例如要运行<code>follow_target_with_rmpflow.py</code>, 该路径为<code>standalone_examples/api/omni.isaac.franka/follow_target_with_rmpflow.py</code>;</p>
+<h3 id="配置Python-Environment"><a href="#配置Python-Environment" class="headerlink" title="配置Python Environment"></a>配置Python Environment</h3><p>进入isaac-sim的根目录</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ..</span><br><span class="line"><span class="built_in">cd</span> isaac-sim</span><br></pre></td></tr></table></figure></div>
+
+<p>打开根目录下的apps&#x2F;omni.isaac.sim.python.kit文件, 添加以下内容</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[dependencies]</span><br><span class="line">...</span><br><span class="line"><span class="comment"># Streaming client</span></span><br><span class="line"><span class="string">&quot;omni.kit.streamsdk.plugins-3.2.1&quot;</span> = &#123;&#125;</span><br><span class="line"><span class="string">&quot;omni.kit.livestream.core-3.2.0&quot;</span> = &#123;&#125;</span><br><span class="line"><span class="string">&quot;omni.kit.livestream.native&quot;</span> = &#123;&#125;</span><br></pre></td></tr></table></figure></div>
+
+<p>对于Python的脚本, 需要进行一个修改:</p>
+<div class="highlight-container" data-rel="Py"><figure class="iseeu highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">simulation_app = SimulationApp(&#123;<span class="string">&quot;headless&quot;</span>: <span class="literal">True</span>&#125;) <span class="comment"># False 改为 True</span></span><br></pre></td></tr></table></figure></div>
+
+<p>启动~</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./python.sh standalone_examples/api/omni.isaac.franka/follow_target_with_rmpflow.py</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="franka机械臂仿真程序"><a href="#franka机械臂仿真程序" class="headerlink" title="franka机械臂仿真程序"></a>franka机械臂仿真程序</h3><p>以<code>follow_target_with_rmpflow.py</code>和<code>franka_gripper.py</code>为例机型讲解</p>
+<h4 id="follow-target-with-rmpflow-py"><a href="#follow-target-with-rmpflow-py" class="headerlink" title="follow_target_with_rmpflow.py"></a><code>follow_target_with_rmpflow.py</code></h4><div class="highlight-container" data-rel="Py"><figure class="iseeu highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基础设置</span></span><br><span class="line"><span class="keyword">from</span> isaacsim <span class="keyword">import</span> SimulationApp</span><br><span class="line"></span><br><span class="line"><span class="comment"># Container运行要改为True</span></span><br><span class="line">simulation_app = SimulationApp(&#123;<span class="string">&quot;headless&quot;</span>: <span class="literal">True</span>&#125;) </span><br><span class="line"></span><br><span class="line"><span class="comment"># World是Isaac Sim中的核心场景管理类</span></span><br><span class="line"><span class="keyword">from</span> omni.isaac.core <span class="keyword">import</span> World</span><br><span class="line"></span><br><span class="line"><span class="comment"># 特定任务下的Controller和Tasks</span></span><br><span class="line"><span class="keyword">from</span> omni.isaac.franka.controllers.rmpflow_controller <span class="keyword">import</span> RMPFlowController</span><br><span class="line"><span class="keyword">from</span> omni.isaac.franka.tasks <span class="keyword">import</span> FollowTarget</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建World和Task实例</span></span><br><span class="line">my_world = World(stage_units_in_meters=<span class="number">1.0</span>)</span><br><span class="line">my_task = FollowTarget(name=<span class="string">&quot;follow_target_task&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 将Task添加到World中, 并初始化状态</span></span><br><span class="line">my_world.add_task(my_task)</span><br><span class="line">my_world.reset()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 获取Task的参数, 提取了机器人和目标的名字</span></span><br><span class="line">task_params = my_world.get_task(<span class="string">&quot;follow_target_task&quot;</span>).get_params()</span><br><span class="line">franka_name = task_params[<span class="string">&quot;robot_name&quot;</span>][<span class="string">&quot;value&quot;</span>]</span><br><span class="line">target_name = task_params[<span class="string">&quot;target_name&quot;</span>][<span class="string">&quot;value&quot;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用get_object()从场景中获取franka机械臂对象</span></span><br><span class="line">my_franka = my_world.scene.get_object(franka_name)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 创建控制器实例, 并且将franka机械臂输入</span></span><br><span class="line">my_controller = RMPFlowController(name=<span class="string">&quot;target_follower_controller&quot;</span>, robot_articulation=my_franka)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 利用get_articulation_controller()获取机械臂的关节控制器, 用于控制动作</span></span><br><span class="line">articulation_controller = my_franka.get_articulation_controller()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 表示是否需要重置, 初始化为False, 确保启动的时候不会重置</span></span><br><span class="line">reset_needed = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 控制循环</span></span><br><span class="line"><span class="keyword">while</span> simulation_app.is_running():</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 仿真世界中前进一帧</span></span><br><span class="line">    my_world.step(render=<span class="literal">True</span>)</span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 检测仿真是否已停止, 并且准备在下一次播放重置</span></span><br><span class="line">    <span class="keyword">if</span> my_world.is_stopped() <span class="keyword">and</span> <span class="keyword">not</span> reset_needed:</span><br><span class="line">        reset_needed = <span class="literal">True</span></span><br><span class="line">    </span><br><span class="line">    <span class="comment"># 仿真正在运行, 代码进入控制逻辑</span></span><br><span class="line">    <span class="keyword">if</span> my_world.is_playing():</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 如果需要重置, 重置仿真世界和控制器</span></span><br><span class="line">        <span class="keyword">if</span> reset_needed:</span><br><span class="line">            my_world.reset()</span><br><span class="line">            my_controller.reset()</span><br><span class="line">            reset_needed = <span class="literal">False</span></span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 获取机械臂和目标物体当前6D位姿</span></span><br><span class="line">        observations = my_world.get_observations()</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># forward()方法即为控制器中用到的一种传统的路径规划方法</span></span><br><span class="line">        <span class="comment"># 调用控制器的forward()方法, 传入目标末端执行器(方块)的6D位姿, 并输出一个关节动作列表</span></span><br><span class="line">        actions = my_controller.forward(</span><br><span class="line">            target_end_effector_position=observations[target_name][<span class="string">&quot;position&quot;</span>],</span><br><span class="line">            target_end_effector_orientation=observations[target_name][<span class="string">&quot;orientation&quot;</span>],</span><br><span class="line">        )</span><br><span class="line">        </span><br><span class="line">        <span class="comment"># 利用apply_action()将forward()方法输出的关节动作列表应用到机械臂的关节上</span></span><br><span class="line">        articulation_controller.apply_action(actions)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 关闭仿真并且清理资源</span></span><br><span class="line">simulation_app.close()</span><br></pre></td></tr></table></figure></div>
+
+
+<p>其中用到的库文件:<br>&#x2F;isaac-sim&#x2F;exts&#x2F;omni.isaac.franka&#x2F;omni&#x2F;isaac&#x2F;franka&#x2F;controllers&#x2F;rmpflow_controller.py</p>
+<div class="highlight-container" data-rel="Py"><figure class="iseeu highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> omni.isaac.motion_generation <span class="keyword">as</span> mg</span><br><span class="line"><span class="keyword">from</span> omni.isaac.core.articulations <span class="keyword">import</span> Articulation</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RMPFlowController</span>(mg.MotionPolicyController):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;[summary]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        name (str): [description]</span></span><br><span class="line"><span class="string">        robot_articulation (Articulation): [description]</span></span><br><span class="line"><span class="string">        physics_dt (float, optional): [description]. Defaults to 1.0/60.0.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self, name: <span class="built_in">str</span>, robot_articulation: Articulation, physics_dt: <span class="built_in">float</span> = <span class="number">1.0</span> / <span class="number">60.0</span></span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        self.rmp_flow_config = mg.interface_config_loader.load_supported_motion_policy_config(<span class="string">&quot;Franka&quot;</span>, <span class="string">&quot;RMPflow&quot;</span>)</span><br><span class="line">        self.rmp_flow = mg.lula.motion_policies.RmpFlow(**self.rmp_flow_config)</span><br><span class="line"></span><br><span class="line">        self.articulation_rmp = mg.ArticulationMotionPolicy(robot_articulation, self.rmp_flow, physics_dt)</span><br><span class="line"></span><br><span class="line">        mg.MotionPolicyController.__init__(self, name=name, articulation_motion_policy=self.articulation_rmp)</span><br><span class="line">        (</span><br><span class="line">            self._default_position,</span><br><span class="line">            self._default_orientation,</span><br><span class="line">        ) = self._articulation_motion_policy._robot_articulation.get_world_pose()</span><br><span class="line">        self._motion_policy.set_robot_base_pose(</span><br><span class="line">            robot_position=self._default_position, robot_orientation=self._default_orientation</span><br><span class="line">        )</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">reset</span>(<span class="params">self</span>):</span><br><span class="line">        mg.MotionPolicyController.reset(self)</span><br><span class="line">        self._motion_policy.set_robot_base_pose(</span><br><span class="line">            robot_position=self._default_position, robot_orientation=self._default_orientation</span><br><span class="line">        )</span><br></pre></td></tr></table></figure></div>
+
+<p>&#x2F;isaac-sim&#x2F;exts&#x2F;omni.isaac.franka&#x2F;omni&#x2F;isaac&#x2F;franka&#x2F;tasks&#x2F;follow_target.py</p>
+<div class="highlight-container" data-rel="Py"><figure class="iseeu highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> typing <span class="keyword">import</span> <span class="type">Optional</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> omni.isaac.core.tasks <span class="keyword">as</span> tasks</span><br><span class="line"><span class="keyword">from</span> omni.isaac.core.utils.prims <span class="keyword">import</span> is_prim_path_valid</span><br><span class="line"><span class="keyword">from</span> omni.isaac.core.utils.string <span class="keyword">import</span> find_unique_string_name</span><br><span class="line"><span class="keyword">from</span> omni.isaac.franka <span class="keyword">import</span> Franka</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">FollowTarget</span>(tasks.FollowTarget):</span><br><span class="line">    <span class="string">&quot;&quot;&quot;[summary]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">    Args:</span></span><br><span class="line"><span class="string">        name (str, optional): [description]. Defaults to &quot;franka_follow_target&quot;.</span></span><br><span class="line"><span class="string">        target_prim_path (Optional[str], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        target_name (Optional[str], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        target_position (Optional[np.ndarray], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        target_orientation (Optional[np.ndarray], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        offset (Optional[np.ndarray], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        franka_prim_path (Optional[str], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">        franka_robot_name (Optional[str], optional): [description]. Defaults to None.</span></span><br><span class="line"><span class="string">    &quot;&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params"></span></span><br><span class="line"><span class="params">        self,</span></span><br><span class="line"><span class="params">        name: <span class="built_in">str</span> = <span class="string">&quot;franka_follow_target&quot;</span>,</span></span><br><span class="line"><span class="params">        target_prim_path: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        target_name: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        target_position: <span class="type">Optional</span>[np.ndarray] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        target_orientation: <span class="type">Optional</span>[np.ndarray] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        offset: <span class="type">Optional</span>[np.ndarray] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        franka_prim_path: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">        franka_robot_name: <span class="type">Optional</span>[<span class="built_in">str</span>] = <span class="literal">None</span>,</span></span><br><span class="line"><span class="params">    </span>) -&gt; <span class="literal">None</span>:</span><br><span class="line">        tasks.FollowTarget.__init__(</span><br><span class="line">            self,</span><br><span class="line">            name=name,</span><br><span class="line">            target_prim_path=target_prim_path,</span><br><span class="line">            target_name=target_name,</span><br><span class="line">            target_position=target_position,</span><br><span class="line">            target_orientation=target_orientation,</span><br><span class="line">            offset=offset,</span><br><span class="line">        )</span><br><span class="line">        self._franka_prim_path = franka_prim_path</span><br><span class="line">        self._franka_robot_name = franka_robot_name</span><br><span class="line">        <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">set_robot</span>(<span class="params">self</span>) -&gt; Franka:</span><br><span class="line">        <span class="string">&quot;&quot;&quot;[summary]</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">        Returns:</span></span><br><span class="line"><span class="string">            Franka: [description]</span></span><br><span class="line"><span class="string">        &quot;&quot;&quot;</span></span><br><span class="line">        <span class="keyword">if</span> self._franka_prim_path <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self._franka_prim_path = find_unique_string_name(</span><br><span class="line">                initial_name=<span class="string">&quot;/World/Franka&quot;</span>, is_unique_fn=<span class="keyword">lambda</span> x: <span class="keyword">not</span> is_prim_path_valid(x)</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">if</span> self._franka_robot_name <span class="keyword">is</span> <span class="literal">None</span>:</span><br><span class="line">            self._franka_robot_name = find_unique_string_name(</span><br><span class="line">                initial_name=<span class="string">&quot;my_franka&quot;</span>, is_unique_fn=<span class="keyword">lambda</span> x: <span class="keyword">not</span> self.scene.object_exists(x)</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">return</span> Franka(prim_path=self._franka_prim_path, name=self._franka_robot_name)</span><br></pre></td></tr></table></figure></div>
+
+<h4 id="franka-gripper-py"><a href="#franka-gripper-py" class="headerlink" title="franka_gripper.py"></a><code>franka_gripper.py</code></h4><div class="highlight-container" data-rel="Py"><figure class="iseeu highlight py"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> isaacsim <span class="keyword">import</span> SimulationApp</span><br><span class="line"></span><br><span class="line">simulation_app = SimulationApp(&#123;<span class="string">&quot;headless&quot;</span>: <span class="literal">False</span>&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> omni.isaac.core <span class="keyword">import</span> World</span><br><span class="line"><span class="keyword">from</span> omni.isaac.core.utils.types <span class="keyword">import</span> ArticulationAction</span><br><span class="line"><span class="keyword">from</span> omni.isaac.franka <span class="keyword">import</span> Franka</span><br><span class="line"></span><br><span class="line">parser = argparse.ArgumentParser()</span><br><span class="line">parser.add_argument(<span class="string">&quot;--test&quot;</span>, default=<span class="literal">False</span>, action=<span class="string">&quot;store_true&quot;</span>, <span class="built_in">help</span>=<span class="string">&quot;Run in test mode&quot;</span>)</span><br><span class="line">args, unknown = parser.parse_known_args()</span><br><span class="line"></span><br><span class="line">my_world = World(stage_units_in_meters=<span class="number">1.0</span>)</span><br><span class="line">my_franka = my_world.scene.add(Franka(prim_path=<span class="string">&quot;/World/Franka&quot;</span>, name=<span class="string">&quot;my_franka&quot;</span>))</span><br><span class="line">my_world.scene.add_default_ground_plane()</span><br><span class="line">my_world.reset()</span><br><span class="line"></span><br><span class="line">i = <span class="number">0</span></span><br><span class="line">reset_needed = <span class="literal">False</span></span><br><span class="line"><span class="keyword">while</span> simulation_app.is_running():</span><br><span class="line">    my_world.step(render=<span class="literal">True</span>)</span><br><span class="line">    <span class="keyword">if</span> my_world.is_stopped() <span class="keyword">and</span> <span class="keyword">not</span> reset_needed:</span><br><span class="line">        reset_needed = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">if</span> my_world.is_playing():</span><br><span class="line">        <span class="keyword">if</span> reset_needed:</span><br><span class="line">            my_world.reset()</span><br><span class="line">            reset_needed = <span class="literal">False</span></span><br><span class="line">        i += <span class="number">1</span></span><br><span class="line">        gripper_positions = my_franka.gripper.get_joint_positions()</span><br><span class="line">        <span class="keyword">if</span> i &lt; <span class="number">500</span>:</span><br><span class="line">            my_franka.gripper.apply_action(</span><br><span class="line">                ArticulationAction(joint_positions=[gripper_positions[<span class="number">0</span>] - (<span class="number">0.005</span>), gripper_positions[<span class="number">1</span>] - (<span class="number">0.005</span>)])</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">if</span> i &gt; <span class="number">500</span>:</span><br><span class="line">            my_franka.gripper.apply_action(</span><br><span class="line">                ArticulationAction(joint_positions=[gripper_positions[<span class="number">0</span>] + (<span class="number">0.005</span>), gripper_positions[<span class="number">1</span>] + (<span class="number">0.005</span>)])</span><br><span class="line">            )</span><br><span class="line">        <span class="keyword">if</span> i == <span class="number">1000</span>:</span><br><span class="line">            i = <span class="number">0</span></span><br><span class="line">    <span class="keyword">if</span> args.test <span class="keyword">is</span> <span class="literal">True</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">simulation_app.close()</span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="Isaac-Lab"><a href="#Isaac-Lab" class="headerlink" title="Isaac Lab"></a>Isaac Lab</h2><blockquote>
+<p>Isaac Lab is the official robot learning framework for Isaac Sim, providing APIs and examples for reinforcement learning, imitation learning, and more.</p>
+</blockquote>
+<blockquote>
+<p>Isaac Gym is a deprecated framework. All reinforcement learning and imitation learning examples have been migrated to Isaac Lab.</p>
+</blockquote>
+<h2 id="Troubleshooting"><a href="#Troubleshooting" class="headerlink" title="Troubleshooting"></a>Troubleshooting</h2><ul>
+<li>一直警告: 2024-09-18 09:42:53 [17,934ms] [Warning] [omni.graph.core.plugin] OmniGraphSettings::getCudaDeviceOrdinal: unable to get a valid CUDA device id from the renderer. Defaulting to GPU0.</li>
+</ul>
+<p>之前启用的python脚本占用了CUDA的ID, 但是没有释放, 重新启动docker即可.</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">docker stop isaac-sim</span><br><span class="line">docker start isaac-sim</span><br></pre></td></tr></table></figure></div>
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p><a class="link"   target="_blank" rel="noopener" href="https://zhaoxuhui.top/blog/2023/02/19/omniverse-and-isaac-sim-note9-standalone-workflow-and-imu-frequency-setting.html" >NVIDIA Omniverse和Isaac Sim笔记9：Standalone工作流介绍与IMU帧率设置 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Isaac Sim (Container)学习</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2024-08-29 15:36:19</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-09-18 20:42:04
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2024/08/29/Issac-Sim-Container-学习/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/08/30/Iterative-Optimal-Control-for-Robotics-System/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Iterative Optimal Control for Robotics System</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/08/28/%E5%BF%AB%E9%80%92%E6%9C%BA%E5%99%A8%E4%BA%BA%E7%9A%84%E6%9E%84%E6%83%B3/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">服务机器人的构想</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Isaac Sim (Container)学习</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Isaac-Sim-%E5%AE%89%E8%A3%85"><span class="nav-text">Isaac Sim 安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isaac-Sim-%E5%90%AF%E5%8A%A8"><span class="nav-text">Isaac Sim 启动</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Vscode%E8%BF%9E%E6%8E%A5source-code"><span class="nav-text">Vscode连接source code</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C%E9%80%BB%E8%BE%91"><span class="nav-text">基本操作逻辑</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Extension"><span class="nav-text">Extension</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Standalone-Application"><span class="nav-text">Standalone Application</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%85%8D%E7%BD%AEPython-Environment"><span class="nav-text">配置Python Environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#franka%E6%9C%BA%E6%A2%B0%E8%87%82%E4%BB%BF%E7%9C%9F%E7%A8%8B%E5%BA%8F"><span class="nav-text">franka机械臂仿真程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#follow-target-with-rmpflow-py"><span class="nav-text">follow_target_with_rmpflow.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#franka-gripper-py"><span class="nav-text">franka_gripper.py</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isaac-Lab"><span class="nav-text">Isaac Lab</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Troubleshooting"><span class="nav-text">Troubleshooting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        45 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+</body>
+</html>

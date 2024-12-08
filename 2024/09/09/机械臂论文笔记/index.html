@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/09/09/机械臂论文笔记/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning2024.5 该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机械臂论文笔记">
+<meta property="og:url" content="http://example.com/2024/09/09/%E6%9C%BA%E6%A2%B0%E8%87%82%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning2024.5 该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-09-09T07:33:10.000Z">
+<meta property="article:modified_time" content="2024-10-15T10:09:20.424Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            机械臂论文笔记 | Fomalhaut Wiki
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/assets/build/styles.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+<!--        <span class="swup-progress-icon">-->
+<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+<!--        </span>-->
+    
+</div>
+
+
+
+<main class="page-container" id="swup">
+
+    
+
+    <div class="main-content-container flex flex-col justify-between min-h-dvh">
+
+
+        <div class="main-content-header">
+            <header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">45</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
+    <div class="article-content-container">
+
+        <div class="article-title relative w-full">
+            
+                <div class="w-full flex items-center pt-6 justify-start">
+                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">机械臂论文笔记</h1>
+                </div>
+            
+            </div>
+
+        
+            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+                    <img src="/images/portrait.jpg">
+                </div>
+                <div class="info flex flex-col justify-between">
+                    <div class="author flex items-center">
+                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+                        
+                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-09-09 15:33:10</span>
+        <span class="mobile">2024-09-09 15:33:10</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2024-10-15 18:09:20</span>
+            <span class="mobile">2024-10-15 18:09:20</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Scientific-Research/">Scientific Research</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        
+
+
+        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+            <h2 id="Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><a href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning" class="headerlink" title="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning"></a>Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</h2><p>2024.5</p>
+<p>该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-IK算法。通过实际的实验表明，MAPPO-IK算法相比传统的逆运动学算法，具有更好的泛化能力和计算效率，能够实时求解唯一解，并且在复杂环境中具有更改好的适应性，还具备路径规划和智能避障等优势。</p>
+
+
+	<div class="row">
+    <embed src="./6.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+
+<h2 id="Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><a href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN" class="headerlink" title="Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN"></a>Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</h2><p>2023.11</p>
+<p>该文章提出了一个混合分层学习框架，称为机器人操作网络 ROMAN, 以应对在机器人操作中解决长时间跨度内的多个复杂任务的挑战。通过整合行为克隆、模仿学习和强化学习。中央操作网络协调一组专门化的神经网络，每个神经网络专注于不同的子任务，从而生成正确的顺序动作，解决复杂的操作任务。</p>
+<p>整个框架通过设计一个中央操作网络 (MN) 来协调多个专家网络，每个专家网络专注于特定的操作任务，专家网络包括多个专门化的神经网络，每个网络擅长特定的操作任务，如推按钮，拾取并插入，拾取并放置，旋转开关，拾取并丢弃，拉开等。使用行为克隆 (BC) 收集初始的状态-动作数据。实施生成对抗模仿学习 (GAIL) 来进一步优化策略，使其能够更好地模仿人类专家的行为。最后，通过强化学习进行策略更新，使用PPO算法结合内在和外在奖励来鼓励探索和改进行为。最终通过在虚拟环境中实验得到结果。</p>
+
+
+	<div class="row">
+    <embed src="./7.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<h2 id="Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><a href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives" class="headerlink" title="Large Language Models for Robotics: Opportunities, Challenges, and Perspectives"></a>Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</h2>
+
+	<div class="row">
+    <embed src="./1.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>LLMs 正在多个领域得到广泛应用，尤其是在机器人任务规划方面，它们通过其推理和语言理解能力，能够根据自然语言指令生成高效的行动计划。然而，当涉及到机器人需要与复杂环境进行交互的任务时，单纯基于文本的 LLMs 存在与视觉感知不兼容的挑战。</p>
+<p>为了解决这个问题，本文提出了一个基于多模态 GPT-4V 的框架，将自然语言指令与机器人视觉感知结合，以提升机器人在任务规划中的表现。</p>
+<p>同时这篇论文给出了LLM方向的综述:</p>
+<h2 id="TidyBot-personalized-robot-assistance-with-large-language-models"><a href="#TidyBot-personalized-robot-assistance-with-large-language-models" class="headerlink" title="TidyBot: personalized robot assistance with large language models"></a>TidyBot: personalized robot assistance with large language models</h2>
+
+	<div class="row">
+    <embed src="./5.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>TidyBot主要结构是一个机械臂加上AGV小车，然后机械臂末端有两个摄像头。首先这个TidyBot要实现通过目标检测来识别有哪些物体，这里他用了ViLD网络。然后对于距离自己最近的检测物体，将这个物体所在的矩形框图片（图像）和之前LLM summarized的物体概括（文本），通过CLIP进行embedding之后，计算余弦相似度获取和这个物体最匹配的物体概括，从而确定这个物体属于哪一类。这里就体现了抽象的物体概括的好处，如果不概括，那么就需要人实现指定一个更大的物体列表，这样的话整体的泛化能力就下降了。有了这个物体的概括之后，然后再通过LLM，来确定这个物体应该放到哪（”recycling bin”, “plastic storage box”, “black storage box”, “sofa”, “drawer”）以及以怎样的方式放（place、toss）。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/664959506" >Robotics+LLM系列TidyBot家务机器人 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="⭐ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><a href="#⭐ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation" class="headerlink" title="⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation"></a>⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</h2><p><a target="_blank" rel="noopener" href="https://rekep-robot.github.io/">ReKep: Spatio-Temporal Reasoning of Relational<br>Keypoint Constraints for Robotic Manipulation</a></p>
+
+
+	<div class="row">
+    <embed src="./2.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>文提出了一种名为 Relational Keypoint Constraints (ReKep) 的方法，用于表示机器人操作中的约束条件。传统的操作任务往往需要明确的约束定义，而 ReKep 通过将 3D 关键点映射为数值成本的 Python 函数，能够灵活适应不同的任务，并实现实时优化。通过这种方法，机器人可以在多任务场景中执行复杂操作，而无需手动标注或特定的环境数据模型。此外，作者设计了一个自动化流程，利用大型视觉模型和视觉语言模型，从自由形式的语言指令和 RGB-D 数据中自动生成 ReKep。系统在单臂和双臂平台上的实验表明，该方法在多阶段、野外、多手臂协作和动态响应任务中的有效性。</p>
+<p>ReKep 的核心是基于 3D 关键点的约束表示。关键点是物体或机器人的特定位置（例如，抓手的末端或物体的边缘），这些关键点之间的空间关系被定义为 Python 函数，表示约束条件。</p>
+<ul>
+<li>关键点：在环境中定义的一组语义相关的 3D 点，通常与任务目标相关，例如茶壶的把手、壶嘴、杯子的位置。</li>
+<li>约束函数：这些函数基于关键点之间的几何关系（例如，距离、角度、相对位置）来计算数值成本。约束满足时，成本接近于零，否则约束不成立。</li>
+</ul>
+<p>这些关键点之间的关系可以通过简单的几何计算表达，例如欧几里得距离或点积。这些关系不仅可以在平面上定义，还可以定义在 3D 空间内，适应复杂的操作场景。</p>
+<p>ReKep 将操作任务分解为多个阶段，每个阶段由两类约束定义：</p>
+<ul>
+<li>子目标约束（Sub-goal Constraints）：这些约束定义了每个阶段需要达到的目标位置。例如，在倒茶任务中，第一阶段的子目标约束是让抓手接近茶壶的把手。</li>
+<li>路径约束（Path Constraints）：这些约束定义了在完成某个子目标时必须持续满足的条件。例如，在移动茶壶过程中，壶嘴必须保持与杯子对齐以避免洒水。</li>
+</ul>
+<p>通过这些约束，ReKep 可以确保机器人在执行复杂操作时不仅能达到每个阶段的目标，还能确保操作过程中的中间行为是安全和有效的。</p>
+<h2 id="⭐In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><a href="#⭐In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper" class="headerlink" title="⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper"></a>⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</h2>
+
+	<div class="row">
+    <embed src="./3.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6c1AyeaGjbk" >In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p> 这篇文章讨论了在机器人操作任务中，灵巧性是一个关键要求，通常需要具有多个自由度（DoF）的抓手。然而，多自由度的抓手虽然能完成复杂任务，但也增加了操作的复杂性。本文介绍了一种带有触觉传感器的两指抓手设计，具有五个自由度，并结合 GelSight 触觉传感器，以提高操作控制精度。文中通过两个实验评估了该抓手的性能：1）从颗粒物中提取、分离和分类不同物体，2）在狭小环境中执行信用卡的铲取和精确插入操作。实验结果表明，该方法在分离和分类任务中，尤其是对球形物体，达到了 94.3% 的高成功率，而在信用卡铲取和插入任务中，成功率达到了 100%。</p>
+<h2 id="⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><a href="#⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation" class="headerlink" title="⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation"></a>⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</h2><p><a class="link"   target="_blank" rel="noopener" href="https://rgbmanip.github.io/" >RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+
+	<div class="row">
+    <embed src="./4.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>这篇文章主要探讨了在机器人操作中常用的两种视觉感知方式：RGB 图像和点云数据。虽然点云可以提供 3D 信息，但由于技术限制，点云数据常常面临稀疏采样和噪声的问题。相比之下，RGB 图像能提供丰富的纹理信息，但缺乏深度和 3D 空间信息，这对机器人操作非常关键。</p>
+<p>为了克服这些问题，作者提出了一种仅基于图像的机器人操作框架。该框架利用安装在机器人抓取器上的单目相机，通过相机随抓取器移动从多个视角感知物体，从而估计物体的 6D 姿态（即位置和方向）。这种方法虽然通过多视角提高了姿态估计的准确性，但也增加了操作时间。为了解决这个权衡问题，作者采用了强化学习策略来平衡操作效率和姿态估计的准确性。实验结果表明，该方法在仿真和实际环境中均表现出色。</p>
+<p>文中使用了一种常见的强化学习算法——Proximal Policy Optimization (PPO) 来训练全局调度策略。PPO 是一种高效且稳定的强化学习方法，通过不断优化策略来改进机器人在不同视角之间的切换决策，使其能够更好地权衡感知精度和操作效率。</p>
+<p>该强化学习应用的算法, 全局调度策略（Global Scheduling Policy），该策略是一个高层次的决策机制。其主要功能是在机器人探索环境或开始操作之间做出决策。它根据已经累积的环境信息和主动感知模块的反馈，决定是否需要进一步探索新视角。若选择探索，策略会为机械臂指定 6D 外参参数，调整相机位置以获取图像；若决定停止探索，机器人将进入操作模式，继续执行任务。</p>
+<h2 id="Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><a href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks" class="headerlink" title="Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks"></a>Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</h2><p>2024 ICLR</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mihdalal.github.io/planseqlearn/" >Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+
+
+	<div class="row">
+    <embed src="./8.pdf" width="100%" height="550" type="application/pdf">
+	</div>
+
+
+
+
+<p>现有的LLM方法能够给机器人提供high-level的planning. 但是这些方法依赖预定义的技能库(抓取, 放置, 拉动, 推动). LLM无法解决如何设计或学习这些技能, 尤其是在长时序任务中.</p>
+<p>本文提出了一个Plan-Seq-Learn框架, 利用LLM的高层次策略引导强化学习(RL)来解决机器人的控制任务.</p>
+<p>文中提出一个观点, LLM与RL优势互补, LLMs可以借助互联网规模的知识将长时序任务分解为可实现的子目标，但它们缺乏生成低层次控制策略的能力；而RL则擅长发现复杂的控制行为，但在长时序推理方面表现不足。</p>
+<p>PSL框架的创新在于, 它不依赖任何预定义的技能库, 而是通过运动规划控制跟踪LLM的计划, 并通过RL学习低层次的控制技能.</p>
+<ol>
+<li>Plan（计划）阶段：由LLM生成高层次任务分解计划<br>在“NutAssembly”任务中，首先由LLM生成任务的高层次计划。这一步的目的是将任务分解为多个可执行的子步骤。对于这个任务，LLM可能生成如下计划：</li>
+</ol>
+<ul>
+<li>抓取金色螺母</li>
+<li>将金色螺母放置在金色螺栓上</li>
+<li>抓取银色螺母</li>
+<li>将银色螺母放置在银色螺栓上</li>
+</ul>
+<p>原文示例：</p>
+<blockquote>
+<p>Plan: [(“gold nut”,“grasp”), (“gold peg”, “place”), (“silver nut”, “grasp”), (“silver peg”, “place”)]​。</p>
+</blockquote>
+<p>这个计划展示了任务的四个关键步骤，分别是抓取和放置两个螺母。计划通过自然语言描述任务的各个阶段，供后续模块执行。</p>
+<ol start="2">
+<li>Seq（序列）阶段：运动规划追踪任务计划<br>在这一步中，PSL框架使用视觉引导的运动规划模块（Seq）将计划的每个阶段转化为机器人要达到的具体目标位置。具体来说：</li>
+</ol>
+<p>系统通过视觉系统识别场景中的目标对象，如“金色螺母”和“金色螺栓”。<br>通过视觉估计物体的三维坐标，计算机器人臂的目标姿态（q_target）。<br>运动规划算法（如AIT*）计算从机器人当前姿态到目标姿态的无碰撞路径，使机器人到达目标区域。<br>这一步主要是通过视觉引导和运动规划来执行无接触的运动，比如将机器人移动到金色螺母的上方，准备抓取。</p>
+<p>原文说明：</p>
+<blockquote>
+<p>Vision and Estimation: Using a text label of the target region of interest from the high-level plan and observation Oglobal, we need to compute a target robot state qtarget for the motion planner to achieve​。</p>
+</blockquote>
+<p>通过运动规划模块，机器人能够在空间中移动到正确的目标区域，比如移动到金色螺母上方。</p>
+<ol start="3">
+<li>Learn（学习）阶段：强化学习策略进行低层次控制<br>当机器人到达目标区域（如金色螺母上方）后，系统开始执行与环境的接触互动，这时RL模块开始发挥作用。RL策略负责学习如何抓取螺母、如何精确地放置螺母在螺栓上等接触任务。</li>
+</ol>
+<p>强化学习（RL）模型通过观察局部的环境信息（如机器人手臂末端的摄像头视角）执行动作。<br>机器人通过与环境的反复交互，逐渐学习到如何精确操控物体，如抓取螺母、放置到螺栓上。<br>每次成功执行后，系统通过奖励函数反馈调整策略，逐渐提高成功率。<br>原文说明：</p>
+<blockquote>
+<p>Once the agent steps through the plan and achieves states near target regions of interest, it needs to train an RL policy πθ to learn low-level control for solving the task. We train πθ using DRQ-v2 Yarats et al. (2021), a SOTA visual model-free RL algorithm​。</p>
+</blockquote>
+<p>通过RL策略，PSL能够处理需要精细控制的接触任务，比如如何准确抓住螺母并将其对准螺栓。</p>
+
+        </div>
+
+        
+            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 机械臂论文笔记</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2024-09-09 15:33:10</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2024-10-15 18:09:20
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2024/09/09/机械臂论文笔记/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+
+        
+
+        
+            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+                
+                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="prev"
+                        rel="prev"
+                        href="/2024/09/12/LLM-Robotics/"
+                        >
+                            <span class="left arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">LLM + Robotics</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+                        <a class="next"
+                        rel="next"
+                        href="/2024/08/30/Iterative-Optimal-Control-for-Robotics-System/"
+                        >
+                            <span class="title flex justify-center items-center">
+                                <span class="post-nav-title-item">Iterative Optimal Control for Robotics System</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex justify-center items-center">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+
+        
+            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+                <div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+            </div>
+        
+    </div>
+
+    
+        <div class="toc-content-container">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">机械臂论文笔记</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><span class="nav-text">Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><span class="nav-text">Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><span class="nav-text">Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TidyBot-personalized-robot-assistance-with-large-language-models"><span class="nav-text">TidyBot: personalized robot assistance with large language models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><span class="nav-text">⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><span class="nav-text">⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><span class="nav-text">⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><span class="nav-text">Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</span></a></li></ol>
+
+    </div>
+</div>
+        </div>
+    
+</div>
+
+
+
+                
+
+            </div>
+
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2024&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        45 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+            <li class="go-comment">
+                <i class="fa-regular fa-comments"></i>
+            </li>
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+    
+<script src="/js/libs/Swup.min.js"></script>
+
+<script src="/js/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+
+
+
+<script src="/js/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/utils.js" type="module"></script>
+
+<script src="/js/main.js" type="module"></script>
+
+<script src="/js/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+</body>
+</html>

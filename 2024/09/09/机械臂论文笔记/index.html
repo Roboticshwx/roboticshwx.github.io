@@ -18,17 +18,22 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning2024.5 该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="机械臂论文笔记">
 <meta property="og:url" content="http://example.com/2024/09/09/%E6%9C%BA%E6%A2%B0%E8%87%82%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Fomalhaut_wiki">
-<meta property="og:description" content="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning2024.5 该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2024-09-09T07:33:10.000Z">
 <meta property="article:modified_time" content="2024-10-15T10:09:20.424Z">
 <meta property="article:author" content="hwx">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
     
     <!--- Icon Part-->
@@ -57,7 +62,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -77,7 +82,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -102,29 +107,26 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
+	<div class="progress-bar-container">
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
-
-
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container flex flex-col justify-between min-h-dvh">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
     <div class="navbar-content transition-navbar ">
         <div class="left">
             
@@ -303,7 +305,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">44</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">47</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -314,40 +316,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">机械臂论文笔记</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">机械臂论文笔记</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/portrait.jpg">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/portrait.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2024-09-09 15:33:10</span>
@@ -392,16 +391,16 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><a href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning" class="headerlink" title="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning"></a>Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</h2><p>2024.5</p>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><a href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning" class="headerlink" title="Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning"></a>Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</h2><p>2024.5</p>
 <p>该文章主要解决的是机械臂逆运动学的算法，通过强化学习设置奖励机制，实时计算末端执行器与目标位姿之间的差异，考虑了高斯距离和余弦距离，称为 MAPPO-IK算法。通过实际的实验表明，MAPPO-IK算法相比传统的逆运动学算法，具有更好的泛化能力和计算效率，能够实时求解唯一解，并且在复杂环境中具有更改好的适应性，还具备路径规划和智能避障等优势。</p>
 
 
@@ -447,7 +446,7 @@
 
 
 <p>TidyBot主要结构是一个机械臂加上AGV小车，然后机械臂末端有两个摄像头。首先这个TidyBot要实现通过目标检测来识别有哪些物体，这里他用了ViLD网络。然后对于距离自己最近的检测物体，将这个物体所在的矩形框图片（图像）和之前LLM summarized的物体概括（文本），通过CLIP进行embedding之后，计算余弦相似度获取和这个物体最匹配的物体概括，从而确定这个物体属于哪一类。这里就体现了抽象的物体概括的好处，如果不概括，那么就需要人实现指定一个更大的物体列表，这样的话整体的泛化能力就下降了。有了这个物体的概括之后，然后再通过LLM，来确定这个物体应该放到哪（”recycling bin”, “plastic storage box”, “black storage box”, “sofa”, “drawer”）以及以怎样的方式放（place、toss）。</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/664959506" >Robotics+LLM系列TidyBot家务机器人 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/664959506" >Robotics+LLM系列TidyBot家务机器人<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <h2 id="⭐ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><a href="#⭐ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation" class="headerlink" title="⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation"></a>⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</h2><p><a target="_blank" rel="noopener" href="https://rekep-robot.github.io/">ReKep: Spatio-Temporal Reasoning of Relational<br>Keypoint Constraints for Robotic Manipulation</a></p>
 
 
@@ -480,9 +479,9 @@
 
 
 
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6c1AyeaGjbk" >In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=6c1AyeaGjbk" >In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p> 这篇文章讨论了在机器人操作任务中，灵巧性是一个关键要求，通常需要具有多个自由度（DoF）的抓手。然而，多自由度的抓手虽然能完成复杂任务，但也增加了操作的复杂性。本文介绍了一种带有触觉传感器的两指抓手设计，具有五个自由度，并结合 GelSight 触觉传感器，以提高操作控制精度。文中通过两个实验评估了该抓手的性能：1）从颗粒物中提取、分离和分类不同物体，2）在狭小环境中执行信用卡的铲取和精确插入操作。实验结果表明，该方法在分离和分类任务中，尤其是对球形物体，达到了 94.3% 的高成功率，而在信用卡铲取和插入任务中，成功率达到了 100%。</p>
-<h2 id="⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><a href="#⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation" class="headerlink" title="⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation"></a>⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</h2><p><a class="link"   target="_blank" rel="noopener" href="https://rgbmanip.github.io/" >RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<h2 id="⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><a href="#⭐RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation" class="headerlink" title="⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation"></a>⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</h2><p><a class="link"   target="_blank" rel="noopener" href="https://rgbmanip.github.io/" >RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
 
 	<div class="row">
@@ -497,7 +496,7 @@
 <p>文中使用了一种常见的强化学习算法——Proximal Policy Optimization (PPO) 来训练全局调度策略。PPO 是一种高效且稳定的强化学习方法，通过不断优化策略来改进机器人在不同视角之间的切换决策，使其能够更好地权衡感知精度和操作效率。</p>
 <p>该强化学习应用的算法, 全局调度策略（Global Scheduling Policy），该策略是一个高层次的决策机制。其主要功能是在机器人探索环境或开始操作之间做出决策。它根据已经累积的环境信息和主动感知模块的反馈，决定是否需要进一步探索新视角。若选择探索，策略会为机械臂指定 6D 外参参数，调整相机位置以获取图像；若决定停止探索，机器人将进入操作模式，继续执行任务。</p>
 <h2 id="Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><a href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks" class="headerlink" title="Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks"></a>Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</h2><p>2024 ICLR</p>
-<p><a class="link"   target="_blank" rel="noopener" href="https://mihdalal.github.io/planseqlearn/" >Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://mihdalal.github.io/planseqlearn/" >Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 
 
 	<div class="row">
@@ -543,11 +542,11 @@
 </blockquote>
 <p>通过RL策略，PSL能够处理需要精细控制的接触任务，比如如何准确抓住螺母并将其对准螺栓。</p>
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>Title:</strong> 机械臂论文笔记</li>
         <li><strong>Author:</strong> Neptune.💤</li>
@@ -575,54 +574,48 @@
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2024/09/12/LLM-Robotics/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">LLM + Robotics</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2024/08/30/Iterative-Optimal-Control-for-Robotics-System/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">Iterative Optimal Control for Robotics System</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/09/12/LLM-Robotics/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">LLM + Robotics</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/08/30/Iterative-Optimal-Control-for-Robotics-System/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Iterative Optimal Control for Robotics System</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         Comments
@@ -662,36 +655,30 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">On this page</div>
-        <div class="page-title">机械臂论文笔记</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><span class="nav-text">Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><span class="nav-text">Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><span class="nav-text">Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TidyBot-personalized-robot-assistance-with-large-language-models"><span class="nav-text">TidyBot: personalized robot assistance with large language models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><span class="nav-text">⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><span class="nav-text">⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><span class="nav-text">⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><span class="nav-text">Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</span></a></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">机械臂论文笔记</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Inverse-kinematics-solution-and-control-method-of-6-degree-of-freedom-manipulator-based-on-deep-reinforcement-learning"><span class="nav-text">Inverse kinematics solution and control method of 6-degree-of-freedom manipulator based on deep reinforcement learning</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hybrid-hierarchical-learning-for-solving-complex-sequential-tasks-using-the-robotic-manipulation-network-ROMAN"><span class="nav-text">Hybrid hierarchical learning for solving complex sequential tasks using the robotic manipulation network ROMAN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Large-Language-Models-for-Robotics-Opportunities-Challenges-and-Perspectives"><span class="nav-text">Large Language Models for Robotics: Opportunities, Challenges, and Perspectives</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TidyBot-personalized-robot-assistance-with-large-language-models"><span class="nav-text">TidyBot: personalized robot assistance with large language models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90ReKep-Spatio-Temporal-Reasoning-of-Relational-Keypoint-Constraints-for-Robotic-Manipulation"><span class="nav-text">⭐ReKep: Spatio-Temporal Reasoning of Relational Keypoint Constraints for Robotic Manipulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90In-Hand-Singulation-and-Scooping-Manipulation-with-a-5-DOF-Tactile-Gripper"><span class="nav-text">⭐In-Hand Singulation and Scooping Manipulation with a 5 DOF Tactile Gripper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E2%AD%90RGBManip-Monocular-Image-based-Robotic-Manipulation-through-Active-Object-Pose-Estimation"><span class="nav-text">⭐RGBManip: Monocular Image-based Robotic Manipulation through Active Object Pose Estimation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Plan-Seq-Learn-Language-Model-Guided-RL-for-Solving-Long-Horizon-Robotics-Tasks"><span class="nav-text">Plan-Seq-Learn: Language Model Guided RL for Solving Long Horizon Robotics Tasks</span></a></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
@@ -705,7 +692,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        44 posts in total
+                        47 posts in total
                     </span>
                     
                 </p>
@@ -730,7 +717,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
         
@@ -759,124 +746,113 @@
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
 </div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fa-solid fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa-solid fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -900,48 +876,46 @@
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
     
-<script src="/js/tools/localSearch.js" type="module"></script>
+<script src="/js/build/tools/localSearch.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -950,10 +924,10 @@
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
@@ -963,29 +937,32 @@
 
 
     
-<script src="/js/libs/anime.min.js"></script>
+<script src="/js/build/libs/anime.min.js"></script>
 
 
 
 
 
     
-<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
 
 
 
 
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
 </body>
+
 </html>

@@ -18,28 +18,22 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="门禁系统v1.0研发需求当我一个人在宿舍的时候，很容易把钥匙放在自己的位置上忘记拿出来，然后就导致被锁在外面。同时携带钥匙出门也会很不方便，所以如果能够实现指纹、人脸、nfc等身份信息来直接进行验证，就可以不用携带钥匙出门或者被锁在外面了。 硬件设计v1.0主要考虑简单易用和成本低廉，因此只采用指纹和nfc两种方式进行验证，采用esp32作为主板开发，后续可以添加人脸识别等功能，远程开门等功能。">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="智能家居门禁系统">
 <meta property="og:url" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/index.html">
 <meta property="og:site_name" content="Fomalhaut_wiki">
-<meta property="og:description" content="门禁系统v1.0研发需求当我一个人在宿舍的时候，很容易把钥匙放在自己的位置上忘记拿出来，然后就导致被锁在外面。同时携带钥匙出门也会很不方便，所以如果能够实现指纹、人脸、nfc等身份信息来直接进行验证，就可以不用携带钥匙出门或者被锁在外面了。 硬件设计v1.0主要考虑简单易用和成本低廉，因此只采用指纹和nfc两种方式进行验证，采用esp32作为主板开发，后续可以添加人脸识别等功能，远程开门等功能。">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_1.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_2.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_3.jpg">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_4.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_5.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_6.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_7.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_8.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_9.png">
-<meta property="og:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_10.png">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2023-05-12T02:58:15.000Z">
 <meta property="article:modified_time" content="2024-08-23T09:34:00.727Z">
 <meta property="article:author" content="hwx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/05/12/%E5%AE%BF%E8%88%8D%E6%99%BA%E8%83%BD%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9F/fig_1.png">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
     
     
     <!--- Icon Part-->
@@ -68,7 +62,7 @@
 
     
         
-<link rel="stylesheet" href="/assets/build/styles.css">
+<link rel="stylesheet" href="/css/build/tailwind.css">
 
     
 
@@ -88,7 +82,7 @@
 
     <script id="hexo-configurations">
     window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
-    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":true,"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.7.3","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
     window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
     window.data = {"masonry":false};
   </script>
@@ -113,29 +107,26 @@
 <meta name="generator" content="Hexo 7.3.0"></head>
 
 
+
 <body>
-<div class="progress-bar-container">
-    
+	<div class="progress-bar-container">
+	
 
-    
-        <span class="pjax-progress-bar"></span>
-<!--        <span class="swup-progress-icon">-->
-<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
-<!--        </span>-->
-    
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
 </div>
-
-
 
 <main class="page-container" id="swup">
 
-    
+	
 
-    <div class="main-content-container flex flex-col justify-between min-h-dvh">
-
-
-        <div class="main-content-header">
-            <header class="navbar-container px-6 md:px-12">
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
     <div class="navbar-content transition-navbar ">
         <div class="left">
             
@@ -314,7 +305,7 @@
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">44</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">47</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -325,40 +316,37 @@
 </header>
 
 
-        </div>
+		</div>
 
-        <div class="main-content-body">
+		<div class="main-content-body transition-fade-up">
+			
 
-            
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
 
-            <div class="main-content">
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">智能家居门禁系统</h1>
+			</div>
+			
+		</div>
 
-                
-                    <div class="post-page-container flex relative justify-between box-border w-full h-full">
-    <div class="article-content-container">
-
-        <div class="article-title relative w-full">
-            
-                <div class="w-full flex items-center pt-6 justify-start">
-                    <h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">智能家居门禁系统</h1>
-                </div>
-            
-            </div>
-
-        
-            <div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
-                <div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
-                    <img src="/images/portrait.jpg">
-                </div>
-                <div class="info flex flex-col justify-between">
-                    <div class="author flex items-center">
-                        <span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
-                        
-                            <span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/portrait.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
     <span class="article-date article-meta-item">
         <i class="fa-regular fa-pen-fancy"></i>&nbsp;
         <span class="desktop">2023-05-12 10:58:15</span>
@@ -403,22 +391,22 @@
     
 </div>
 
-                    </div>
-                </div>
-            </div>
-        
+				</div>
+			</div>
+		</div>
+		
 
-        
+		
 
 
-        <div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
-            <h2 id="门禁系统v1-0"><a href="#门禁系统v1-0" class="headerlink" title="门禁系统v1.0"></a>门禁系统v1.0</h2><h3 id="研发需求"><a href="#研发需求" class="headerlink" title="研发需求"></a>研发需求</h3><p>当我一个人在宿舍的时候，很容易把钥匙放在自己的位置上忘记拿出来，然后就导致被锁在外面。同时携带钥匙出门也会很不方便，所以如果能够实现指纹、人脸、nfc等身份信息来直接进行验证，就可以不用携带钥匙出门或者被锁在外面了。</p>
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="门禁系统v1-0"><a href="#门禁系统v1-0" class="headerlink" title="门禁系统v1.0"></a>门禁系统v1.0</h2><h3 id="研发需求"><a href="#研发需求" class="headerlink" title="研发需求"></a>研发需求</h3><p>当我一个人在宿舍的时候，很容易把钥匙放在自己的位置上忘记拿出来，然后就导致被锁在外面。同时携带钥匙出门也会很不方便，所以如果能够实现指纹、人脸、nfc等身份信息来直接进行验证，就可以不用携带钥匙出门或者被锁在外面了。</p>
 <h3 id="硬件设计"><a href="#硬件设计" class="headerlink" title="硬件设计"></a>硬件设计</h3><p>v1.0主要考虑简单易用和成本低廉，因此只采用指纹和nfc两种方式进行验证，采用esp32作为主板开发，后续可以添加人脸识别等功能，远程开门等功能。</p>
 <ul>
-<li>NFC模块采用<a class="link"   target="_blank" rel="noopener" href="https://detail.tmall.com/item.htm?_u=33hgjd523174&id=41286608549&spm=a1z09.2.0.0.3c6b2e8dTXqeeb" >RC522模块 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，使用SPI通信，可以利用<code>MFRC522.h</code>进行开发；</li>
-<li>指纹模块采用<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=561808592573&_u=33hgjd5212e9" >AS608光学指纹传感器 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，使用串口通信，具体通信协议可以查看其开发手册。</li>
-<li>采用<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=672120084915&_u=33hgjd522c61" >ESP32 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>作为主板，方便后续添加wifi或蓝牙模块进行升级；</li>
-<li>执行机构采用一个9克的<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=657320114220&_u=33hgjd52c885" >金属舵机 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>，保证拉力足够；</li>
+<li>NFC模块采用<a class="link"   target="_blank" rel="noopener" href="https://detail.tmall.com/item.htm?_u=33hgjd523174&id=41286608549&spm=a1z09.2.0.0.3c6b2e8dTXqeeb" >RC522模块<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>，使用SPI通信，可以利用<code>MFRC522.h</code>进行开发；</li>
+<li>指纹模块采用<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=561808592573&_u=33hgjd5212e9" >AS608光学指纹传感器<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>，使用串口通信，具体通信协议可以查看其开发手册。</li>
+<li>采用<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=672120084915&_u=33hgjd522c61" >ESP32<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>作为主板，方便后续添加wifi或蓝牙模块进行升级；</li>
+<li>执行机构采用一个9克的<a class="link"   target="_blank" rel="noopener" href="https://item.taobao.com/item.htm?spm=a1z09.2.0.0.3c6b2e8dTXqeeb&id=657320114220&_u=33hgjd52c885" >金属舵机<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a>，保证拉力足够；</li>
 </ul>
 <p>接线图如下：</p>
 <img  
@@ -463,18 +451,18 @@
 </ul>
 <p>在程序中有很多延时函数容易导致阻塞和卡死。这里使用任务看门狗来防止阻塞的发生。</p>
 <p>头文件：</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;esp_task_wdt.h&gt;</span></span></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;esp_task_wdt.h&gt;</span></span></span><br></pre></td></tr></table></figure></div>
 <p>在<code>setup()</code>函数中初始化任务看门狗:</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 其他初始化代码</span></span><br><span class="line"></span><br><span class="line">    esp_task_wdt_init(<span class="number">2</span>, <span class="literal">true</span>); <span class="comment">// 设置任务看门狗的超时时间为2秒，并使能看门狗</span></span><br><span class="line">    esp_task_wdt_add(<span class="literal">NULL</span>); <span class="comment">// 将loop()添加到任务看门狗的监控列表中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 其他初始化代码</span></span><br><span class="line"></span><br><span class="line">    esp_task_wdt_init(<span class="number">2</span>, <span class="literal">true</span>); <span class="comment">// 设置任务看门狗的超时时间为2秒，并使能看门狗</span></span><br><span class="line">    esp_task_wdt_add(<span class="literal">NULL</span>); <span class="comment">// 将loop()添加到任务看门狗的监控列表中</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 <p>在<code>loop()</code>函数的末尾重置任务看门狗的计时器</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 你的代码</span></span><br><span class="line"></span><br><span class="line">    esp_task_wdt_reset(); <span class="comment">// 重置任务看门狗的计时器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="comment">// 你的代码</span></span><br><span class="line"></span><br><span class="line">    esp_task_wdt_reset(); <span class="comment">// 重置任务看门狗的计时器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="遇到的一些问题"><a href="#遇到的一些问题" class="headerlink" title="遇到的一些问题"></a>遇到的一些问题</h4><ul>
 <li>通过串口<code>Serial1.write()</code>发送指令包之后，需要延时<code>delay()</code>等传感器返回数据，然后再通过<code>if (Serial1.available())</code>来判断是否读取到数据，如果没有延时，会读不到数据；至于延时函数的大小，则可以通过测试或者查看串口调试助手的时间戳来确定；</li>
 <li>在串口通讯中，通常2个16进制数(0x1A)代表1个字节(bytes)，例如2 bytes则代表输入4位16进制数指令。</li>
 <li>门锁使用一段时间之后会卡死无法响应，reset单片机可以解决，因此需要通过软件看门狗来解决这个问题；</li>
 </ul>
-<h4 id="总体设计代码"><a href="#总体设计代码" class="headerlink" title="总体设计代码"></a>总体设计代码</h4><div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP32Servo.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_25 25</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_33 33</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line">Servo servo1; <span class="comment">//定义servo对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// SG90舵机的参数</span></span><br><span class="line"><span class="type">int</span> minUs = <span class="number">500</span>; <span class="comment">//0度时脉宽，us</span></span><br><span class="line"><span class="type">int</span> maxUs = <span class="number">2400</span>; <span class="comment">//180度时的脉宽，us</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> servo1Pin = <span class="number">22</span>; <span class="comment">//对应esp32上的pin22，输出pwm</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_GetImage[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x05</span>&#125;; <span class="comment">// PS_GetImage指令包: EF01 FFFFFFFF 01 0003 01 0005</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_GenChar[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x04</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>&#125;; <span class="comment">// PS_GenChar指令包: EF01 FFFFFFFF 01 0004 02 01 0008</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_Search[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>, <span class="number">0x04</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x50</span>, <span class="number">0x00</span>, <span class="number">0x0A</span>, <span class="number">0x00</span>, <span class="number">0x68</span>&#125;; <span class="comment">// PS_Search指令包: EF01 FFFFFFFF 01 0008 04 01 0050 000A 0068</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">  ESP32PWM::allocateTimer(<span class="number">0</span>); <span class="comment">//分配一个定时器0</span></span><br><span class="line"></span><br><span class="line">  servo1.setPeriodHertz(<span class="number">50</span>); <span class="comment">// 设置舵机PWM频率为50Hz</span></span><br><span class="line"></span><br><span class="line">  servo1.attach(servo1Pin, minUs, maxUs); <span class="comment">// 将舵机与引脚对应</span></span><br><span class="line"></span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_25, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_25, HIGH); <span class="comment">// 25输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_13, HIGH); <span class="comment">// 13输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  pinMode(PIN_33, INPUT); <span class="comment">// 设置引脚33为输入模式</span></span><br><span class="line"></span><br><span class="line">  Serial1.begin(<span class="number">57600</span>, SERIAL_8N1, <span class="number">26</span>, <span class="number">27</span>); <span class="comment">// 初始化Serial1</span></span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line"></span><br><span class="line">  esp_task_wdt_init(<span class="number">5</span>, <span class="literal">true</span>); <span class="comment">// 设置任务看门狗的超时时间为5s，并使能看门狗</span></span><br><span class="line">  esp_task_wdt_add(<span class="literal">NULL</span>); <span class="comment">// 将loop()添加到任务看门狗的监控列表中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isTargetUID</span><span class="params">(byte *uid)</span> &#123;</span><br><span class="line">  <span class="type">const</span> byte targetUID1[] = &#123;<span class="number">0x7A</span>, <span class="number">0x14</span>, <span class="number">0x86</span>, <span class="number">0x4E</span>&#125;; <span class="comment">// 洪汶熙的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID2[] = &#123;<span class="number">0x09</span>, <span class="number">0xAB</span>, <span class="number">0x0D</span>, <span class="number">0x64</span>&#125;; <span class="comment">// 张殷华的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID3[] = &#123;<span class="number">0xCA</span>, <span class="number">0x55</span>, <span class="number">0x88</span>, <span class="number">0xE5</span>&#125;; <span class="comment">// 徐昌洲的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID4[] = &#123;<span class="number">0xCA</span>, <span class="number">0x8B</span>, <span class="number">0x90</span>, <span class="number">0x7F</span>&#125;; <span class="comment">// 毛逸先的校卡</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(targetUID1); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (uid[i] != targetUID1[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID2[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID3[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID4[i]) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">  digitalWrite(LED_PIN, LOW); <span class="comment">// 确保LED初始状态为熄灭</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (digitalRead(PIN_33) == HIGH) <span class="comment">// 如果引脚33为高电平</span></span><br><span class="line">  &#123;</span><br><span class="line">    Serial1.write(PS_GetImage, <span class="keyword">sizeof</span>(PS_GetImage));  <span class="comment">// 向传感器发送指令包</span></span><br><span class="line"></span><br><span class="line">    delay(<span class="number">300</span>); <span class="comment">// 延时30ms，等待传感器返回数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Serial1.available()) <span class="comment">// 判断串口是否读取到指令包</span></span><br><span class="line">    &#123;</span><br><span class="line">      String receiveData_1 = Serial1.readString(); <span class="comment">// 读取并存储串口数据</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (receiveData_1[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 检查确认码是否为0x00</span></span><br><span class="line">      &#123;</span><br><span class="line">        Serial1.write(PS_GenChar, <span class="keyword">sizeof</span>(PS_GenChar));</span><br><span class="line"></span><br><span class="line">        delay(<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">        &#123;</span><br><span class="line">          String receiveData_2 = Serial1.readString(); <span class="comment">// 读取并存储串口数据</span></span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (receiveData_2[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 检查确认码是否为0x00</span></span><br><span class="line">          &#123;</span><br><span class="line">            Serial1.write(PS_Search, <span class="keyword">sizeof</span>(PS_Search));</span><br><span class="line"></span><br><span class="line">            delay(<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">            &#123;</span><br><span class="line">              String receiveData_3 = Serial1.readString();</span><br><span class="line"></span><br><span class="line">              <span class="keyword">if</span> (receiveData_3[<span class="number">9</span>] == <span class="number">0x00</span>)</span><br><span class="line">              &#123;</span><br><span class="line">                digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line">                servo1.write(<span class="number">60</span>); <span class="comment">// 执行开门操作</span></span><br><span class="line">                delay(<span class="number">1000</span>);</span><br><span class="line">                servo1.write(<span class="number">180</span>); </span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial()) &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 检查是否为目标UID</span></span><br><span class="line">  <span class="keyword">if</span> (isTargetUID(rfid.uid.uidByte)) &#123;</span><br><span class="line">  digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line"></span><br><span class="line">  servo1.write(<span class="number">60</span>); <span class="comment">// 执行开门操作</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  servo1.write(<span class="number">180</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line"></span><br><span class="line">  esp_task_wdt_reset(); <span class="comment">// 重置任务看门狗的计时器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<h4 id="总体设计代码"><a href="#总体设计代码" class="headerlink" title="总体设计代码"></a>总体设计代码</h4><div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;ESP32Servo.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_25 25</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_33 33</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line">Servo servo1; <span class="comment">//定义servo对象</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// SG90舵机的参数</span></span><br><span class="line"><span class="type">int</span> minUs = <span class="number">500</span>; <span class="comment">//0度时脉宽，us</span></span><br><span class="line"><span class="type">int</span> maxUs = <span class="number">2400</span>; <span class="comment">//180度时的脉宽，us</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> servo1Pin = <span class="number">22</span>; <span class="comment">//对应esp32上的pin22，输出pwm</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_GetImage[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x05</span>&#125;; <span class="comment">// PS_GetImage指令包: EF01 FFFFFFFF 01 0003 01 0005</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_GenChar[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x04</span>, <span class="number">0x02</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>&#125;; <span class="comment">// PS_GenChar指令包: EF01 FFFFFFFF 01 0004 02 01 0008</span></span><br><span class="line"></span><br><span class="line"><span class="type">unsigned</span> <span class="type">char</span> PS_Search[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>, <span class="number">0x04</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x50</span>, <span class="number">0x00</span>, <span class="number">0x0A</span>, <span class="number">0x00</span>, <span class="number">0x68</span>&#125;; <span class="comment">// PS_Search指令包: EF01 FFFFFFFF 01 0008 04 01 0050 000A 0068</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">  ESP32PWM::allocateTimer(<span class="number">0</span>); <span class="comment">//分配一个定时器0</span></span><br><span class="line"></span><br><span class="line">  servo1.setPeriodHertz(<span class="number">50</span>); <span class="comment">// 设置舵机PWM频率为50Hz</span></span><br><span class="line"></span><br><span class="line">  servo1.attach(servo1Pin, minUs, maxUs); <span class="comment">// 将舵机与引脚对应</span></span><br><span class="line"></span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_25, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_25, HIGH); <span class="comment">// 25输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_13, HIGH); <span class="comment">// 13输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  pinMode(PIN_33, INPUT); <span class="comment">// 设置引脚33为输入模式</span></span><br><span class="line"></span><br><span class="line">  Serial1.begin(<span class="number">57600</span>, SERIAL_8N1, <span class="number">26</span>, <span class="number">27</span>); <span class="comment">// 初始化Serial1</span></span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line"></span><br><span class="line">  esp_task_wdt_init(<span class="number">5</span>, <span class="literal">true</span>); <span class="comment">// 设置任务看门狗的超时时间为5s，并使能看门狗</span></span><br><span class="line">  esp_task_wdt_add(<span class="literal">NULL</span>); <span class="comment">// 将loop()添加到任务看门狗的监控列表中</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isTargetUID</span><span class="params">(byte *uid)</span> &#123;</span><br><span class="line">  <span class="type">const</span> byte targetUID1[] = &#123;<span class="number">0x7A</span>, <span class="number">0x14</span>, <span class="number">0x86</span>, <span class="number">0x4E</span>&#125;; <span class="comment">// 洪汶熙的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID2[] = &#123;<span class="number">0x09</span>, <span class="number">0xAB</span>, <span class="number">0x0D</span>, <span class="number">0x64</span>&#125;; <span class="comment">// 张殷华的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID3[] = &#123;<span class="number">0xCA</span>, <span class="number">0x55</span>, <span class="number">0x88</span>, <span class="number">0xE5</span>&#125;; <span class="comment">// 徐昌洲的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID4[] = &#123;<span class="number">0xCA</span>, <span class="number">0x8B</span>, <span class="number">0x90</span>, <span class="number">0x7F</span>&#125;; <span class="comment">// 毛逸先的校卡</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(targetUID1); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (uid[i] != targetUID1[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID2[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID3[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID4[i]) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line"></span><br><span class="line">  digitalWrite(LED_PIN, LOW); <span class="comment">// 确保LED初始状态为熄灭</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (digitalRead(PIN_33) == HIGH) <span class="comment">// 如果引脚33为高电平</span></span><br><span class="line">  &#123;</span><br><span class="line">    Serial1.write(PS_GetImage, <span class="keyword">sizeof</span>(PS_GetImage));  <span class="comment">// 向传感器发送指令包</span></span><br><span class="line"></span><br><span class="line">    delay(<span class="number">300</span>); <span class="comment">// 延时30ms，等待传感器返回数据</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Serial1.available()) <span class="comment">// 判断串口是否读取到指令包</span></span><br><span class="line">    &#123;</span><br><span class="line">      String receiveData_1 = Serial1.readString(); <span class="comment">// 读取并存储串口数据</span></span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (receiveData_1[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 检查确认码是否为0x00</span></span><br><span class="line">      &#123;</span><br><span class="line">        Serial1.write(PS_GenChar, <span class="keyword">sizeof</span>(PS_GenChar));</span><br><span class="line"></span><br><span class="line">        delay(<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">        &#123;</span><br><span class="line">          String receiveData_2 = Serial1.readString(); <span class="comment">// 读取并存储串口数据</span></span><br><span class="line"></span><br><span class="line">          <span class="keyword">if</span> (receiveData_2[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 检查确认码是否为0x00</span></span><br><span class="line">          &#123;</span><br><span class="line">            Serial1.write(PS_Search, <span class="keyword">sizeof</span>(PS_Search));</span><br><span class="line"></span><br><span class="line">            delay(<span class="number">300</span>);</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">            &#123;</span><br><span class="line">              String receiveData_3 = Serial1.readString();</span><br><span class="line"></span><br><span class="line">              <span class="keyword">if</span> (receiveData_3[<span class="number">9</span>] == <span class="number">0x00</span>)</span><br><span class="line">              &#123;</span><br><span class="line">                digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line">                servo1.write(<span class="number">60</span>); <span class="comment">// 执行开门操作</span></span><br><span class="line">                delay(<span class="number">1000</span>);</span><br><span class="line">                servo1.write(<span class="number">180</span>); </span><br><span class="line">              &#125;</span><br><span class="line">            &#125;</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial()) &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 检查是否为目标UID</span></span><br><span class="line">  <span class="keyword">if</span> (isTargetUID(rfid.uid.uidByte)) &#123;</span><br><span class="line">  digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line"></span><br><span class="line">  servo1.write(<span class="number">60</span>); <span class="comment">// 执行开门操作</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  servo1.write(<span class="number">180</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line"></span><br><span class="line">  esp_task_wdt_reset(); <span class="comment">// 重置任务看门狗的计时器</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h2 id="门禁系统v2-0"><a href="#门禁系统v2-0" class="headerlink" title="门禁系统v2.0"></a>门禁系统v2.0</h2><p>由于已经不在宿舍住，V2.0改为卧室门锁，方便离开后锁门和解锁，保留NFC+指纹开门，同时在室内采用手扫上锁以及红外远程上锁解锁，同时采用7.4V的电池供电，红外遥控器通过工位上的USB HUB供电。</p>
 <h3 id="问题总结-amp-硬件设计"><a href="#问题总结-amp-硬件设计" class="headerlink" title="问题总结&amp;硬件设计"></a>问题总结&amp;硬件设计</h3><p>第一代指纹传感器响应速度过慢，第二代将其替换为响应速度更快的指纹识别模块，并且有更小的体积，更便宜的价格。</p>
@@ -547,7 +535,7 @@
 
   </div>
 
-<p><a class="link"   target="_blank" rel="noopener" href="https://www.sojson.com/hexconvert/10to16.html" >进制转换工具 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://www.sojson.com/hexconvert/10to16.html" >进制转换工具<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
 <p>使用特定的上位机录入指纹较方便；</p>
 <p>先用串口调试工具测试，再写代码！</p>
 <div style="display: flex; align-items: center;">
@@ -571,10 +559,10 @@
     </div>
 </div>
 
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VCC 33   <span class="comment">// 指纹模组电源</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TOUCH 25 <span class="comment">// 手指检测引脚</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> PS_AutoIdentify[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>, <span class="number">0x32</span>, <span class="number">0x03</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x07</span>, <span class="number">0x02</span>, <span class="number">0x43</span>&#125;;</span><br><span class="line"><span class="comment">// EF 01 FF FF FF FF 01 00 08 32 03 FF FF 00 07 02 43</span></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> PS_Sleep[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x33</span>, <span class="number">0x00</span>, <span class="number">0x37</span>&#125;;</span><br><span class="line"><span class="comment">// EF 01 FF FF FF FF 01 00 03 33 00 37</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial1.begin(<span class="number">57600</span>, SERIAL_8N2, <span class="number">27</span>, <span class="number">26</span>);</span><br><span class="line">  Serial.begin(<span class="number">57600</span>, SERIAL_8N2); <span class="comment">// 用于电脑端检查</span></span><br><span class="line"></span><br><span class="line">  pinMode(VCC, OUTPUT);</span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(TOUCH, INPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(<span class="number">27</span>, INPUT_PULLUP); <span class="comment">// RX引脚上拉电阻</span></span><br><span class="line"></span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (digitalRead(TOUCH) == HIGH) </span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(VCC, HIGH); <span class="comment">// 指纹模块VCC上电</span></span><br><span class="line">    delay(<span class="number">180</span>); <span class="comment">// 上电初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (Serial1.available()) <span class="comment">// 清空休眠和开机的数据缓存</span></span><br><span class="line">    &#123;</span><br><span class="line">      Serial1.read();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Serial1.write(PS_AutoIdentify, <span class="keyword">sizeof</span>(PS_AutoIdentify)); <span class="comment">// 发送自动识别指令</span></span><br><span class="line">    delay(<span class="number">800</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">    &#123;</span><br><span class="line">      String receiveData_1 = Serial1.readString(); <span class="comment">// 读取第一个应答包</span></span><br><span class="line">      </span><br><span class="line">      Serial.print(receiveData_1); <span class="comment">// 打印字符的十六进制值</span></span><br><span class="line">      Serial.print(<span class="string">&quot; &quot;</span>); <span class="comment">// 打印空格</span></span><br><span class="line">      Serial.println();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (receiveData_1.length() &gt;= <span class="number">10</span> &amp;&amp; receiveData_1[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 验证第一个应答包</span></span><br><span class="line">      &#123;</span><br><span class="line">        digitalWrite(LED_PIN, HIGH);</span><br><span class="line">        delay(<span class="number">1000</span>);</span><br><span class="line">        digitalWrite(LED_PIN, LOW);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Serial1.write(PS_Sleep, <span class="keyword">sizeof</span>(PS_Sleep)); <span class="comment">// 指纹模块休眠</span></span><br><span class="line"></span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    digitalWrite(VCC, LOW); <span class="comment">// 指纹模块VCC下电</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> VCC 33   <span class="comment">// 指纹模组电源</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> TOUCH 25 <span class="comment">// 手指检测引脚</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> PS_AutoIdentify[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x08</span>, <span class="number">0x32</span>, <span class="number">0x03</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x00</span>, <span class="number">0x07</span>, <span class="number">0x02</span>, <span class="number">0x43</span>&#125;;</span><br><span class="line"><span class="comment">// EF 01 FF FF FF FF 01 00 08 32 03 FF FF 00 07 02 43</span></span><br><span class="line"><span class="type">const</span> <span class="type">uint8_t</span> PS_Sleep[] = &#123;<span class="number">0xEF</span>, <span class="number">0x01</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0xFF</span>, <span class="number">0x01</span>, <span class="number">0x00</span>, <span class="number">0x03</span>, <span class="number">0x33</span>, <span class="number">0x00</span>, <span class="number">0x37</span>&#125;;</span><br><span class="line"><span class="comment">// EF 01 FF FF FF FF 01 00 03 33 00 37</span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial1.begin(<span class="number">57600</span>, SERIAL_8N2, <span class="number">27</span>, <span class="number">26</span>);</span><br><span class="line">  Serial.begin(<span class="number">57600</span>, SERIAL_8N2); <span class="comment">// 用于电脑端检查</span></span><br><span class="line"></span><br><span class="line">  pinMode(VCC, OUTPUT);</span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(TOUCH, INPUT);</span><br><span class="line"></span><br><span class="line">  pinMode(<span class="number">27</span>, INPUT_PULLUP); <span class="comment">// RX引脚上拉电阻</span></span><br><span class="line"></span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (digitalRead(TOUCH) == HIGH) </span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(VCC, HIGH); <span class="comment">// 指纹模块VCC上电</span></span><br><span class="line">    delay(<span class="number">180</span>); <span class="comment">// 上电初始化</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span> (Serial1.available()) <span class="comment">// 清空休眠和开机的数据缓存</span></span><br><span class="line">    &#123;</span><br><span class="line">      Serial1.read();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Serial1.write(PS_AutoIdentify, <span class="keyword">sizeof</span>(PS_AutoIdentify)); <span class="comment">// 发送自动识别指令</span></span><br><span class="line">    delay(<span class="number">800</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (Serial1.available())</span><br><span class="line">    &#123;</span><br><span class="line">      String receiveData_1 = Serial1.readString(); <span class="comment">// 读取第一个应答包</span></span><br><span class="line">      </span><br><span class="line">      Serial.print(receiveData_1); <span class="comment">// 打印字符的十六进制值</span></span><br><span class="line">      Serial.print(<span class="string">&quot; &quot;</span>); <span class="comment">// 打印空格</span></span><br><span class="line">      Serial.println();</span><br><span class="line"></span><br><span class="line">      <span class="keyword">if</span> (receiveData_1.length() &gt;= <span class="number">10</span> &amp;&amp; receiveData_1[<span class="number">9</span>] == <span class="number">0x00</span>) <span class="comment">// 验证第一个应答包</span></span><br><span class="line">      &#123;</span><br><span class="line">        digitalWrite(LED_PIN, HIGH);</span><br><span class="line">        delay(<span class="number">1000</span>);</span><br><span class="line">        digitalWrite(LED_PIN, LOW);</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    Serial1.write(PS_Sleep, <span class="keyword">sizeof</span>(PS_Sleep)); <span class="comment">// 指纹模块休眠</span></span><br><span class="line"></span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line"></span><br><span class="line">    digitalWrite(VCC, LOW); <span class="comment">// 指纹模块VCC下电</span></span><br><span class="line">  &#125;</span><br><span class="line">  delay(<span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="RFID-RC522-射频感应模块"><a href="#RFID-RC522-射频感应模块" class="headerlink" title="RFID-RC522 射频感应模块"></a>RFID-RC522 射频感应模块</h4><p>需要安装库依赖，打开根目录下的<code>platformio.ini</code>文件，添加如下内容：</p>
-<div class="highlight-container" data-rel="Ini"><figure class="iseeu highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[env:esp32dev]</span></span><br><span class="line"><span class="attr">platform</span> = espressif32</span><br><span class="line"><span class="attr">board</span> = esp32dev</span><br><span class="line"><span class="attr">framework</span> = ardui<span class="literal">no</span></span><br><span class="line"><span class="attr">lib_deps</span> = MFRC522</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Ini"><figure class="iseeu highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[env:esp32dev]</span></span><br><span class="line"><span class="attr">platform</span> = espressif32</span><br><span class="line"><span class="attr">board</span> = esp32dev</span><br><span class="line"><span class="attr">framework</span> = ardui<span class="literal">no</span></span><br><span class="line"><span class="attr">lib_deps</span> = MFRC522</span><br></pre></td></tr></table></figure></div>
 
 <p>接线如下：</p>
 <table>
@@ -614,10 +602,10 @@
 </tr>
 </tbody></table>
 <p>为了方便使用校园卡中的NFC身份信息来做验证，因此先通过一个程序读取并且打印所有NFC卡的UID，然后再将其写在门锁的程序中：</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">115200</span>);</span><br><span class="line"></span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_13, HIGH); <span class="comment">// 13输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial()) &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 点亮LED</span></span><br><span class="line">  digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line">  <span class="comment">// 打印卡片UID</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Card UID: &quot;</span>);</span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; rfid.uid.size; i++) &#123;</span><br><span class="line">    Serial.print(rfid.uid.uidByte[i] &lt; <span class="number">0x10</span> ? <span class="string">&quot; 0&quot;</span> : <span class="string">&quot; &quot;</span>);</span><br><span class="line">    Serial.print(rfid.uid.uidByte[i], HEX);</span><br><span class="line">  &#125;</span><br><span class="line">  Serial.println();</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">115200</span>);</span><br><span class="line"></span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT);</span><br><span class="line">  digitalWrite(PIN_13, HIGH); <span class="comment">// 13输出3.3V到传感器上</span></span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line"></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial()) &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 点亮LED</span></span><br><span class="line">  digitalWrite(LED_PIN, HIGH); <span class="comment">// 点亮LED</span></span><br><span class="line">  <span class="comment">// 打印卡片UID</span></span><br><span class="line">  Serial.print(<span class="string">&quot;Card UID: &quot;</span>);</span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; rfid.uid.size; i++) &#123;</span><br><span class="line">    Serial.print(rfid.uid.uidByte[i] &lt; <span class="number">0x10</span> ? <span class="string">&quot; 0&quot;</span> : <span class="string">&quot; &quot;</span>);</span><br><span class="line">    Serial.print(rfid.uid.uidByte[i], HEX);</span><br><span class="line">  &#125;</span><br><span class="line">  Serial.println();</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <p>测试程序：</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13 <span class="comment">// RFID输入3.3V</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT); <span class="comment">// RFID输入3.3V</span></span><br><span class="line">  digitalWrite(PIN_13, HIGH);</span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isTargetUID</span><span class="params">(byte *uid)</span> &#123;</span><br><span class="line">  <span class="type">const</span> byte targetUID1[] = &#123;<span class="number">0x7A</span>, <span class="number">0x14</span>, <span class="number">0x86</span>, <span class="number">0x4E</span>&#125;; <span class="comment">// 洪汶熙的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID2[] = &#123;<span class="number">0x09</span>, <span class="number">0xAB</span>, <span class="number">0x0D</span>, <span class="number">0x64</span>&#125;; <span class="comment">// 张殷华的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID3[] = &#123;<span class="number">0xCA</span>, <span class="number">0x55</span>, <span class="number">0x88</span>, <span class="number">0xE5</span>&#125;; <span class="comment">// 徐昌洲的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID4[] = &#123;<span class="number">0xCA</span>, <span class="number">0x8B</span>, <span class="number">0x90</span>, <span class="number">0x7F</span>&#125;; <span class="comment">// 毛逸先的校卡</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(targetUID1); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (uid[i] != targetUID1[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID2[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID3[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID4[i]) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial())</span><br><span class="line">  &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (isTargetUID(rfid.uid.uidByte))</span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(LED_PIN, HIGH);</span><br><span class="line">    delay(<span class="number">1000</span>);</span><br><span class="line">    digitalWrite(LED_PIN, LOW);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line">  delay(<span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;SPI.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;MFRC522.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> LED_PIN 2</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PIN_13 13 <span class="comment">// RFID输入3.3V</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> SS_PIN 5</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RST_PIN 12</span></span><br><span class="line"></span><br><span class="line">MFRC522 <span class="title function_">rfid</span><span class="params">(SS_PIN, RST_PIN)</span>;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  pinMode(LED_PIN, OUTPUT);</span><br><span class="line">  digitalWrite(LED_PIN, LOW);</span><br><span class="line"></span><br><span class="line">  pinMode(PIN_13, OUTPUT); <span class="comment">// RFID输入3.3V</span></span><br><span class="line">  digitalWrite(PIN_13, HIGH);</span><br><span class="line"></span><br><span class="line">  SPI.begin(); <span class="comment">// 初始化SPI接口</span></span><br><span class="line">  rfid.PCD_Init(); <span class="comment">// 初始化RFID模块</span></span><br><span class="line">  rfid.PCD_SetAntennaGain(rfid.RxGain_max); <span class="comment">// 设置天线增益</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">bool</span> <span class="title function_">isTargetUID</span><span class="params">(byte *uid)</span> &#123;</span><br><span class="line">  <span class="type">const</span> byte targetUID1[] = &#123;<span class="number">0x7A</span>, <span class="number">0x14</span>, <span class="number">0x86</span>, <span class="number">0x4E</span>&#125;; <span class="comment">// 洪汶熙的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID2[] = &#123;<span class="number">0x09</span>, <span class="number">0xAB</span>, <span class="number">0x0D</span>, <span class="number">0x64</span>&#125;; <span class="comment">// 张殷华的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID3[] = &#123;<span class="number">0xCA</span>, <span class="number">0x55</span>, <span class="number">0x88</span>, <span class="number">0xE5</span>&#125;; <span class="comment">// 徐昌洲的校卡</span></span><br><span class="line">  <span class="type">const</span> byte targetUID4[] = &#123;<span class="number">0xCA</span>, <span class="number">0x8B</span>, <span class="number">0x90</span>, <span class="number">0x7F</span>&#125;; <span class="comment">// 毛逸先的校卡</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> (byte i = <span class="number">0</span>; i &lt; <span class="keyword">sizeof</span>(targetUID1); i++) &#123;</span><br><span class="line">    <span class="keyword">if</span> (uid[i] != targetUID1[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID2[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID3[i]</span><br><span class="line">    &amp;&amp;  uid[i] != targetUID4[i]) &#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!rfid.PICC_IsNewCardPresent() || !rfid.PICC_ReadCardSerial())</span><br><span class="line">  &#123;</span><br><span class="line">    delay(<span class="number">50</span>);</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  </span><br><span class="line">  <span class="keyword">if</span> (isTargetUID(rfid.uid.uidByte))</span><br><span class="line">  &#123;</span><br><span class="line">    digitalWrite(LED_PIN, HIGH);</span><br><span class="line">    delay(<span class="number">1000</span>);</span><br><span class="line">    digitalWrite(LED_PIN, LOW);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  rfid.PICC_HaltA();</span><br><span class="line">  rfid.PCD_StopCrypto1();</span><br><span class="line">  delay(<span class="number">100</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="HLK-LD102-微运动感应模块"><a href="#HLK-LD102-微运动感应模块" class="headerlink" title="HLK-LD102 微运动感应模块"></a>HLK-LD102 微运动感应模块</h4><p>手扫感应开关采用海凌科的HLK-LD102微运动感知模组；</p>
 <img  
@@ -648,22 +636,22 @@
 
 <p>使用ledc模块输出PWM，使用10位解析度，将对应的脉冲转化为解析度；</p>
 <p>测试程序：这里将正常情况下（没上锁）输入脉冲宽度为0.5ms，上锁的脉冲宽度设置为1.5ms。</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> servoPin 22 <span class="comment">// 舵机引脚</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> freq 50 <span class="comment">// 舵机频率</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledChannel 0 <span class="comment">//LEDc模块的通道0</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> resolution 10 <span class="comment">// 分辨率</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  ledcSetup(ledChannel, freq, resolution); <span class="comment">// 配置LEDc模块</span></span><br><span class="line">  ledcAttachPin(servoPin, ledChannel); <span class="comment">// 将舵机引脚连接到LEDc模块的通道0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  ledcWrite(ledChannel, <span class="number">77</span>); <span class="comment">// 上锁，占空比约为0.075，相当于1.5ms</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  ledcWrite(ledChannel, <span class="number">25</span>); <span class="comment">// 解锁，占空比约为0.025，相当于0.5ms</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> servoPin 22 <span class="comment">// 舵机引脚</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> freq 50 <span class="comment">// 舵机频率</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledChannel 0 <span class="comment">//LEDc模块的通道0</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> resolution 10 <span class="comment">// 分辨率</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  ledcSetup(ledChannel, freq, resolution); <span class="comment">// 配置LEDc模块</span></span><br><span class="line">  ledcAttachPin(servoPin, ledChannel); <span class="comment">// 将舵机引脚连接到LEDc模块的通道0</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">  ledcWrite(ledChannel, <span class="number">77</span>); <span class="comment">// 上锁，占空比约为0.075，相当于1.5ms</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">  ledcWrite(ledChannel, <span class="number">25</span>); <span class="comment">// 解锁，占空比约为0.025，相当于0.5ms</span></span><br><span class="line">  delay(<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></div>
 
 <h4 id="红外传感器"><a href="#红外传感器" class="headerlink" title="红外传感器"></a>红外传感器</h4><p>目前还有点问题</p>
-<div class="highlight-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;IRremote.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> recvPin 35</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledPin 2</span></span><br><span class="line"></span><br><span class="line">IRrecv <span class="title function_">irrecv</span><span class="params">(recvPin)</span>;</span><br><span class="line">decode_results results;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  pinMode(ledPin, OUTPUT);</span><br><span class="line">  irrecv.enableIRIn(); <span class="comment">// 初始化接收器</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  digitalWrite(ledPin, LOW);</span><br><span class="line">  <span class="keyword">if</span> (irrecv.decode()) &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> data = IrReceiver.decodedIRData.decodedRawData;</span><br><span class="line">    Serial.println(data, HEX);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (data == <span class="number">0x00</span>) &#123;</span><br><span class="line">    digitalWrite(ledPin, HIGH);</span><br><span class="line">    Serial.println(<span class="string">&quot;LED ON&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      digitalWrite(ledPin, LOW);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    irrecv.resume(); <span class="comment">// 接收下一个值</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="C"><figure class="iseeu highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;Arduino.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;IRremote.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> recvPin 35</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> ledPin 2</span></span><br><span class="line"></span><br><span class="line">IRrecv <span class="title function_">irrecv</span><span class="params">(recvPin)</span>;</span><br><span class="line">decode_results results;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">setup</span><span class="params">()</span> &#123;</span><br><span class="line">  Serial.begin(<span class="number">9600</span>);</span><br><span class="line">  pinMode(ledPin, OUTPUT);</span><br><span class="line">  irrecv.enableIRIn(); <span class="comment">// 初始化接收器</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">loop</span><span class="params">()</span> &#123;</span><br><span class="line">  digitalWrite(ledPin, LOW);</span><br><span class="line">  <span class="keyword">if</span> (irrecv.decode()) &#123;</span><br><span class="line">    <span class="type">unsigned</span> <span class="type">long</span> data = IrReceiver.decodedIRData.decodedRawData;</span><br><span class="line">    Serial.println(data, HEX);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (data == <span class="number">0x00</span>) &#123;</span><br><span class="line">    digitalWrite(ledPin, HIGH);</span><br><span class="line">    Serial.println(<span class="string">&quot;LED ON&quot;</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      digitalWrite(ledPin, LOW);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    delay(<span class="number">100</span>);</span><br><span class="line">    irrecv.resume(); <span class="comment">// 接收下一个值</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></div>
 
 <p><code>platformio.ini</code></p>
-<div class="highlight-container" data-rel="Ini"><figure class="iseeu highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[env:esp32dev]</span></span><br><span class="line"><span class="attr">platform</span> = espressif32</span><br><span class="line"><span class="attr">board</span> = esp32dev</span><br><span class="line"><span class="attr">framework</span> = ardui<span class="literal">no</span></span><br><span class="line"><span class="attr">lib_deps</span> = </span><br><span class="line">    MFRC522</span><br><span class="line">    IRremote</span><br></pre></td></tr></table></figure></div>
+<div class="code-container" data-rel="Ini"><figure class="iseeu highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[env:esp32dev]</span></span><br><span class="line"><span class="attr">platform</span> = espressif32</span><br><span class="line"><span class="attr">board</span> = esp32dev</span><br><span class="line"><span class="attr">framework</span> = ardui<span class="literal">no</span></span><br><span class="line"><span class="attr">lib_deps</span> = </span><br><span class="line">    MFRC522</span><br><span class="line">    IRremote</span><br></pre></td></tr></table></figure></div>
 
 
 
 
-        </div>
+		</div>
 
-        
-            <div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
-                <div class="article-copyright-info-container">
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
     <ul>
         <li><strong>Title:</strong> 智能家居门禁系统</li>
         <li><strong>Author:</strong> Neptune.💤</li>
@@ -691,54 +679,48 @@
     </ul>
 </div>
 
-            </div>
-        
+		</div>
+		
 
-        
+		
 
-        
+		
 
-        
-            <div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
-                
-                    <div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="prev"
-                        rel="prev"
-                        href="/2023/05/18/%E5%8D%B7%E7%A7%AF/"
-                        >
-                            <span class="left arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-left"></i>
-                            </span>
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">卷积</span>
-                                <span class="post-nav-item">Prev posts</span>
-                            </span>
-                        </a>
-                    </div>
-                
-                
-                    <div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
-                        <a class="next"
-                        rel="next"
-                        href="/2023/05/11/ESP32%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/"
-                        >
-                            <span class="title flex justify-center items-center">
-                                <span class="post-nav-title-item">ESP32入门学习</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex justify-center items-center">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/05/18/%E5%8D%B7%E7%A7%AF/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">卷积</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/05/11/ESP32%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">ESP32入门学习</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
 
 
-        
-            <div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
-                <div class="comments-container mt-10 w-full ">
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
     <div id="comment-anchor" class="w-full h-2.5"></div>
     <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
         Comments
@@ -778,36 +760,30 @@
     
 </div>
 
-            </div>
-        
-    </div>
+		</div>
+		
+	</div>
 
-    
-        <div class="toc-content-container">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <div class="toc-title">On this page</div>
-        <div class="page-title">智能家居门禁系统</div>
-        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9Fv1-0"><span class="nav-text">门禁系统v1.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%94%E5%8F%91%E9%9C%80%E6%B1%82"><span class="nav-text">研发需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">硬件设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">机械设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">软件设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9C%8B%E9%97%A8%E7%8B%97%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8C%96"><span class="nav-text">看门狗设计优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-text">遇到的一些问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-text">总体设计代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9Fv2-0"><span class="nav-text">门禁系统v2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-amp-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">问题总结&amp;硬件设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HLK-FPM383F-%E7%94%B5%E5%AE%B9%E5%BC%8F%E6%8C%87%E7%BA%B9%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-text">HLK-FPM383F 电容式指纹传感器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RFID-RC522-%E5%B0%84%E9%A2%91%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97"><span class="nav-text">RFID-RC522 射频感应模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HLK-LD102-%E5%BE%AE%E8%BF%90%E5%8A%A8%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97"><span class="nav-text">HLK-LD102 微运动感应模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MG996R-%E8%88%B5%E6%9C%BA"><span class="nav-text">MG996R 舵机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%A2%E5%A4%96%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-text">红外传感器</span></a></li></ol></li></ol></li></ol>
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">智能家居门禁系统</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9Fv1-0"><span class="nav-text">门禁系统v1.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A0%94%E5%8F%91%E9%9C%80%E6%B1%82"><span class="nav-text">研发需求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">硬件设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%BA%E6%A2%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">机械设计</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">软件设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9C%8B%E9%97%A8%E7%8B%97%E8%AE%BE%E8%AE%A1%E4%BC%98%E5%8C%96"><span class="nav-text">看门狗设计优化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98"><span class="nav-text">遇到的一些问题</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E4%BD%93%E8%AE%BE%E8%AE%A1%E4%BB%A3%E7%A0%81"><span class="nav-text">总体设计代码</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%97%A8%E7%A6%81%E7%B3%BB%E7%BB%9Fv2-0"><span class="nav-text">门禁系统v2.0</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E6%80%BB%E7%BB%93-amp-%E7%A1%AC%E4%BB%B6%E8%AE%BE%E8%AE%A1"><span class="nav-text">问题总结&amp;硬件设计</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#HLK-FPM383F-%E7%94%B5%E5%AE%B9%E5%BC%8F%E6%8C%87%E7%BA%B9%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-text">HLK-FPM383F 电容式指纹传感器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#RFID-RC522-%E5%B0%84%E9%A2%91%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97"><span class="nav-text">RFID-RC522 射频感应模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HLK-LD102-%E5%BE%AE%E8%BF%90%E5%8A%A8%E6%84%9F%E5%BA%94%E6%A8%A1%E5%9D%97"><span class="nav-text">HLK-LD102 微运动感应模块</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MG996R-%E8%88%B5%E6%9C%BA"><span class="nav-text">MG996R 舵机</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%A2%E5%A4%96%E4%BC%A0%E6%84%9F%E5%99%A8"><span class="nav-text">红外传感器</span></a></li></ol></li></ol></li></ol>
 
-    </div>
+	</div>
 </div>
-        </div>
-    
+	</div>
+	
 </div>
+			</div>
 
+			
+		</div>
 
-
-                
-
-            </div>
-
-            
-
-        </div>
-
-        <div class="main-content-footer">
-            <footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
     <div class="info-container py-3 text-center">
         
         <div class="text-center">
@@ -821,7 +797,7 @@
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        44 posts in total
+                        47 posts in total
                     </span>
                     
                 </p>
@@ -846,7 +822,7 @@
         
         <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
             <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
-            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.7.3</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
         </div>
         
         
@@ -875,124 +851,113 @@
         
     </div>  
 </footer>
-        </div>
-    </div>
+		</div>
+	</div>
 
-    
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="article-tools-list">
-        <!-- TOC aside toggle -->
-        
-            <li class="right-bottom-tools page-aside-toggle">
-                <i class="fa-regular fa-outdent"></i>
-            </li>
-        
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
 
-        <!-- go comment -->
-        
-            <li class="go-comment">
-                <i class="fa-regular fa-comments"></i>
-            </li>
-        
-    </ul>
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
 </div>
 
-        </div>
-    
-
-    <div class="right-side-tools-container">
-        <div class="side-tools-container">
-    <ul class="hidden-tools-list">
-        <li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-plus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
-            <i class="fa-regular fa-magnifying-glass-minus"></i>
-        </li>
-
-        <li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
-            <i class="fa-regular fa-moon"></i>
-        </li>
-
-        <!-- rss -->
-        
-
-        
-
-        <li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
-            <i class="fa-regular fa-arrow-down"></i>
-        </li>
-    </ul>
-
-    <ul class="visible-tools-list">
-        <li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
-            <i class="fa-regular fa-cog fa-spin"></i>
-        </li>
-        
-            <li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
-        
-    </ul>
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
 </div>
-
-    </div>
-
-    <div class="image-viewer-container">
-    <img src="">
-</div>
-
-
-    
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fa-solid fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fa-solid fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
-    </div>
-</div>
-
-    
+	
 
 </main>
 
 
-    
-<script src="/js/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupSlideTheme.min.js"></script>
+<script src="/js/build/libs/Swup.min.js"></script>
 
-<script src="/js/libs/SwupScriptsPlugin.min.js"></script>
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
 
-<script src="/js/libs/SwupProgressPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
 
-<script src="/js/libs/SwupScrollPlugin.min.js"></script>
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
 
-<script src="/js/libs/SwupPreloadPlugin.min.js"></script>
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
 
 <script>
     const swup = new Swup({
@@ -1016,48 +981,46 @@
 
 
 
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
 
+<script src="/js/build/utils.js" type="module"></script>
 
+<script src="/js/build/main.js" type="module"></script>
 
-<script src="/js/tools/imageViewer.js" type="module"></script>
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
 
-<script src="/js/utils.js" type="module"></script>
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
 
-<script src="/js/main.js" type="module"></script>
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
 
-<script src="/js/layouts/navbarShrink.js" type="module"></script>
-
-<script src="/js/tools/scrollTopBottom.js" type="module"></script>
-
-<script src="/js/tools/lightDarkSwitch.js" type="module"></script>
-
-<script src="/js/layouts/categoryList.js" type="module"></script>
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
 
 
 
     
-<script src="/js/tools/localSearch.js" type="module"></script>
+<script src="/js/build/tools/localSearch.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/codeBlock.js" type="module"></script>
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
 
 
 
 
     
-<script src="/js/layouts/lazyload.js" type="module"></script>
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
 
 
 
 
     
-<script src="/js/tools/runtime.js"></script>
+<script src="/js/build/tools/runtime.js"></script>
 
     
-<script src="/js/libs/odometer.min.js"></script>
+<script src="/js/build/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -1066,10 +1029,10 @@
 
 
   
-<script src="/js/libs/Typed.min.js"></script>
+<script src="/js/build/libs/Typed.min.js"></script>
 
   
-<script src="/js/plugins/typed.js" type="module"></script>
+<script src="/js/build/plugins/typed.js" type="module"></script>
 
 
 
@@ -1079,29 +1042,32 @@
 
 
     
-<script src="/js/libs/anime.min.js"></script>
+<script src="/js/build/libs/anime.min.js"></script>
 
 
 
 
 
     
-<script src="/js/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
 
-<script src="/js/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
-
-
-
-
-<script src="/js/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
-
-
-<script src="/js/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
 
 
 
 
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
 </body>
+
 </html>

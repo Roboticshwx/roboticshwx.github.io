@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://example.com/images/redefine-og.webp">
 <meta property="article:published_time" content="2025-02-10T07:39:25.000Z">
-<meta property="article:modified_time" content="2025-02-24T12:52:52.451Z">
+<meta property="article:modified_time" content="2025-03-12T08:56:27.711Z">
 <meta property="article:author" content="hwx">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
@@ -417,7 +417,7 @@ mjx-container[display="true"] + br {
         <div class="label text-third-text-color text-sm">Categories</div>
     </a>
     <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
-        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">49</div>
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">47</div>
         <div class="label text-third-text-color text-sm">Posts</div>
     </a>
 </div>
@@ -468,8 +468,8 @@ mjx-container[display="true"] + br {
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2025-02-24 20:52:52</span>
-            <span class="mobile">2025-02-24 20:52:52</span>
+            <span class="desktop">2025-03-12 16:56:27</span>
+            <span class="mobile">2025-03-12 16:56:27</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -522,6 +522,7 @@ mjx-container[display="true"] + br {
 <p>在机器人中通常用于机器人控制状态管理</p>
 <div class="code-container" data-rel="Cpp"><figure class="iseeu highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum class</span> <span class="title class_">ControllerState</span> : std::<span class="type">uint8_t</span> <span class="comment">// 该枚举类为1byte, 节省内存</span></span><br><span class="line">{</span><br><span class="line">  INITIALIZING = <span class="number">0</span>,  <span class="comment">// 初始化中</span></span><br><span class="line">  RUNNING = <span class="number">1</span>,       <span class="comment">// 运行中</span></span><br><span class="line">  ERROR = <span class="number">2</span>          <span class="comment">// 错误状态</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">RobotController</span> {</span><br><span class="line">    ControllerState state_ = ControllerState::INITIALIZING;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">ControllerState <span class="title">getState</span><span class="params">()</span> <span class="type">const</span> </span>{ <span class="keyword">return</span> state_; } <span class="comment">// 定义函数, 必须返回ControllerState类型的值, 并交给state_变量</span></span><br><span class="line">};</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="type">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>{</span><br><span class="line">	RobotController controller;</span><br><span class="line">	ControllerState currentState = controller.<span class="built_in">getState</span>(); <span class="comment">// 定义currentState变量的类型是ControllerState类型</span></span><br><span class="line"></span><br><span class="line">	currentState = ControllerState::RUNNING <span class="comment">// 直接操作枚举值</span></span><br><span class="line">}</span><br></pre></td></tr></table></figure></div>
 
+<p>注意! 类的声明和使用必须在同一个命名空间中, 否则会出现找不到类的错误.</p>
 <h3 id="智能指针"><a href="#智能指针" class="headerlink" title="智能指针"></a>智能指针</h3><p>传统的指针容易导致内存泄漏, C++中有三种智能指针, 可以实现内存自动释放;</p>
 <ul>
 <li><code>unique_ptr</code><ul>
@@ -624,7 +625,7 @@ mjx-container[display="true"] + br {
         
             <li>
                 <strong>Updated at
-                    :</strong> 2025-02-24 20:52:52
+                    :</strong> 2025-03-12 16:56:27
             </li>
         
         <li>
@@ -761,7 +762,7 @@ mjx-container[display="true"] + br {
                 
                 <p class="post-count space-x-0.5">
                     <span>
-                        49 posts in total
+                        47 posts in total
                     </span>
                     
                 </p>

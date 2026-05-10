@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="Neptune.💤">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2024/09/12/llm-robotics/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LLM + Robotics">
+<meta property="og:url" content="http://example.com/2024/09/12/LLM-Robotics/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2024-09-12T03:59:02.000Z">
+<meta property="article:modified_time" content="2025-08-21T06:44:52.000Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            LLM + Robotics | Fomalhaut Wiki
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":{"github":null,"instagram":null,"zhihu":null,"twitter":null,"email":null},"qrs":{"weixin":null}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.8.2","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/8/17 11:45:14"};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">54</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">LLM + Robotics</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] flex-shrink-0 rounded-medium border border-border-color p-[1px]">
+				<img src="/images/portrait.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2024-09-12 11:59:02</span>
+        <span class="mobile">2024-09-12 11:59:02</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-08-21 14:44:52</span>
+            <span class="mobile">2025-08-21 14:44:52</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                
+                    
+                        
+                        <li>
+                            <a href="/categories/Robotics/">Robotics</a>&nbsp;
+                        </li>
+                    
+                    
+                
+            </ul>
+        </span>
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h2><blockquote>
+<p>The way we program robots today is rigid! They can’t be flexibly re-programmed by everyday users.</p>
+</blockquote>
+<p>传统机器人执行pick and place任务的流程:</p>
+<ol>
+<li>利用cv算法检测出要抓取的目标物体;</li>
+<li>计算机械臂该用什么姿势抓取物体;</li>
+<li>移动机械臂到抓取姿势并抓取</li>
+<li>根据要求移动机械臂到指定位置;</li>
+<li>计算机械臂放下物体的姿势并放下;</li>
+</ol>
+<p>传统机器人控制中存在的弊端:</p>
+<ul>
+<li>对于每一个任务, 现实中有大量边缘情况, 需要设计更复杂的规则来应对;</li>
+<li>对于每一个任务都需要人类专家设计规则, 但现实中复杂任务数不胜数, 且任务之间很难融洽;</li>
+</ul>
+<p>Two Fundamental Challenges:</p>
+<ul>
+<li>Ground natural language in robot state.</li>
+</ul>
+<p>如何把自然语言转换成能够被机器人识别, 处理的状态?</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/1.png"
+                      class="" width="500"
+                >
+
+<p>例如抓取桌子最左边的红色方块, 需要机器人识别和定位到桌子, 桌子上的物体, 红色的方块, 以及相对位置关系.</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/2.png"
+                      class="" width="500"
+                >
+
+<ul>
+<li>Planning actions to solve a task.</li>
+</ul>
+<p>如何规划合适的动作来完成任务?</p>
+<p>例如”把货架的苹果放到桌子上”, 整个执行流程随着任务的复杂程度不断增加;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/3.png"
+                      class="" width="500"
+                >
+
+<p>同样的, 多个物体的task planning.</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/4.png"
+                      class="" width="500"
+                >
+
+
+<p>Microsoft提出了Robotics with ChatGPT的设计原则:</p>
+<ol>
+<li>设计一个task-relevant的API Library, 这个库将high-level的自然语言指令转换为low-level的机器人动作.</li>
+<li>给chatgpt设计prompt, 用来描述任务目标并且需要陈输出high-level的库, 这些prompt也会包含任务的约束;</li>
+<li>用户通过实验结果不断优化prompt来优化chatgpt的输出;</li>
+<li>如果用户对目前的chatgpt的输出感到满意, 则最后部署到实际的机器人上.</li>
+</ol>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/5.png"
+                      class="" width="1000"
+                >
+
+<h3 id="Scaling-Law"><a href="#Scaling-Law" class="headerlink" title="Scaling Law"></a>Scaling Law</h3><p><strong>Scaling Law</strong></p>
+<p>在机器学习中, 模型的性能通常遵循<code>Power Law</code>, 即性能提升与资源投入呈对数线性关系, 当数据和算力达到极大规模, 性能提升会逐渐放缓, 出现边际效应递减的现象;</p>
+<h2 id="VLA研究进展"><a href="#VLA研究进展" class="headerlink" title="VLA研究进展"></a>VLA研究进展</h2><p>随着VLM大模型的进展，视觉-语言-动作（VLA）模型在机器人领域的应用也在不断深化。这些模型能够理解和生成与视觉和语言相关的复杂指令，从而实现更高效的机器人控制和任务执行。</p>
+<h3 id="端到端单体模型-Monolithic-Models"><a href="#端到端单体模型-Monolithic-Models" class="headerlink" title="端到端单体模型 Monolithic Models"></a>端到端单体模型 Monolithic Models</h3><h4 id="单系统架构"><a href="#单系统架构" class="headerlink" title="单系统架构"></a>单系统架构</h4><p>2023年第一篇工作RT-2，以及后续经典的OpenVLA</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://robotics-transformer2.github.io/" >RT-2: Vision-Language-Action Models<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://openvla.github.io/" >OpenVLA: An Open-Source Vision-Language-Action Model<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h4 id="双系统架构"><a href="#双系统架构" class="headerlink" title="双系统架构"></a>双系统架构</h4><p>代表作CogACT</p>
+<p><a target="_blank" rel="noopener" href="https://cogact.github.io/">CogACT:<br>A Foundational Vision-Language-Action Model for Synergizing Cognition and Action in Robotic Manipulation</a></p>
+<p>将感知模块和动作模块的推理过程分开，本质是两个大模型互相配合。</p>
+<h3 id="层级化模型-Hierarchical-Models"><a href="#层级化模型-Hierarchical-Models" class="headerlink" title="层级化模型 Hierarchical Models"></a>层级化模型 Hierarchical Models</h3><h4 id="纯规划器"><a href="#纯规划器" class="headerlink" title="纯规划器"></a>纯规划器</h4><p>大模型仅生成高级指令，需要底层独立执行模块</p>
+<h4 id="规划-策略"><a href="#规划-策略" class="headerlink" title="规划+策略"></a>规划+策略</h4><p>分层决策，可处理长时序任务</p>
+<h3 id="高效推理"><a href="#高效推理" class="headerlink" title="高效推理"></a>高效推理</h3><p>压缩动作token，优化实时性能。</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://arxiv.org/pdf/2502.02175" >VLA-Cache<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="多模态增强"><a href="#多模态增强" class="headerlink" title="多模态增强"></a>多模态增强</h3><p>利用视觉+触觉，或者3d点云的方法</p>
+<p>以及利用人类视频学习和世界模型等等</p>
+<p><a class="link"   target="_blank" rel="noopener" href="https://ai.meta.com/blog/v-jepa-2-world-model-benchmarks/" >Introducing the V-JEPA 2 world model and new benchmarks for physical reasoning<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<h3 id="强化学习结合"><a href="#强化学习结合" class="headerlink" title="强化学习结合"></a>强化学习结合</h3><p>提高策略的稳定性，和持续优化</p>
+<h3 id="与抖动的相关"><a href="#与抖动的相关" class="headerlink" title="与抖动的相关"></a>与抖动的相关</h3><p>VLA模型高计算复杂度（1Hz左右） vs 机械臂控制周期要求（1000Hz左右）</p>
+<p>电机力矩波动 ➡️ 轨迹点突变 ➡️ 低频抖动（0.5-5Hz）<br>关节跟随超差 ➡️ 控制器过调 ➡️ 高频震颤</p>
+<h2 id="科研机器人设计思路"><a href="#科研机器人设计思路" class="headerlink" title="科研机器人设计思路"></a>科研机器人设计思路</h2><p>目标是设计出一个机器人, 能够泛化的执行一些科研任务, 例如做材料实验, 化学实验等;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/6.png"
+                      class="" width="800"
+                >
+
+
+<p>LLM在观测后输出一整个计划的行动序列, 就需要LLM对环境的未来走向有很好的了解.</p>
+<h3 id="Tricks-for-Improving-Plan"><a href="#Tricks-for-Improving-Plan" class="headerlink" title="Tricks for Improving Plan"></a>Tricks for Improving Plan</h3><ul>
+<li>执行前Self-refine</li>
+</ul>
+<p>在LLM生成plan后, 使用另一个LLM (或者人类设定的启发式评估函数) 来评估其好坏, 并且给出指导性意见;</p>
+<p>但在这种情况下, LLM常常无法正确定位出错误; 通常会出现自己误导自己的情况;</p>
+<ul>
+<li>Self-consistency</li>
+</ul>
+<p>LLM通过多次生成规划并且选择最优的生成结果.</p>
+<ul>
+<li>执行后Self-reflection</li>
+</ul>
+<p>让LLM从环境的反馈+自身反思中优化计划;</p>
+<p>环境的反馈可能包括以下失败的原因:</p>
+<ul>
+<li>生成的动作不合规范, 没有正确调用action function;</li>
+<li>没有满足动作的执行条件, 如手中没有物体时, 执行放下物体的动作;</li>
+<li>LLM自己以为生成的plan已经完成了任务, 实际任务还没有完成;</li>
+<li>生成的plan有很多冗余动作, 导致动作序列太长;</li>
+</ul>
+<p><strong>Replan机制: 结合ReAct与Planning</strong></p>
+<p>生成plan之后, 先执行plan获得环境的反馈和新观测信息后, 从当前状态继续规划;<br>同时, Replan允许LLM分析解决问题, 如可以先执行探索plan, 再根据结果调整和生成后续plan.</p>
+<p><strong>Tree search</strong></p>
+<p>如果计划未通过self-evaluation或执行失败, 在计划中的各步思考有哪些可行解决方案;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/7.png"
+                      class="" width="800"
+                >
+
+<p>使用DFS或BFS, 在叶节点进行self-evaluation, 最终选择一条最优计划;</p>
+<p>Tree search的缺点是</p>
+<ul>
+<li>消耗的tokens数大大增加;</li>
+<li>容易在错误的分支上花费很多搜索;</li>
+</ul>
+<p><strong>State tracking</strong></p>
+<p>预测出操作一步之后, 环境会发生什么样的变化, 对下一步的状态进行估计;</p>
+<p>原本LLM应该包含这一步, 但是由于大模型的幻觉, 可能对下一步的状态估计不准确;</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/8.png"
+                      class="" width="800"
+                >
+
+<p>可以使用另一个LLM作为world model来预测每一步动作后的观测;</p>
+<p><strong>问题分析</strong></p>
+<ul>
+<li>不着急直接输出Plan, 先让LLM自己分析一下这个问题: 这个问题有什么特点, 有什么易错点, 可以借助什么知识;</li>
+<li>Step back: 退一步看问题, 先针对问题中的核心概念提一个相关问题, 再回答原问题;</li>
+<li>让LLM重新强调一下输入环境和规则的重点, 有助于提取关键信息和进一步思考;</li>
+</ul>
+<h3 id="Plan-with-Code"><a href="#Plan-with-Code" class="headerlink" title="Plan with Code"></a>Plan with Code</h3><p>当再LLM的API输入high-level action之后得到的low-level actions sequence, 还可以让LLM直接生成代码, 例如生成Python代码;</p>
+<p>其优点有:</p>
+<ul>
+<li>利用代码的逻辑能力和可直接执行性;</li>
+<li>有更高的自由性, 不只是调用已有的high-level action;</li>
+<li>有更好的复用性, 可以利用他人的代码以及保存已有代码;</li>
+</ul>
+<p>甚至可以让LLM在code中自行定义有用的function;</p>
+<h3 id="Replan机制"><a href="#Replan机制" class="headerlink" title="Replan机制"></a>Replan机制</h3><p>如果计划遇到问题, 可以重新来过然后优化计划, 但是现实中常常不能重新来, 要在犯错后继续规划来完成任务.</p>
+<p>需要做的事情:</p>
+<ul>
+<li>环境返回执行错误的原因,以及当前最新状态和观测</li>
+<li>让LLM解释犯错的原因</li>
+</ul>
+<p>可以使用LLM worker, 监视每一步的执行结果, 或者在Plan code里面设定一些checkpoint, 保证环境变量按照计划执行;</p>
+<h2 id="Baseline-分析"><a href="#Baseline-分析" class="headerlink" title="Baseline 分析"></a>Baseline 分析</h2><h3 id="LABOR-Agent-Large-Language-Models-for-Orchestrating-Bimanual-Robots"><a href="#LABOR-Agent-Large-Language-Models-for-Orchestrating-Bimanual-Robots" class="headerlink" title="LABOR Agent: Large Language Models for Orchestrating Bimanual Robots"></a>LABOR Agent: Large Language Models for Orchestrating Bimanual Robots</h3><h3 id="OpenVLA-An-Open-Source-Vision-Language-Action-Model"><a href="#OpenVLA-An-Open-Source-Vision-Language-Action-Model" class="headerlink" title="OpenVLA: An Open-Source Vision-Language-Action Model"></a>OpenVLA: An Open-Source Vision-Language-Action Model</h3><h2 id="LLM-ROS2-Bridge"><a href="#LLM-ROS2-Bridge" class="headerlink" title="LLM-ROS2 Bridge"></a>LLM-ROS2 Bridge</h2><p>LLM与ROS2通信的框架图.</p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2024/09/12/LLM-Robotics/10.png"
+                      class="" width="500"
+                >
+
+
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
+<li><a class="link"   target="_blank" rel="noopener" href="https://github.com/GT-RIPL/Awesome-LLM-Robotics" >Awesome-LLM-Robotics<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/668053911" >Robotics+LLM系列通过大语言模型控制机器人<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/research/articles/chatgpt-for-robotics/" >ChatGPT for Robotics: Design Principles and Model Abilities<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+<li><a class="link"   target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1JgsxebEf5/?spm_id_from=333.788&vd_source=3c842e78ba17ee7afd3375b35f554ca1" >LLM for Robotics前沿- 系统性讲解大语言模型如何助力通用机器人<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></li>
+</ul>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> LLM + Robotics</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2024-09-12 11:59:02</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-08-21 14:44:52
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2024/09/12/LLM-Robotics/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2024/09/14/Vscode%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">Vscode开发环境搭建</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2024/09/09/%E6%9C%BA%E6%A2%B0%E8%87%82%E8%AE%BA%E6%96%87%E7%AC%94%E8%AE%B0/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item">机械臂论文笔记</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.mjs';
+
+      function loadWaline() {
+        init({
+          el: '#waline',
+          serverURL: 'https://example.example.com',
+          lang: 'zh-CN',
+          dark: 'body[class~="dark-mode"]',
+          reaction: false,
+          requiredMeta: ['nick', 'mail'],
+          emoji: [],
+          
+          
+        });
+      }
+
+      if (typeof swup !== 'undefined') {
+        loadWaline();
+      } else {
+        window.addEventListener('DOMContentLoaded', loadWaline);
+      }
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">LLM + Robotics</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-text">基础知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Scaling-Law"><span class="nav-text">Scaling Law</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VLA%E7%A0%94%E7%A9%B6%E8%BF%9B%E5%B1%95"><span class="nav-text">VLA研究进展</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AB%AF%E5%88%B0%E7%AB%AF%E5%8D%95%E4%BD%93%E6%A8%A1%E5%9E%8B-Monolithic-Models"><span class="nav-text">端到端单体模型 Monolithic Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="nav-text">单系统架构</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%9E%B6%E6%9E%84"><span class="nav-text">双系统架构</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%82%E7%BA%A7%E5%8C%96%E6%A8%A1%E5%9E%8B-Hierarchical-Models"><span class="nav-text">层级化模型 Hierarchical Models</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%AF%E8%A7%84%E5%88%92%E5%99%A8"><span class="nav-text">纯规划器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%84%E5%88%92-%E7%AD%96%E7%95%A5"><span class="nav-text">规划+策略</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%AB%98%E6%95%88%E6%8E%A8%E7%90%86"><span class="nav-text">高效推理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%A8%A1%E6%80%81%E5%A2%9E%E5%BC%BA"><span class="nav-text">多模态增强</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E7%BB%93%E5%90%88"><span class="nav-text">强化学习结合</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E6%8A%96%E5%8A%A8%E7%9A%84%E7%9B%B8%E5%85%B3"><span class="nav-text">与抖动的相关</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%91%E7%A0%94%E6%9C%BA%E5%99%A8%E4%BA%BA%E8%AE%BE%E8%AE%A1%E6%80%9D%E8%B7%AF"><span class="nav-text">科研机器人设计思路</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tricks-for-Improving-Plan"><span class="nav-text">Tricks for Improving Plan</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Plan-with-Code"><span class="nav-text">Plan with Code</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Replan%E6%9C%BA%E5%88%B6"><span class="nav-text">Replan机制</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Baseline-%E5%88%86%E6%9E%90"><span class="nav-text">Baseline 分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#LABOR-Agent-Large-Language-Models-for-Orchestrating-Bimanual-Robots"><span class="nav-text">LABOR Agent: Large Language Models for Orchestrating Bimanual Robots</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#OpenVLA-An-Open-Source-Vision-Language-Action-Model"><span class="nav-text">OpenVLA: An Open-Source Vision-Language-Action Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LLM-ROS2-Bridge"><span class="nav-text">LLM-ROS2 Bridge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-text">参考资料</span></a></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        54 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.8.2</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container">
+	<img src="">
+</div>
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    const swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+</script>
+
+
+
+
+	
+<script src="/js/build/tools/imageViewer.js" type="module"></script>
+
+<script src="/js/build/utils.js" type="module"></script>
+
+<script src="/js/build/main.js" type="module"></script>
+
+<script src="/js/build/layouts/navbarShrink.js" type="module"></script>
+
+<script src="/js/build/tools/scrollTopBottom.js" type="module"></script>
+
+<script src="/js/build/tools/lightDarkSwitch.js" type="module"></script>
+
+<script src="/js/build/layouts/categoryList.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/tools/localSearch.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/codeBlock.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/layouts/lazyload.js" type="module"></script>
+
+
+
+
+    
+<script src="/js/build/tools/runtime.js"></script>
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+  
+<script src="/js/build/plugins/typed.js" type="module"></script>
+
+
+
+
+
+
+
+
+    
+<script src="/js/build/libs/anime.min.js"></script>
+
+
+
+
+
+    
+<script src="/js/build/tools/tocToggle.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/layouts/toc.js" type="module" data-swup-reload-script=""></script>
+
+<script src="/js/build/plugins/tabs.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+<script src="/js/build/layouts/essays.js" type="module" data-swup-reload-script=""></script>
+
+
+
+
+
+	
+</body>
+
+</html>

@@ -1,0 +1,1170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    
+    <meta name="author" content="Neptune.💤">
+    
+    <!-- Completely eliminate flash of wrong theme -->
+    <script>
+        (function() {
+            const THEME_KEY = "REDEFINE-THEME-STATUS";
+            const DARK = "dark", LIGHT = "light";
+            
+            // Get preferred theme
+            function getTheme() {
+                try {
+                    const saved = localStorage.getItem(THEME_KEY);
+                    if (saved) {
+                        const { isDark } = JSON.parse(saved);
+                        return isDark ? DARK : LIGHT;
+                    }
+                } catch (e) {}
+                
+                return matchMedia("(prefers-color-scheme: dark)").matches ? DARK : LIGHT;
+            }
+            
+            // Apply theme to document
+            function applyTheme(theme) {
+                const isDark = theme === DARK;
+                const root = document.documentElement;
+                
+                // Set classes for compatibility
+                root.classList.add(theme);
+                root.classList.remove(isDark ? LIGHT : DARK);
+                root.style.colorScheme = theme;
+            }
+            
+            // Initial application
+            const theme = getTheme();
+            applyTheme(theme);
+            
+            // Listen for system preference changes
+            matchMedia("(prefers-color-scheme: dark)").addEventListener("change", ({ matches }) => {
+                // Only update if using system preference (no localStorage entry)
+                if (!localStorage.getItem(THEME_KEY)) {
+                    applyTheme(matches ? DARK : LIGHT);
+                }
+            });
+            
+            // Set body classes ASAP (before DOMContentLoaded)
+            (function() {
+                const addBodyClass = () => {
+                    const b = document.body;
+                    if (!b) return false;
+                    b.classList.add(theme + "-mode");
+                    return true;
+                };
+
+                // Try immediately
+                if (addBodyClass()) return;
+
+                // Observe until body exists
+                const mo = new MutationObserver(() => {
+                    if (addBodyClass()) mo.disconnect();
+                });
+                mo.observe(document.documentElement, { childList: true, subtree: true });
+            })();
+        })();
+    </script>
+    
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/05/article-extract/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+    
+        
+        <meta name="description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Article Extract">
+<meta property="og:url" content="http://example.com/2023/10/05/Article-Extract/index.html">
+<meta property="og:site_name" content="Fomalhaut_wiki">
+<meta property="og:description" content="Hexo Theme Redefine, Redefine Your Hexo Journey.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/redefine-og.webp">
+<meta property="article:published_time" content="2023-10-05T09:17:06.000Z">
+<meta property="article:modified_time" content="2025-08-26T13:12:59.000Z">
+<meta property="article:author" content="hwx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/redefine-og.webp">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/portrait.jpg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/portrait.jpg">
+    <meta name="theme-color" content="#FFC0CB">
+    <link rel="shortcut icon" href="/images/portrait.jpg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            Article Extract | Fomalhaut Wiki
+        
+    </title>
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+
+    <!--- Inject Part-->
+    
+
+    
+<link rel="stylesheet" href="/css/style.css">
+
+
+    
+        
+<link rel="stylesheet" href="/css/build/tailwind.css">
+
+    
+
+    
+<link rel="stylesheet" href="/fonts/GeistMono/geist-mono.css">
+
+    
+<link rel="stylesheet" href="/fonts/Geist/geist.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+    
+    
+
+    <script id="hexo-configurations">
+    window.config = {"hostname":"example.com","root":"/","language":"en","path":"search.xml"};
+    window.theme = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true,"delete_mask":false,"title_alignment":"left","headings_top_spacing":{"h1":"3.2rem","h2":"2.4rem","h3":"1.9rem","h4":"1.6rem","h5":"1.4rem","h6":"1.3rem"}},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","highlight_theme":{"light":"github","dark":"vs2015"},"font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":6,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"pangu_js":false,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#FFC0CB","secondary":"#00FF7F","default_mode":"light"},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null},"title":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"website_counter":{"url":"https://cn.vercount.one/js","enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"single_page":true,"preloader":{"enable":false,"custom_message":null},"side_tools":{"gear_rotation":true,"auto_expand":false},"open_graph":{"enable":true,"image":"/images/redefine-og.webp","description":"Hexo Theme Redefine, Redefine Your Hexo Journey."},"google_analytics":{"enable":false,"id":null},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/tank.png","dark":"/images/space_station.jpg"},"title":"Fomalhaut Wiki","subtitle":{"text":["🤖Robotics","🔢Mathmatics","🔫RoboMaster","⚙️Engineering","🎹Classical Music","💡Quantum Mechanics","🔭Astronomy"],"hitokoto":{"enable":false,"show_author":false,"api":"https://v1.hitokoto.cn"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.8rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":false,"style":"default","links":[],"qrs":[{"icon":"fa-brands fa-weixin","qr":null},{"icon":"/images/custom-icon.svg","qr":null}]}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null,"lrc":null}]},"mermaid":{"enable":false,"version":"9.3.0","theme":{"light":"default","dark":"dark"}}},"version":"2.9.0","navbar":{"auto_hide":true,"color":{"left":"#f78736","right":"#367df7","transparency":35},"width":{"home":"1200px","pages":"1000px"},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Categories":{"path":"/categories","icon":"fa-regular fa-folder"}},"search":{"enable":true,"preload":true},"categories":{"Categories":null,"icon":"fa-solid fa-folder","path":"/categories/"}},"page_templates":{"friends_column":2,"tags_style":"blur","masonry":{"batch_size":12,"initial_batch_size":24}},"home":{"sidebar":{"enable":true,"position":"left","first_item":"menu","announcement":null,"show_on_mobile":true,"links":{"Tags":{"path":"/tags","icon":"fa-regular fa-tags"},"Categories":{"path":"/categories/","icon":"fa-regular fa-folder","shuoshuo":{"path":"/essays","icon":"fa-solid fa-message-dots"}}}},"article_date_format":"auto","excerpt_length":200,"categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footer":{"runtime":true,"icon":"<i class=\"fa-solid fa-heart fa-beat\" style=\"--fa-animation-duration: 0.5s; color: #f54545\"></i>","start":"2022/8/17 11:45:14","statistics":true,"customize":null,"icp":{"enable":false,"number":null,"url":null}},"footerStart":"2022/8/17 11:45:14","mermaid":{"style":{"light":"default","dark":"dark"}}};
+    window.lang_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    window.i18n = {"search":"Search...","toc":"On this page","prev":"Prev","next":"Next","prev_posts":"Prev posts","next_posts":"Next posts","page":"Page %d","recent_posts":"Recent Posts","share":"Share","powered_by":"POWERED BY %s","theme":"THEME","rss_feed":"RSS Feed","category":"Category","categories":"Categories","tag":"Tag","tags":"Tags","post":"Post","posts":"Posts","tagcloud":"Tag Cloud","comment":"Comment","comments":"Comments","home":"Home","archive":"Archive","archives":"Archives","top":"TOP","sticky":"Sticky","go-back-home":"Go Back Home","masonry_loading":"Loading photos...","image_viewer":"Image viewer","close":"Close","exif":{"title":"EXIF","cards":{"camera":"Camera","lens":"Lens","exposure":"Exposure","other":"Other"},"fields":{"make":"Brand","model":"Model","date_taken":"Date taken","lens_model":"Lens","focal_length":"Focal length","focus_mode":"Focus mode","shutter":"Shutter","aperture":"Aperture","iso":"ISO","exposure_program":"Exposure program","exposure_compensation":"Exposure compensation","metering_mode":"Metering mode","flash":"Flash","white_balance":"White balance","latitude":"Latitude","longitude":"Longitude","altitude":"Altitude"},"status":{"loading":"Loading...","no_exif":"No EXIF available","library_missing":"EXIF library not loaded","image_source_missing":"Image source unavailable","unavailable":"EXIF unavailable (blocked by CORS or missing metadata)","flag_unavailable":"EXIF unavailable"}},"about":"About","changelog":"Changelog","links":"Links","link":"Link","friends":"Friends","friend":"Friend","timeline":"Timeline","shuoshuo":"Shuoshuo","bookmarks":"Bookmarks","site_uv":"VISITOR COUNT","site_pv":"TOTAL PAGE VIEWS","read_more":"Read more","wordcount":"Words","min2read":"Mins","status":"Status","runtime":"Blog up for","days":"days","hours":"hrs","minutes":"Min","seconds":"Sec","optimized_by":"and Optimized by Evan","rights":"All Rights Reserved","site_posts":"%s posts in total","site_wordcount":"%s words in total","copyright":{"author":"Author","title":"Title","link":"Link","create_time":"Created at","update_time":"Updated at","license_title":"License","license_content":"This work is licensed under %s.","all_rights_reserved":"All Rights Reserved &#169; %s","public_domain":"This work is in the public domain."},"ago":{"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"},"create_time":"Created","update_time":"Updated","expired":"This post is written %s days ago, and the content may not be up to date."};
+    window.data = {"masonry":false};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 7.3.0"></head>
+
+
+<body>
+	<div class="progress-bar-container">
+	
+
+	
+	<span class="pjax-progress-bar"></span>
+	<!--        <span class="swup-progress-icon">-->
+	<!--            <i class="fa-solid fa-circle-notch fa-spin"></i>-->
+	<!--        </span>-->
+	
+</div>
+
+<main class="page-container" id="swup">
+
+	
+
+	<div class="main-content-container flex flex-col justify-between min-h-dvh">
+		<div class="main-content-header">
+			<header class="navbar-container px-6 md:px-12">
+    <div class="navbar-content transition-navbar ">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                Fomalhaut Wiki
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/"
+                                        >
+                                    <i class="fa-regular fa-house fa-fw"></i>
+                                    HOME
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/archives"
+                                        >
+                                    <i class="fa-regular fa-archive fa-fw"></i>
+                                    ARCHIVES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            
+
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class=""
+                                   href="/categories"
+                                        >
+                                    <i class="fa-regular fa-folder fa-fw"></i>
+                                    CATEGORIES
+                                    
+                                </a>
+
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile sheet -->
+    <div class="navbar-drawer h-dvh w-full absolute top-0 left-0 bg-background-color flex flex-col justify-between">
+        <ul class="drawer-navbar-list flex flex-col px-4 justify-center items-start">
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/"
+                        >
+                            <span>
+                                HOME
+                            </span>
+                            
+                                <i class="fa-regular fa-house fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/archives"
+                        >
+                            <span>
+                                ARCHIVES
+                            </span>
+                            
+                                <i class="fa-regular fa-archive fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+                
+                    
+
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full "
+                           href="/categories"
+                        >
+                            <span>
+                                CATEGORIES
+                            </span>
+                            
+                                <i class="fa-regular fa-folder fa-sm fa-fw"></i>
+                            
+                        </a>
+                        
+
+                        
+                    </li>
+            
+
+            
+            
+                
+                    
+                    <li class="drawer-navbar-item text-base my-1.5 flex flex-col w-full">
+                        <a class="py-1.5 px-2 flex flex-row items-center justify-between gap-1 hover:!text-primary active:!text-primary text-2xl font-semibold group border-b border-border-color hover:border-primary w-full active"
+                           href="/tags"
+                        >
+                            <span>Tags</span>
+                            <i class="fa-regular fa-tags fa-sm fa-fw"></i>
+                        </a>
+                    </li>
+                
+                    
+            
+        </ul>
+
+        <div class="statistics flex justify-around my-2.5">
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/tags">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">0</div>
+        <div class="label text-third-text-color text-sm">Tags</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/categories">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">11</div>
+        <div class="label text-third-text-color text-sm">Categories</div>
+    </a>
+    <a class="item tag-count-item flex flex-col justify-center items-center w-20" href="/archives">
+        <div class="number text-2xl sm:text-xl text-second-text-color font-semibold">58</div>
+        <div class="label text-third-text-color text-sm">Posts</div>
+    </a>
+</div>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+		</div>
+
+		<div class="main-content-body transition-fade-up">
+			
+
+			<div class="main-content">
+				<div class="post-page-container flex relative justify-between box-border w-full h-full">
+	<div class="article-content-container">
+
+		<div class="article-title relative w-full">
+			
+			<div class="w-full flex items-center pt-6 justify-start">
+				<h1 class="article-title-regular text-second-text-color tracking-tight text-4xl md:text-6xl font-semibold px-2 sm:px-6 md:px-8 py-3">Article Extract</h1>
+			</div>
+			
+		</div>
+
+		
+		<div class="article-header flex flex-row gap-2 items-center px-2 sm:px-6 md:px-8">
+			<div class="avatar w-[46px] h-[46px] shrink-0 rounded-medium border border-border-color p-px">
+				<img src="/images/portrait.jpg">
+			</div>
+			<div class="info flex flex-col justify-between">
+				<div class="author flex items-center">
+					<span class="name text-default-text-color text-lg font-semibold">Neptune.💤</span>
+					
+					<span class="author-label ml-1.5 text-xs px-2 py-0.5 rounded-small text-third-text-color border border-shadow-color-1">Lv4</span>
+					
+				</div>
+				<div class="meta-info">
+					<div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-05 17:17:06</span>
+        <span class="mobile">2023-10-05 17:17:06</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2025-08-26 21:12:59</span>
+            <span class="mobile">2025-08-26 21:12:59</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+				</div>
+			</div>
+		</div>
+		
+
+		
+
+
+		<div class="article-content markdown-body px-2 sm:px-6 md:px-8 pb-8">
+			<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><h3 id="What-caused-the-fall-of-one-of-the-most-influential-empires-in-history"><a href="#What-caused-the-fall-of-one-of-the-most-influential-empires-in-history" class="headerlink" title="What caused the fall of one of the most influential empires in history?"></a>What caused the fall of one of the most influential empires in history?</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=vRyoEoyXCEU" >What caused the fall of one of the most influential empires in history?<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/10/05/Article-Extract/3.png"
+                      class="" width="800"
+                >
+
+<blockquote>
+<p>While Istanbul slept in the early hours of April 27th, 1909, Sultan Abdulhamid II <strong>boarded</strong> a <strong>westbound</strong> train. Under cover of darkness, he left the <strong>imperial</strong> capital, bringing an end to his <strong>reign</strong>.</p>
+</blockquote>
+<ul>
+<li>“Boarded” &#x3D; To step onto or enter a vehicle.</li>
+<li>“Westbound” &#x3D; Moving or facing toward the west.</li>
+<li>“Imperial” &#x3D; Relating to an empire, emperor, or supreme authority.</li>
+<li>“Reign” &#x3D; The period of rule by a monarch.</li>
+</ul>
+<blockquote>
+<p>But the end of this powerful dynasty had been <strong>brewing</strong> for years. In the late 18th century, the <strong>Ottomans’ once-feared faction</strong> of <strong>elite</strong> warriors called the <strong>Janissaries</strong> had become <strong>inefficient</strong> and greedy. Their numbers <strong>swelled</strong> with poorly trained fighters, and their outdated weapons led to a series of embarrassing defeats that <strong>coincided</strong> with several economic crises.</p>
+</blockquote>
+<ul>
+<li>“Brewing” &#x3D; A liquid slowly developing or steeping.<ul>
+<li>Problems were building gradually over decades, not sudden cllapse, but a simmering crisis.</li>
+</ul>
+</li>
+<li>“Ottomans’ once-feared faction”<ul>
+<li>“Ottomans” &#x3D; 奥斯曼帝国</li>
+<li>“Once-feared” &#x3D; Previously inspired terror.</li>
+<li>“Faction” &#x3D; An organized subgroup within the empire(here, the Janissaries).</li>
+</ul>
+</li>
+<li>“Elite” &#x3D; Select, superior, or highly trained group.</li>
+<li>“Janissaries” &#x3D; 土耳其新军，也叫做杰尼西斯士兵</li>
+<li>“Inefficient” &#x3D; Wasteful, underperforming, failing to act effectively.</li>
+<li>“Swelled” &#x3D; Grew larger or puffed up.</li>
+<li>“Coincided” &#x3D; Events happened simultaneously, often implying a causal link.</li>
+</ul>
+<blockquote>
+<p>To survive, <strong>Sultan</strong> Selim III sought to <strong>curb</strong> Janissaries’ influence and modernize the empire with widespread reforms. The warriors <strong>rebelled</strong> and assassinated Selim, but his <strong>successor</strong> would not be so easily beaten.</p>
+</blockquote>
+<ul>
+<li>“Sultan” &#x3D; 苏丹（某些伊斯兰国家统治者的称号）</li>
+<li>“Curb” &#x3D; To restrain, control or limit.</li>
+<li>“Rebelled” &#x3D; Organized violent resistance against authority.</li>
+<li>“Successor” &#x3D; One who follows another in power.</li>
+</ul>
+<blockquote>
+<p>Mahmud II subdued the Janissaries in a massacre known as the Auspicious Event, and swiftly replaced the outmoded warriors with a European-style army. </p>
+</blockquote>
+<blockquote>
+<p>Sultan Abdulmejid ushered in an era of reforms known as the Tanzimat, or “reordering”, where economic and administrative systems were overhauled, and usbects from all backgrounds were recruited to work for the government. The Tanzimat was hindered by foreign debt and ploitical upheavals.</p>
+</blockquote>
+<h2 id="Biology-and-Nature"><a href="#Biology-and-Nature" class="headerlink" title="Biology and Nature"></a>Biology and Nature</h2><h3 id="How-smart-are-crows"><a href="#How-smart-are-crows" class="headerlink" title="How smart are crows?"></a>How smart are crows?</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=wQ-GmWy_zmM" >How smart are crows? - Katharina Brecht<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/10/05/Article-Extract/1.png"
+                      class="" width="800"
+                >
+
+<blockquote>
+<p>“The <strong>mimicker</strong>, the tool maker, the strutter around the bird feeder, the pretty thief of shiny objects.”</p>
+</blockquote>
+<ul>
+<li>“Mimicker” &#x3D; A creature that imitates or copies sounds. From verb to <em>mimic</em>.</li>
+<li>“Strutter” &#x3D; A creature that walks in a proud, stiff way, often to show off. From the verb to <em>strut</em>.</li>
+</ul>
+<blockquote>
+<p>In on of Aesop’s 2500-year-old <strong>fables</strong>, a crow is searching for water. It spies a <strong>pitcher</strong> and discovers liquid inside but it’s beyond reach. Soon, the crow begins dropping pebbles into the pitcher. One by one, the displace the water, and the crow <strong>quenches</strong> its thirst.</p>
+</blockquote>
+<ul>
+<li>“Fables” &#x3D; A short story with animal characters teaching a moral. (寓言)</li>
+<li>“Pitcher” &#x3D; A container with handle, used for liquids.</li>
+<li>“Quench” &#x3D; To satisfy thirst by drinking.<ul>
+<li>“Reading travel blogs quenched his desire for adventure while saving money.”</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Interestingly, this fable turns out to be pretty accurate. In a 2014 experiment, scientists placed a food reward in a tube partially filled with water, and watched as crow after crow dropped stone after stone in until the food was in <strong>beak-snatching</strong> distance. This is just one of many fascinating displays of intelligence from <strong>corvids</strong>, the <strong>bold</strong>, brainy family of <strong>songbirds</strong>, that includes crows, <strong>ravens</strong>, <strong>jays</strong>, and <strong>magpies</strong>. To start, corvids are strategic when it comes to their food. They <strong>ransack</strong> trash bins and snatch bites from under other birds’ beaks. They also <strong>hoard</strong> and cache their food.</p>
+</blockquote>
+<ul>
+<li>“beak-snatching”<ul>
+<li>“Beak” &#x3D; The hard, pointed mouth part of a bird.(鸟喙)</li>
+<li>“Snatch” &#x3D; Grabbing something suddenly, quickly and often aggressively.</li>
+<li>“Corvids” refer to the entire bird family “Corvidae”(鸦科).</li>
+<li>“Songbirds” &#x3D; A group of birds known for their vocal abilities, including many species that are capable of producing complex sounds and melodies.(鸣禽)<ul>
+<li>crows 乌鸦</li>
+<li>ravens 渡鸦</li>
+<li>jays 松鸦</li>
+<li>magpies 喜鹊</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>“Bold” &#x3D; Fearless and daring; willing to take risks or act decisively.<ul>
+<li>The bold raccoon ripped open the camper’s cooler.</li>
+</ul>
+</li>
+<li>“Ransack” implies savage theft and disarray beyond mere searching.</li>
+<li>“Hoard” &#x3D; To gather and hiddenly stockpile valuable resources, often obsessively or greedily.</li>
+</ul>
+<blockquote>
+<p>A single <strong>Clark’s nutcracker</strong>, for instance, is thought to <strong>scatter</strong> some 30,000 <strong>pine</strong> nuts across more than 2,000 cache sites, which it can recover more than nine months later. And in one experiment, <strong>scrub jays</strong> given <strong>waxworms</strong> and peanuts, cached and retrieved the <strong>perishable</strong> worms first and left the peanuts for later. </p>
+</blockquote>
+<ul>
+<li>“Clark’s nutcracker”: 北美星鸦</li>
+<li>“Scrub jays”: 灌丛鸦’</li>
+<li>“Waxworms”: 蜡虫.</li>
+<li>“Scatter” &#x3D; To disperse widely across a landscape.</li>
+<li>“Pine nuts” refer specifically to the edible seeds produced by pine trees(松树).</li>
+<li>“Perishable” refers to items that spoil, decay or become inedible quickly if not consumed or preserved promptly. (易腐烂的)</li>
+</ul>
+<blockquote>
+<p>Corvid abilities extend beyond meal <strong>prepping</strong>. </p>
+</blockquote>
+<ul>
+<li>“Prepping” refers to the planning, preparing, and managing resources in advance.</li>
+</ul>
+<blockquote>
+<p>Corvids like <strong>New Caledonian crows</strong>, also demonstrate an impressive <strong>proclivity</strong> for reasoning and tool use. Even in the wild, they <strong>fashion</strong> sticks into <strong>hook-shaped probes</strong> for food. </p>
+</blockquote>
+<ul>
+<li>“New Caledonian crows”: 新克里多尼亚乌鸦</li>
+<li>“Proclivity” refers to a natural or habitual inclination toward something—-especially a behavior, skill, or tendency that feels instinctive or innate.(倾向)</li>
+<li>“Fashion” (as a verb) &#x3D; To skillfully create, shape, or modify raw materials into a functional or deliberate form.</li>
+<li>“Hook-shaped” &#x3D; Having a curved, J-like end(钩状) for snagging or lifting.</li>
+<li>“Probes” &#x3D; Tools for inspecting, extracting, or manipulating objects.(探针&#x2F;探具)</li>
+</ul>
+<blockquote>
+<p> But corvids also do things that are harder to explain. They sometimes <strong>tote</strong> <strong>trinkets</strong> around, which might help them practice caching or serve as gifts to their partners. And they’ve been spotted repeatedly <strong>sledding</strong> down roofs on plastic <strong>lids</strong>. Play activities like this are relatively common in corvids, especially <strong>juvenils</strong>. </p>
+</blockquote>
+<ul>
+<li>“Tote” &#x3D; To carry something casually, often over a distance.</li>
+<li>“Trinkets” &#x3D; Small, decorative items of little practical value, often bright, shiny, or textured.</li>
+<li>“Sledding” &#x3D; Sliding down a slope using an object as a makeshift vehicle(滑橇), not accidental slipping, but intentional play.</li>
+<li>“Lids” &#x3D; Lightweight plastic or covers from human-made containers.</li>
+<li>“Juveniles” &#x3D; Young individuals of a species, especially not yet sexually mature.</li>
+</ul>
+<blockquote>
+<p>They <strong>breed</strong> cooperatively; live and communicate in large dynamic groups; share food; and <strong>mob</strong> predators together. </p>
+</blockquote>
+<ul>
+<li>“Breed” &#x3D; To produce offspring, but specifically here in a socially complex, collaborative system.(群体养殖)</li>
+<li>“Mob” &#x3D; To group aggressively against a threat.</li>
+</ul>
+<blockquote>
+<p>Scientists today consider corvids among the smartest animals – a big step from where <strong>consensus</strong> used to be. In the late 1800s, German scientists Ludwig Edinger, compared <strong>primate</strong> and crow brains and <strong>interpreted</strong> the crow’s brain structure as <strong>primitive</strong>, <strong>dismissing</strong> their cognitive abilities. This was a <strong>misinterpretation</strong>. A raven, for example, has a brain that looks quite different that a <strong>Capuchin</strong> monkeys, and is about a third of the size. But both animals have a similar number of neurons in their <strong>pallium</strong>, a brain region that’s associated with cognition. </p>
+</blockquote>
+<ul>
+<li>“Consensus” &#x3D; General agreement among experts in a field, formed after debate and evidence evaluation.</li>
+<li>“Primate” &#x3D; Mammalian order including humans, apes, monkeys.(灵长类)</li>
+<li>“Interpreted” &#x3D; To subjectively explain data based on existing beliefs.</li>
+<li>“Primitive” &#x3D; Early, undeveloped, simple. Implies evolutionary backwardness.</li>
+<li>“Dismissing” &#x3D; To reject as unworthy of consideration.</li>
+<li>“Misinterpretation” &#x3D; A flawed conclusion from data due to bias or limited methods.</li>
+<li>“Capuchin monkey”: 卷尾猴</li>
+<li>“Pallium”：大脑皮层</li>
+</ul>
+<h2 id="Sociology"><a href="#Sociology" class="headerlink" title="Sociology"></a>Sociology</h2><h3 id="How-did-detectives-solve-the-case-of-the-bloody-fingerprints"><a href="#How-did-detectives-solve-the-case-of-the-bloody-fingerprints" class="headerlink" title="How did detectives solve the case of the bloody fingerprints?"></a>How did detectives solve the case of the bloody fingerprints?</h3><p><a class="link"   target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=__nlupHISg0" >How did detectives solve the case of the bloody fingerprints?<i class="fa-solid fa-arrow-up-right ml-[0.2em] font-light align-text-top text-[0.7em] link-icon"></i></a></p>
+<img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/2023/10/05/Article-Extract/2.png"
+                      class="" width="600"
+                >
+
+<blockquote>
+<p>On October 17th, 1902, Paris detectives arrived at a <strong>grisly</strong> scene.</p>
+</blockquote>
+<ul>
+<li>“Grisly” &#x3D; Causing intense horror, disgust, or revulsion, typically due to explicit brutality or bloodshed. (血腥，恐怖)</li>
+</ul>
+<blockquote>
+<p>With no eyewitnesses, the officers had little to work from, until they discovered a <strong>shard</strong> of broken glass with several bloody fingerprints.</p>
+</blockquote>
+<ul>
+<li>“Shard” specifically means a sharp, fragmented piece of brittle material.</li>
+</ul>
+<blockquote>
+<p>Henri Scheffer, who had been arrested for theft the year before, was <strong>detained</strong> and later <strong>confessed</strong> to the murder.</p>
+</blockquote>
+<ul>
+<li>“Detained” &#x3D; Legally held in custody for investigation, without formal charges yet.</li>
+<li>“Confessed” &#x3D; Formally admitted guilt to the crime.</li>
+</ul>
+<blockquote>
+<p>Humans, like other climbing species, are born with patterns of raised <strong>ridges</strong> and <strong>recessed</strong> <strong>furrows</strong>, not only on their fingers but also along their hands and feet. These friction ridges help provide a firmer <strong>grip</strong>, especially on wet surfaces, and increase our sensitivity to touch. They begin to develop in the <strong>womb</strong> at about seven weeks, when the skin on the hands and feet <strong>swell</strong> to form smooth raised <strong>pads</strong>. At around ten weeks, deeper layers begin to grow faster than the upper layers, casuing the pads to <strong>buckle</strong> and fold. This folding is guided by genetics and environmental factors, and continues over the next several months.</p>
+</blockquote>
+<ul>
+<li>“Ridges” &#x3D; Raised lines of skin that form distinct patterns. (凸纹)</li>
+<li>“Furrows” &#x3D; The valleys or grooves between ridges. (沟纹)</li>
+<li>“Recessed” &#x3D; Set below the surrounding surface; indented or sunken. (凹陷的)<ul>
+<li>“Liquid pools in the recessed furrows” &#x3D; Liquid collects in the skin valleys.</li>
+</ul>
+</li>
+<li>“Grip” &#x3D; The ability to grasp or hold onto something firmly.</li>
+<li>“Womb” &#x3D; The organ in a female mammal where offspring develop before birth. (子宫)</li>
+<li>“Swell” &#x3D; To expand or enlarge due to internal pressure or growth.</li>
+<li>“Pads” &#x3D; Soft, thickened areas of skin that act as cushions. (肉垫)</li>
+<li>“Buckle” &#x3D; To bend, fold, or collapse under pressure.</li>
+</ul>
+<blockquote>
+<p>In fact, many experts believe it’s <strong>improbable</strong> that any two fingerprints, past or present, are exactly alike. They’re even different among <strong>identical</strong> twins.</p>
+</blockquote>
+<ul>
+<li>“Improbable” &#x3D; Highly unlikely to happen; almost certain not to occur.</li>
+<li>“Identical” &#x3D; Exactly the same in every detail; indistinguishable.</li>
+</ul>
+<blockquote>
+<p>By the early 1900s, <strong>prosecutors</strong> began utilizing fingerprints in courts, forever changing how detectives approach and analyze crime scenes.</p>
+</blockquote>
+<ul>
+<li>“Prosecutors” &#x3D; Legal representatives who bring criminal charges against a defendant in court.</li>
+</ul>
+<blockquote>
+<p>These include <strong>patent</strong> prints, left by <strong>transferable</strong> <strong>substances</strong> like blood or dirt, and <strong>plastic</strong> prints, which are impressions in soft, <strong>malleable</strong> materials, like <strong>caulking</strong>, <strong>wax</strong>, or even a newly painted <strong>fence</strong>.</p>
+</blockquote>
+<ul>
+<li>“Patent prints” &#x3D; Visible, easily noticeable fingerprints.</li>
+<li>“Transferable substances” &#x3D; Materials that stick to skin and deposit onto surfaces.</li>
+<li>“Plastic prints” &#x3D; 3D impressions left in soft materials.</li>
+<li>“Malleable materials” &#x3D; Surfaces that deform under pressure and soft enough to retain ridge detail when touched.</li>
+<li>“Caulking” &#x3D; Soft sealant used in construction. (用于施工的软密封材料)</li>
+<li>“Wax” &#x3D; Soft, moldable substance.(蜡)</li>
+<li>“Fence” &#x3D; A barrier enclosing an area, often made of wood or metal. (栅栏)</li>
+</ul>
+<blockquote>
+<p>These are called <strong>latent</strong> prints, and they’re composed of the water, oils, proteins, and salts, that ridge patterns leave on surfaces. They can be revealed by dusting with a fine powder, which sticks to the water and oil <strong>trail</strong>.</p>
+</blockquote>
+<ul>
+<li>“Latent” &#x3D; Existing but no visible, hidden, requiring specific conditions to become detectable.</li>
+<li>“Trail” &#x3D; A path, track, a series of marks left behind.</li>
+</ul>
+<blockquote>
+<p>If surfaces are <strong>porous</strong> or difficult to dust, investigators use chemical developers like <strong>Ninhydrin</strong>, which reacts with proteins left by fingers.</p>
+</blockquote>
+<ul>
+<li>“Porous” &#x3D; A material containing tiny holes or capillaries that absorb liquids or gases. (e.g. paper, cardboard, raw wood, fabric)</li>
+<li>“Ninhydrin” &#x3D; 茚三酮</li>
+</ul>
+<blockquote>
+<p><strong>Forensic</strong> scientists continue to develop more sensitive and surface-specific tools. For example, one experimental technique uses an electrical charge to capture the <strong>corrosion</strong> that fingerprint salts leave on metals, even if they have been wiped down.</p>
+</blockquote>
+<ul>
+<li>“Forensic” &#x3D; Relating to the scientific methods to investigate crimes, analyze evidence, and provide data for legal proceedings.</li>
+<li>“Corrosion” &#x3D; Electrochemical degradation of metals due to reactions with their environment.</li>
+</ul>
+<blockquote>
+<p>Certified experts then compare minor fingerprint details, such as how the ridges branch and intersect, and the spacing of oil <strong>pores</strong>. </p>
+</blockquote>
+<ul>
+<li>“Pores” &#x3D; Microscopic openings (15-50μm wide) on fingerprint ridges where sweat ducts emerge to secrete. (毛孔，气孔)<ul>
+<li>“The spacing of oil pores” &#x3D; 毛孔之间的距离</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>Prints are often <strong>smudged</strong>, <strong>distorted</strong>, or overlapped with other prints, which can make matching more challenging. And it’s <strong>prone</strong> to human error.</p>
+</blockquote>
+<ul>
+<li>“Smudged” &#x3D; Ridge patterns dragged or wiped across a surface due to lateral finger movement or excessive residue, causing blurred or unreadable areas. (弄脏，涂污)</li>
+<li>“Distorted” &#x3D;  Twisted, warped, or stretched out of its true shape.Unevene force sculpts ridges into unnatural shapes or stretch and compress.</li>
+<li>“Prone” &#x3D; Likely to experience or naturally inclined to suffer from something negative.<ul>
+<li>The fingerprint-matching process is naturally vulnerable to mistakes by experts.</li>
+</ul>
+</li>
+</ul>
+<blockquote>
+<p>While this may seem low, the <strong>stakes</strong> are high for a wrongly accused <strong>defendant</strong>. Futher, there’s no universal standard on the number of ridge details that experts must analyze to make a match. Many investigators stress that no <strong>conviction</strong> should be made on fingerprint evidence alone.</p>
+</blockquote>
+<ul>
+<li>“Stakes” &#x3D; What can be gained or lost in a situation; the level of risk or importance involved.</li>
+<li>“Defendant” &#x3D; The person accused of a crime in a court.</li>
+<li>“Conviction” &#x3D; A formal declaration that someone is guilty of a crime following a trial.</li>
+</ul>
+<h2 id="Psychology"><a href="#Psychology" class="headerlink" title="Psychology"></a>Psychology</h2><h3 id="How-to-get-motivated-even-when-you-don’t-feel-like-it"><a href="#How-to-get-motivated-even-when-you-don’t-feel-like-it" class="headerlink" title="How to get motivated even when you don’t feel like it"></a>How to get motivated even when you don’t feel like it</h3><p>You’ve always aspired to be a professional artist. At last, this dream may become a reality, and you’re creating a portfolio to submit to art programs. But as the application deadline looms, you suddenly find yourself unmotivated, and avoiding the canvas altogether.</p>
+<p>Why does motivation seem so fickle? And what even is it in the first place? </p>
+<p>Psychologists define motivation as the desire or impetus to initiate and maintain a particular behavior. In other words, it’s the energy that drives you to do something. And knowing the source of that drive is particularly important when it comes to understanding how to maintain it.</p>
+<p>These motivational forces generally fall into two broad categories: intrinsic and extrinsic. Intrinsic motivation is involved when you experience an activity as an end in itself. Take a hobby, like playing video games. The experience largely explains the desire to do it. Performing tasks that feel right in the moment or that you find a meaningful, interesting, or satisfying are driven by intrinsic motivation. </p>
+<p>Extrinsic motivation, on the other hand, refers to pursuing a task as a means to an end. While few would consider going to the dentist as an enjoyable activity, you’re often motivated by the outcome of having clean, healthy teeth. Other examples of extrinsic motivation include completing a task to receive some sort of reward, whether it’s praise, power, or money. Notably, these rewards tend to come later, like receiving a bonus at the end of a quarter, or winning a competition after months of training. While extrinsic rewards, like getting paid, may seem appealing, their effectiveness can be surprisingly short-lived. </p>
+<p>For example, a 2017 study found that those who were highly focused on the outcomes of their New Year’s resolutions or driven by extrinsic motivation weren’t the most likely to stick to them. What did predict persistence, however, was how much a person enjoyed pursuing their goals. In other words, you’re more likely to maintain an exercise routine if you take classes you enjoy, rather than just those that build your biceps. </p>
+<p>Years of psychology research have shown that high levels of intrinsic motivation for school, a job, or an exercise class are more likely to keep you engaged in the long run. Day-to-day actions, though, are rarely either exclusively intrinsically motivated. Study for histroy exam, for example, can be intrinsically motivated if you’re curious about the culture of ancient Egypt. But extrinsic motivators may also be at play, as you aim to get good grade or feel pressure from family members to do well in school. But having multiple motivators isn’t always better. </p>
+<p>One study of military cadets found that those who were driven both by intrinsic motivators, like self-improvement, and extrinsic motivators, like the outcome of getting a good job, were overall less motivated than cadets driven by just one of these factors. As a result, these cadets performed worse and were less likely to graduate. Psychologists call this phenomenon the overjustification effect, the idea that additional extrinsic motivators can actually muddy the waters when you already have the intrinsic drive to do something. </p>
+<p>But this is only a problem if you already find a task motivating. When you’re faced with an activity you find tedious or uninteresing, adding extrinsic rewards can be beneficial. In this way, extrincis motivators can provide sufficient justification. While you may never enjoy doing the laundry, it may feel less daunting if you get praise from a loved one, or even promise yourself that you’ll watch your favorite TV show when you’re done folding. </p>
+<p>Motication is complicated. And sometimes, no matter how passionate you are about a goal or hobby, finding the motivation to actually do it can be difficult. But there are things you can do to increase your drive, even when it feels impossible. Focus on building intrinsic motivation by making the task more fun in the moment. Asking a friend to join you or simply putting on your favorite playlist can give you the boost to get started and stick with your goals for the long haul. </p>
+
+		</div>
+
+		
+		<div class="post-copyright-info w-full my-8 px-2 sm:px-6 md:px-8">
+			<div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> Article Extract</li>
+        <li><strong>Author:</strong> Neptune.💤</li>
+        <li><strong>Created at
+                :</strong> 2023-10-05 17:17:06</li>
+        
+            <li>
+                <strong>Updated at
+                    :</strong> 2025-08-26 21:12:59
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://roboticshwx.github.io/2023/10/05/Article-Extract/
+        </li>
+        <li>
+            <strong>
+                License:
+            </strong>
+            
+
+            
+                This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0">CC BY-NC-SA 4.0</a>.
+            
+        </li>
+    </ul>
+</div>
+
+		</div>
+		
+
+		
+
+		
+
+		
+		<div class="article-nav my-8 flex justify-between items-center px-2 sm:px-6 md:px-8">
+			
+			<div class="article-prev border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="prev" rel="prev" href="/2023/10/12/IEILTS-Writing/">
+					<span class="left arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-left"></i>
+					</span>
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">IELTS Writing</span>
+						<span class="post-nav-item">Prev posts</span>
+					</span>
+				</a>
+			</div>
+			
+			
+			<div class="article-next border-border-color shadow-redefine-flat shadow-shadow-color-2 rounded-medium px-4 py-2 hover:shadow-redefine-flat-hover hover:shadow-shadow-color-2">
+				<a class="next" rel="next" href="/2023/10/05/Lean-English-With-Movies-and-TV-Series/">
+					<span class="title flex justify-center items-center">
+						<span class="post-nav-title-item truncate max-w-48">Lean English With Movies and TV Series</span>
+						<span class="post-nav-item">Next posts</span>
+					</span>
+					<span class="right arrow-icon flex justify-center items-center">
+						<i class="fa-solid fa-chevron-right"></i>
+					</span>
+				</a>
+			</div>
+			
+		</div>
+		
+
+
+		
+		<div class="comment-container px-2 sm:px-6 md:px-8 pb-8">
+			<div class="comments-container mt-10 w-full ">
+    <div id="comment-anchor" class="w-full h-2.5"></div>
+    <div class="comment-area-title w-full my-1.5 md:my-2.5 text-xl md:text-3xl font-bold">
+        Comments
+    </div>
+    
+
+        
+            
+    <div id="waline"></div>
+    <script type="module" data-swup-reload-script>
+      import { init } from '/js/libs/waline.js';
+
+      (function() {
+        const startPath = location.pathname;
+        const startTime = Date.now();
+        const retryDelay = 200;
+        const retryLimit = 5000;
+
+        const runWaline = () => {
+          if (location.pathname !== startPath) {
+            return;
+          }
+
+          const container = document.getElementById('waline');
+          if (!container) {
+            if (Date.now() - startTime < retryLimit) {
+              setTimeout(runWaline, retryDelay);
+            }
+            return;
+          }
+
+          if (window.redefineWalineInstance?.destroy) {
+            window.redefineWalineInstance.destroy();
+          }
+
+          container.innerHTML = '';
+          window.redefineWalineInstance = init({
+            el: '#waline',
+            serverURL: 'https://example.example.com',
+            path: location.pathname,
+            dark: 'body[class~="dark-mode"]',
+            reaction: false,
+            requiredMeta: ['nick', 'mail'],
+            emoji: [],
+                      lang: 'zh-CN',
+          });
+        };
+
+        runWaline();
+      })();
+    </script>
+
+
+
+        
+    
+</div>
+
+		</div>
+		
+	</div>
+
+	
+	<div class="toc-content-container">
+		<div class="post-toc-wrap">
+	<div class="post-toc">
+		<div class="toc-title">On this page</div>
+		<div class="page-title">Article Extract</div>
+		<ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-text">History</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#What-caused-the-fall-of-one-of-the-most-influential-empires-in-history"><span class="nav-text">What caused the fall of one of the most influential empires in history?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Biology-and-Nature"><span class="nav-text">Biology and Nature</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-smart-are-crows"><span class="nav-text">How smart are crows?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sociology"><span class="nav-text">Sociology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-did-detectives-solve-the-case-of-the-bloody-fingerprints"><span class="nav-text">How did detectives solve the case of the bloody fingerprints?</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Psychology"><span class="nav-text">Psychology</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How-to-get-motivated-even-when-you-don%E2%80%99t-feel-like-it"><span class="nav-text">How to get motivated even when you don’t feel like it</span></a></li></ol></li></ol>
+
+	</div>
+</div>
+	</div>
+	
+</div>
+
+			</div>
+
+			
+		</div>
+
+		<div class="main-content-footer">
+			<footer class="footer mt-5 py-5 h-auto text-base text-third-text-color relative border-t-2 border-t-border-color">
+    <div class="info-container py-3 text-center">
+        
+        <div class="text-center">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2026&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">Neptune.💤</a>
+            
+                
+                <p class="post-count space-x-0.5">
+                    <span>
+                        58 posts in total
+                    </span>
+                    
+                </p>
+            
+        </div>
+        
+            <script data-swup-reload-script src="https://cn.vercount.one/js"></script>
+            <div class="relative text-center lg:absolute lg:right-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-right">
+                
+                    <span id="busuanzi_container_site_uv" class="lg:!block">
+                        <span class="text-sm">VISITOR COUNT</span>
+                        <span id="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="lg:!block">
+                        <span class="text-sm">TOTAL PAGE VIEWS</span>
+                        <span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="relative text-center lg:absolute lg:left-[20px] lg:top-1/2 lg:-translate-y-1/2 lg:text-left">
+            <span class="lg:block text-sm">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg class="relative top-[2px] inline-block align-baseline" version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" class="text-base" href="https://hexo.io">Hexo</a></span>
+            <span class="text-sm lg:block">THEME&nbsp;<a class="text-base" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.9.0</a></span>
+        </div>
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+            <script data-swup-reload-script>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+		</div>
+	</div>
+
+	
+	<div class="post-tools">
+		<div class="post-tools-container">
+	<ul class="article-tools-list">
+		<!-- TOC aside toggle -->
+		
+		<li class="right-bottom-tools page-aside-toggle">
+			<i class="fa-regular fa-outdent"></i>
+		</li>
+		
+
+		<!-- go comment -->
+		
+		<li class="go-comment">
+			<i class="fa-regular fa-comments"></i>
+		</li>
+		
+	</ul>
+</div>
+	</div>
+	
+
+	<div class="right-side-tools-container">
+		<div class="side-tools-container">
+	<ul class="hidden-tools-list">
+		<li class="right-bottom-tools tool-font-adjust-plus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-plus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-font-adjust-minus flex justify-center items-center">
+			<i class="fa-regular fa-magnifying-glass-minus"></i>
+		</li>
+
+		<li class="right-bottom-tools tool-dark-light-toggle flex justify-center items-center">
+			<i class="fa-regular fa-moon"></i>
+		</li>
+
+		<!-- rss -->
+		
+
+		
+
+		<li class="right-bottom-tools tool-scroll-to-bottom flex justify-center items-center">
+			<i class="fa-regular fa-arrow-down"></i>
+		</li>
+	</ul>
+
+	<ul class="visible-tools-list">
+		<li class="right-bottom-tools toggle-tools-list flex justify-center items-center">
+			<i class="fa-regular fa-cog fa-spin"></i>
+		</li>
+		
+		<li class="right-bottom-tools tool-scroll-to-top flex justify-center items-center">
+			<i class="arrow-up fas fa-arrow-up"></i>
+			<span class="percent"></span>
+		</li>
+		
+		
+	</ul>
+</div>
+	</div>
+
+	<div class="image-viewer-container" role="dialog" aria-modal="true" aria-label="Image viewer">
+	<button class="image-viewer-close" type="button" aria-label="Close">
+		<i class="fa-solid fa-xmark"></i>
+	</button>
+	<button class="image-viewer-prev" type="button" aria-label="Prev">
+		<i class="fa-solid fa-chevron-left"></i>
+	</button>
+	<div class="image-viewer-frame">
+		<img src="" alt="">
+	</div>
+	<div class="image-viewer-exif-panel hidden absolute left-1/2 bottom-20 -translate-x-1/2 w-[min(92vw,420px)] max-h-[60vh] overflow-hidden rounded-2xl bg-background-color-transparent-80 p-4 text-left shadow-redefine-flat backdrop-blur-md" role="dialog" aria-label="EXIF" aria-hidden="true">
+		<div class="flex items-center justify-between mb-3">
+			<span class="text-sm font-semibold text-first-text-color">EXIF</span>
+			<button class="image-viewer-exif-close flex h-8 w-8 items-center justify-center rounded-full bg-background-color-transparent-80 text-first-text-color transition hover:bg-background-color-transparent-40" type="button" aria-label="Close">
+				<i class="fa-solid fa-xmark text-[0.65rem]"></i>
+			</button>
+		</div>
+		<div class="image-viewer-exif-cards grid grid-cols-1 sm:grid-cols-2 gap-3 max-h-[50vh] overflow-y-auto pr-1 scrollbar-hide"></div>
+		<template class="image-viewer-exif-card-template">
+			<div class="rounded-lg bg-background-color-transparent-40 px-3 py-2">
+				<div class="image-viewer-exif-card-header flex items-center gap-2 mb-1">
+					<i class="image-viewer-exif-card-icon fa-solid fa-circle-info text-xs text-third-text-color"></i>
+					<div class="image-viewer-exif-card-title text-xs font-semibold text-first-text-color"></div>
+				</div>
+				<div class="image-viewer-exif-card-items flex flex-col gap-1"></div>
+			</div>
+		</template>
+	</div>
+	<button class="image-viewer-exif-toggle flex items-center gap-2 hidden absolute left-1/2 bottom-6 -translate-x-1/2 rounded-full border border-border-color bg-background-color-transparent-80 px-4 py-2 text-first-text-color backdrop-blur-md transition hover:bg-background-color-transparent-40" type="button" aria-label="EXIF" aria-expanded="false">
+		<i class="fa-solid fa-circle-info text-xs"></i>
+		<span class="text-xs font-semibold uppercase tracking-wider">EXIF</span>
+	</button>
+	<button class="image-viewer-next" type="button" aria-label="Next">
+		<i class="fa-solid fa-chevron-right"></i>
+	</button>
+</div>
+
+
+	
+	<div class="search-pop-overlay">
+	<div class="popup search-popup">
+		<div class="search-header">
+			<span class="search-input-field-pre">
+				<i class="fa-solid fa-keyboard"></i>
+			</span>
+			<div class="search-input-container">
+				<input autocomplete="off" autocorrect="off" autocapitalize="off" placeholder="Search..." spellcheck="false" type="search" class="search-input">
+			</div>
+			<span class="popup-btn-close">
+				<i class="fa-solid fa-times"></i>
+			</span>
+		</div>
+		<div id="search-result">
+			<div id="no-result">
+				<i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+			</div>
+		</div>
+	</div>
+</div>
+	
+
+</main>
+
+
+
+<script src="/js/build/libs/Swup.min.js"></script>
+
+<script src="/js/build/libs/SwupSlideTheme.min.js"></script>
+
+<script src="/js/build/libs/SwupScriptsPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupProgressPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupScrollPlugin.min.js"></script>
+
+<script src="/js/build/libs/SwupPreloadPlugin.min.js"></script>
+
+<script>
+    window.swup = new Swup({
+        plugins: [
+            new SwupScriptsPlugin({
+                optin: true,
+            }),
+            new SwupProgressPlugin(),
+            new SwupScrollPlugin({
+                offset: 80,
+            }),
+            new SwupSlideTheme({
+                mainElement: ".main-content-body",
+            }),
+            new SwupPreloadPlugin(),
+        ],
+        containers: ["#swup"],
+    });
+
+    window.dispatchEvent(
+        new CustomEvent("redefine:swup:ready", {
+            detail: {
+                swup: window.swup,
+            },
+        }),
+    );
+</script>
+
+
+
+
+	
+<script src="/js/build/main.js" type="module"></script>
+
+
+
+    
+<script src="/js/build/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+
+
+
+  
+<script src="/js/build/libs/Typed.min.js"></script>
+
+
+
+
+
+
+
+
+
+
+<script src="/js/build/libs/moment-with-locales.min.js" data-swup-reload-script=""></script>
+
+
+
+	
+</body>
+
+</html>
